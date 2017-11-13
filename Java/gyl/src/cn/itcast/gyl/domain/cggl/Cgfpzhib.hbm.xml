@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.cggl.Cgfpzhib">
+		<id name="cgfpzhibid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 
+			币种
+		 -->
+		<property name="bz"></property>
+		<!-- 
+			存货编码
+		 -->
+		<property name="chbm"></property>
+		<!-- 
+			存货名称
+		 -->
+		<property name="chmc"></property>
+		<!-- 
+			发票数量
+		 -->
+		<property name="fpsl"></property>
+		<!-- 
+			行号
+		 -->
+		<property name="hh"></property>
+		<!-- 
+			含税单价
+		 -->
+		<property name="hsdj"></property>
+		<!-- 
+			金额
+		 -->
+		<property name="je"></property>
+		<!-- 
+			来源单据号    订单或者入库单
+		 -->
+		<property name="lydjh"></property>
+		<!-- 
+			来源行号     订单或者入库单
+		 -->
+		<property name="lyhh"></property>
+		<!-- 
+			批次
+		 -->
+		<property name="pc"></property>
+		<!-- 
+			税额
+		 -->
+		<property name="se"></property>
+		<!-- 
+			税率
+		 -->
+		<property name="sl"></property>
+		<!-- 
+			无税单价
+		 -->
+		<property name="wsdj"></property>
+		<!-- 
+			无税金额
+		 -->
+		<property name="wsje"></property>
+		<!-- 
+			型号
+		 -->
+		<property name="xh"></property>
+		<!--
+			源头单据号
+		 -->
+		<property name="ytdjd"></property>
+		<!-- 
+			源头行号
+		 -->
+		<property name="ythh"></property>
+		<many-to-one name="cgfpzhub" class="cn.itcast.gyl.domain.cggl.Cgfpzhub" column="cgfpzhubid"></many-to-one>
+	</class>
+</hibernate-mapping>

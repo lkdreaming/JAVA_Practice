@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录界面</title>
+	<script type="text/javascript">
+        function chkLogin() {
+			var reg = /^[0-9a-zA-Z]{8,16}$/;
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+			if(!reg.test(username)) {
+				alert("uername error!!");
+				return false;
+			}
+			if(password == "") {
+				alert("password error!!");
+				return false;
+			}
+			return true;
+		}
+    
+    </script>
+</head>
+
+<body>
+	<form action="../动态时钟/动态时钟.html" onsubmit="return chkLogin()">
+    	<input type="text" id="username" /><br/>
+        <input type="password" id="password" /><br/>
+    	<input type="submit" value="提交" />
+        <input type="reset" value="重置" />
+    </form>
+
+</body>
+</html>

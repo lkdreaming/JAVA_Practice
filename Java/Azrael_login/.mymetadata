@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Azrael_login"
+  id="myeclipse.1455437271747"
+  context-root="/Azrael_login"
+  j2ee-spec="5.0"
+  archive="Azrael_login.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

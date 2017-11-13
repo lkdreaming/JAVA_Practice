@@ -1,0 +1,15 @@
+import java.io.DataOutputStream;
+import java.net.DatagramSocket;
+
+
+public class TankMoveMsg implements Msg {
+
+	public void send(DatagramSocket ds, String ip, int udpPort) {
+		
+	}
+
+	public void parse(DataIutputStream dis) {
+		
+	}
+
+}

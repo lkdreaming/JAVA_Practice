@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;beans.xml&apos; to &apos;Spring_2800_Registration_Hibernate_Struts_Spring_6/src&apos;&#x0D;&#x0A;- Original project: &apos;Spring_2000_Spring__Hibernate_HibernateTemplate&apos;&#x0D;&#x0A;- Destination element: &apos;Spring_2800_Registration_Hibernate_Struts_Spring_6/src&apos;&#x0D;&#x0A;- Original element: &apos;beans.xml&apos;" description="Copy file" destination="=Spring_2800_Registration_Hibernate_Struts_Spring_6/src" element1="src/beans.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1454401930188" units="0" version="1.0"/>
+</session>

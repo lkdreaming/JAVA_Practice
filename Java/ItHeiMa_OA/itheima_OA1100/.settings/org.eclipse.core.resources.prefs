@@ -1,0 +1,23 @@
+#Tue Mar 15 11:59:38 CST 2016
+eclipse.preferences.version=1
+encoding//WebRoot/WEB-INF/jsp/common/common.jsp=UTF-8
+encoding//WebRoot/WEB-INF/jsp/system/department/add.jsp=UTF-8
+encoding//WebRoot/WEB-INF/jsp/system/duty/duty.jsp=UTF-8
+encoding//WebRoot/WEB-INF/jsp/system/frame/bottom.jsp=UTF-8
+encoding//WebRoot/WEB-INF/jsp/system/frame/index.jsp=UTF-8
+encoding//WebRoot/WEB-INF/jsp/system/frame/left.jsp=UTF-8
+encoding//WebRoot/WEB-INF/jsp/system/frame/right.jsp=UTF-8
+encoding//WebRoot/WEB-INF/jsp/system/frame/top.jsp=UTF-8
+encoding//WebRoot/WEB-INF/jsp/system/user/list.jsp=UTF-8
+encoding//src/com/lk/oa/action/DepartmentAction.java=UTF-8
+encoding//src/com/lk/oa/action/DutyAction.java=UTF-8
+encoding//src/com/lk/oa/action/UserAction.java=UTF-8
+encoding//src/com/lk/oa/action/base/BaseAction.java=UTF-8
+encoding//src/com/lk/oa/dao/base/BaseDao.java=UTF-8
+encoding//src/com/lk/oa/dao/base/impl/BaseDaoImpl.java=UTF-8
+encoding//src/com/lk/oa/model/Duty.java=UTF-8
+encoding//src/com/lk/oa/service/base/impl/BaseServiceImpl.java=UTF-8
+encoding//test/com/lk/oa/test/DepartmentTest.java=UTF-8
+encoding//test/com/lk/oa/test/DutyTest.java=UTF-8
+encoding/<project>=UTF-8
+separateDerivedEncodings=true

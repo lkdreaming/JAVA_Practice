@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Spring_2700_Registration_Hibernate_Struts_5_bak"
+  id="myeclipse.1454398780948"
+  context-root="/Spring_2700_Registration_Hibernate_Struts_5_bak"
+  j2ee-spec="5.0"
+  archive="Spring_2700_Registration_Hibernate_Struts_5_bak.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

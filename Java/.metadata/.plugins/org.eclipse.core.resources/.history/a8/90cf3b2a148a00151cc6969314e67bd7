@@ -1,0 +1,70 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.*;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * 读取所有的参数
+ * @author jukey
+ *
+ */
+public class ShowParameters extends HttpServlet {
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=gb2312");
+        PrintWriter out = response.getWriter();
+        
+        String title = "Reading All Request Parameters";
+        out.println("init");
+        out.println("<html><head><title>读取所有参数</title></head>"
+                + title
+                + "/n" + "<table border=1 align=center>/n"
+                + "<TH>Parameter Name<TH>Parameter Value(s)");
+        
+        Map resMap=transToMAP(request.getParameterMap());
+
+
+       
+         private Map transToMAP(Map parameterMap){
+              // 返回值Map
+              Map returnMap = new HashMap();
+              Iterator entries = parameterMap.entrySet().iterator();
+              Map.Entry entry;
+              String name = "";
+              String value = "";
+              while (entries.hasNext()) {
+                  entry = (Map.Entry) entries.next();
+                  name = (String) entry.getKey();
+                  Object valueObj = entry.getValue();
+                  if(null == valueObj){
+                      value = "";
+                  }else if(valueObj instanceof String[]){
+                      String[] values = (String[])valueObj;
+                      for(int i=0;i<values.length;i++){
+                          value = values[i] + ",";
+                      }
+                      value = value.substring(0, value.length()-1);
+                  }else{
+                      value = valueObj.toString();
+                  }
+                  returnMap.put(name, value);
+              }
+              return  returnMap;
+          }
+        out.println("</table>/n<body><html>");
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("doPost");
+        doGet(request,response);
+    }
+
+}
+
+	
+
+}

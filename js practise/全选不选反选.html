@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全选,反选,不选</title>
+	<script type="text/javascript">
+    	function selectAll(booleanVal) {
+			var chkBoxs = document.getElementsByName("chkBox");	
+			for(var i = 0; i<chkBoxs.length; i++) {
+					chkBoxs[i].checked = booleanVal;
+			}		
+		}
+		function reverSelect() {
+			var chkBoxs = document.getElementsByName("chkBox");	
+			for(var i = 0; i<chkBoxs.length; i++) {
+					chkBoxs[i].checked =! chkBoxs[i].checked;
+			}
+		}
+    
+    </script>
+
+
+
+</head>
+
+<body>
+	全选/全不选<input type="checkbox" onclick="selectAll(this.checked)"/><br />
+    足球<input type="checkbox"  name="chkBox"/>|
+    篮球<input type="checkbox"  name="chkBox"/>|
+    羽毛球<input type="checkbox"  name="chkBox"/>|
+    排球<input type="checkbox"  name="chkBox"/><br /><br />
+    <input type="button" value="全选" onclick="selectAll(true)"/>
+    <input type="button" value="全不选" onclick="selectAll(false)"/>
+    <input type="button" value="反选" onclick="reverSelect()"/>
+    
+    
+
+</body>
+</html>

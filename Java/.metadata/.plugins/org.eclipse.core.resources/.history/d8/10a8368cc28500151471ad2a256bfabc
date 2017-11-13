@@ -1,0 +1,11 @@
+import java.awt.event.KeyEvent;
+
+
+public class Snake {
+	Dir dir = Dir.R;
+	public void keyPressed(KeyEvent e) {
+		int key = e.getKeyCode();
+		
+	}
+
+}

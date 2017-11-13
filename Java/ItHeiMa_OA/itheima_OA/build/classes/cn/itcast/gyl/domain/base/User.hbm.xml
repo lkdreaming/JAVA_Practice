@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.base.User">
+		<id name="uid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<property name="email" length="20"></property>
+		<property name="password" length="20"></property>
+		<property name="phone" length="11"></property>
+		<property name="username" length="20"></property>
+		<property name="sex" length="20"></property>
+		<many-to-one name="department" column="did" class="cn.itcast.gyl.domain.base.Department"></many-to-one>
+		<set name="roles" table="user_role">
+			<key>
+				<column name="uid"></column>
+			</key>
+			<many-to-many class="cn.itcast.gyl.domain.base.Role" column="rid"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

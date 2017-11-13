@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;UserService&apos; in &apos;com.lk.oa.action.UserAction&apos; to &apos;userService&apos;&#x0D;&#x0A;- Original project: &apos;itheima_OA0700&apos;&#x0D;&#x0A;- Original element: &apos;com.lk.oa.action.UserAction.UserService&apos;&#x0D;&#x0A;- Renamed element: &apos;com.lk.oa.action.UserAction.userService&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;UserService&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;com.lk.oa.action{UserAction.java[UserAction^UserService" name="userService" references="true" setter="false" stamp="1457055182095" textual="false" version="1.0"/>
+</session>

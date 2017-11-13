@@ -1,0 +1,48 @@
+package com.lk.oa.service.base.impl;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.lk.oa.dao.base.BaseDao;
+import com.lk.oa.service.base.BaseService;
+
+public abstract class BaseServiceImpl<T> implements BaseService {
+
+	/**
+	 * 由子类来实现
+	 * @return
+	 */
+	public abstract BaseDao<T> getBaseDao();
+	
+	public void saveEntry(Object t) {
+		this.getBaseDao().saveEntry(t);
+	}
+
+	public void deleteEntryById(Serializable id) {
+		
+	}
+
+	public List getAllEntries() {
+		return null;
+	}
+
+	public Object getEntryById(Serializable id) {
+		return null;
+	}
+
+	public Set getEntriesByIds(Serializable[] serializables) {
+		return null;
+	}
+
+	public Object queryEntryByProperty(Map map) {
+		return null;
+	}
+
+	public void updateEntry(Object t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

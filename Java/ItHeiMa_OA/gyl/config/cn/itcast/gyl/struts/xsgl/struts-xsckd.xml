@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="xsckd" namespace="/" extends="struts-default">
+		<action name="xsckdAction_*" method="{1}" class="cn.itcast.gyl.web.action.xsgl.XsckdAction">
+			<result name="list">/WEB-INF/jsp/gyl/xsgl/xsdd/list.jsp</result>
+			<result name="addUI">/WEB-INF/jsp/gyl/xsgl/xsckd/add.jsp</result>
+			<result name="action2action" type="redirectAction">xsckdAction_showXsckd.action</result>
+		</action>
+	</package>
+</struts>

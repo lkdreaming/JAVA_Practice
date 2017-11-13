@@ -1,0 +1,10 @@
+#Sun Feb 14 10:54:21 CST 2016
+TOMCAT_HOME=D\:\\WebServers\\tomcat6.0.44
+TOMCAT_TEMP=D\:\\WebServers\\tomcat6.0.44\\temp
+LIBRARY_PATH="D\:\\Program Files\\MyEclipse\\Common\\binary\\com.sun.java.jdk.win32.x86_64_1.6.0.013\\bin;D\:\\WebServers\\tomcat6.0.44\\bin"
+TOMCAT_BASE=D\:\\WebServers\\tomcat6.0.44
+ENDORSED_DIRS="D\:\\WebServers\\tomcat6.0.44/common/endorsed"
+eclipse.preferences.version=1
+JDK_INSTALLATION_NAME=Sun JDK 1.6.0_13
+JDK_HOME=D\:\\Program Files\\MyEclipse\\Common\\binary\\com.sun.java.jdk.win32.x86_64_1.6.0.013
+SERVER_ENABLEMENT=true

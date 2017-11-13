@@ -1,0 +1,87 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>SQLServerResultSet 类</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:04/01/2010 05:03:28-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">SQLServerResultSet 类</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+    <font color="DarkGray">
+      
+    </font>
+    <p />
+    
+    <p />
+  
+        <div id="introductionSection" class="section">
+    <p>表示 JDBC 结果集。</p>
+    <p>
+      <b>包：</b>com.microsoft.sqlserver.jdbc</p>
+    <p>
+      <b>实现：</b><a href="002496f7-8ec0-4267-b4e6-ba095e2ef306.htm">ISQLServerResultSet</a></p>
+  </div><h1 class="heading">语法</h1><div id="syntaxSection" class="section"><div class="sampleCode"><span codeLanguage="other"><pre>
+public final class <b>SQLServerResultSet</b></pre></span></div></div><h1 class="heading">备注</h1><div id="remarksSection" class="section" name="collapseableSection">
+    <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">结果集有两种类型：客户端与服务器端。</p>
+      <p xmlns="">当结果可容纳于客户端进程内存时，使用客户端结果集。这些结果提供了最快的性能，并由 Microsoft SQL Server JDBC Driver 从数据库中整个读取。这些结果集并不会在创建服务器端游标时产生开销而为数据库增加额外负荷。然而，这些结果集类型不可更新。</p>
+      <p xmlns="">当结果不可容纳于客户端进程内存或当结果集需要调整为可更新时，可使用服务器端结果集。使用此类型的结果集，JDBC 驱动程序会在用户滚动浏览结果集时，以透明方式创建服务器端游标并提取结果集的行。</p>
+      <p xmlns=""><b>SQLServerResultSet</b> 类提供了很多方法，您可以通过这些方法使用任何本地 Java 数据类型和很多 Java 对象类型来更新结果集。</p>
+      <p xmlns="">此类支持取消对 <b>SQLServerResultSet</b> 类、<b> ISQLServerResultSet</b> 接口和<b> java.sql.ResultSet</b> 接口的包装。有关详细信息，请参阅<a href="27fc9b72-9f21-4728-abcb-5c015f28a6ab.htm">包装和接口</a>。</p>
+    </content>
+  </div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="2a438d5d-2d6a-46a0-a2ae-f35fbae4a472.htm">ISQLServerResultSet 成员</a><br /><a href="e4e1ae9d-18a6-41db-8bd2-9cf0eee4cccb.htm">JDBC 驱动程序 API 参考</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2010 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+var role = {
+		data : {
+			roleNode : null,
+			zTreePlugin : null
+		},
+		
+		roleTree : {
+			setting : {
+				showLine : true,
+				isSimpleData : true,
+			    treeNodeKey : "roleId",
+			    treeNodeParentKey : "pId",
+			},
+			loadRoleTree : function() {
+				$ajax({
+					url : "roleAction_showAllRoles.action",
+					data : null,
+					success : function(data) {
+						alert(data);
+						role.data.zTreePlugin = $("#roleTree").zTree(role.roleTree.setting, data);
+					}
+				}); 
+			}
+		}
+};
+
+$().ready(function() {
+	role.roleTree.loadRoleTree();
+});
+	

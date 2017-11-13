@@ -1,0 +1,18 @@
+package com.lk.oa.service.base.impl;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.lk.oa.dao.base.BaseDao;
+import com.lk.oa.service.base.BaseService;
+
+public abstract class BaseServiceImpl<T> implements BaseService {
+
+	/**
+	 * 由子类来实现
+	 * @return
+	 */
+	public abstract BaseDao<T> getBaseDao();
+	

@@ -1,0 +1,97 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>setEncrypt 方法 (SQLServerDataSource)</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:04/01/2010 05:03:28-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">setEncrypt 方法 (SQLServerDataSource)</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+    <font color="DarkGray">
+      
+    </font>
+    <p />
+    
+    <p />
+  
+        <div id="introductionSection" class="section">
+    <p>设置一个指示是否启用了 encrypt 属性的<b> boolean </b>值。</p>
+  </div><h1 class="heading">语法</h1><div id="syntaxSection" class="section"><div class="sampleCode"><span codeLanguage="other"><pre>
+public void <b>setEncypt</b>(boolean encrypt)</pre></span></div><h1 class="heading">参数</h1><div id="parametersSection" class="section" name="collapseableSection">
+    <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">
+        <i>encrypt</i>
+      </p>
+      <p xmlns="">
+        如果在客户端与 SQL Server 之间启用了安全套接字层 (SSL) 加密，则为 <b>true</b>。否则为 <b>false</b>。</p>
+    </content>
+  </div></div><h1 class="heading">备注</h1><div id="remarksSection" class="section" name="collapseableSection">
+    <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">如果 encrypt 属性设置为 <b>true</b>，则在服务器安装了证书的情况下，Microsoft SQL Server JDBC 驱动程序将确保 SQL Server 对在客户端与服务器之间发送的所有数据使用 SSL 加密。默认值为 <b>false</b>。</p>
+      <p xmlns="">JDBC 驱动程序在尝试建立 SSL 握手时，会检测运行它的 Java 虚拟机 (JVM)。</p>
+      <p xmlns="">如果 encrypt 属性设置为 <b>true</b>，则 Microsoft SQL Server JDBC 驱动程序将使用 JVM 的默认 JSSE 安全提供程序与 SQL Server 协商 SSL 加密。默认的安全提供程序可能不支持成功协商 SSL 加密所需的全部功能。例如，默认的安全提供程序可能不支持在 SQL Server SSL 证书中使用的 RSA 公钥的大小。在这种情况下，默认的安全提供程序可能报错，此错误将导致 JDBC 驱动程序终止连接。为了解决这一问题，请执行下列操作之一：</p>
+      <ul xmlns=""><li>
+          使用具有较小 RSA 公钥的服务器证书配置 SQL Server<br />
+        </li><li>
+          在“&lt;java 主文件夹&gt;/lib/security/java.security”安全属性文件中将 JVM 配置为使用其他 JSSE 安全提供程序<br />
+        </li><li>
+          使用其他 JVM<br />
+        </li></ul>
+      <p xmlns="">如果未指定 encrypt 属性或该属性设置为 <b>false</b>，则驱动程序不会强制 SQL Server 支持 SSL 加密。如果 SQL Server 实例未配置为强制 SSL 加密，将建立连接而不进行加密。如果 SQL Server 实例已配置为强制 SSL 加密，则当 Microsoft SQL Server JDBC 驱动程序在经正确配置的 JVM 上运行时，它将自动启用 SSL 加密，否则连接将终止并且驱动程序将报错。</p>
+    </content>
+  </div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="097434fd-2b74-411c-a5ed-eba04481dde5.htm">SQLServerDataSource 类</a><br /><a href="7e749bc5-d765-4864-be2b-7822d4c20c09.htm">SQLServerDataSource 成员</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2010 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

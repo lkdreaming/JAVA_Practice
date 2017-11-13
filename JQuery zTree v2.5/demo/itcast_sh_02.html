@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+ <HEAD>
+  <TITLE> ZTREE DEMO </TITLE>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="zTreeStyle/zTreeStyle.css" type="text/css">
+  <script type="text/javascript" src="jquery-1.4.2.js"></script>
+  <script type="text/javascript" src="jquery-ztree-2.5.js"></script>
+
+  <SCRIPT LANGUAGE="JavaScript">
+  <!--
+	var setting = {
+		isSimpleData: true,
+		treeNodeKey: "id",
+		treeNodeParentKey: "pid",
+		showLine: true,
+		root:{ 
+			isRoot:true,
+			nodes:[]
+		}
+	};
+
+	zNodes =[
+		{id:1,pid:0,name:'上海JavaEE云就业班二期',isParent:true,icon:'user.gif'},
+		{id:2,pid:1,name:'一号人物：带头大哥:班长'},
+		{id:3,pid:2,name:'带头大哥秘书：林志玲'},
+		{id:4,pid:1,name:'老师：老赵'}
+	];
+
+	$(document).ready(function(){
+		$("#tree").zTree(setting, zNodes);
+	});
+  //-->
+  </SCRIPT>
+ </HEAD>
+
+<BODY>
+<TABLE border=0 height=600px align=left>
+	<TR>
+		<TD width=230px align=left valign=top style="BORDER-RIGHT: #999999 1px dashed">
+			<ul id="tree" class="tree" style="width:230px; overflow:auto;"></ul>
+		</TD>
+	</TR>
+</TABLE>
+
+ </BODY>
+</HTML>

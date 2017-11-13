@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.xsgl.Xsysdzhub">
+		<id name="xsysdzhubid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<property name="bm" length="20"></property>
+		<property name="ddh" length="20"></property>
+		<property name="gs" length="100"></property>
+		<!-- 
+			 客商
+		 -->
+		<property name="ks" length="20"></property>
+		<!-- 
+			起算日期
+		 -->
+		<property name="qsrq"></property>
+		<property name="qzr" length="20"></property>
+		<property name="qzrq"></property>
+		<!-- 
+			日期
+		 -->
+		<property name="rq"></property>
+		<!-- 
+			审核人
+		 -->
+		<property name="shr" length="20"></property>
+		<property name="shrq"></property>
+		<!-- 
+			生效标志
+		 -->
+		<property name="sxbz"></property>
+		<!-- 
+			往来对象
+		 -->
+		<property name="wldx"></property>
+		<!-- 
+			修改人
+		 -->
+		<property name="xgr" length="20"></property>
+		<!-- 
+			修改日期
+		 -->
+		<property name="xgrq"></property>
+		<property name="ywy" length="20"></property>
+		<property name="zdr" length="20"></property>
+		<property name="zdrq"></property>
+		
+		<set name="xsysdzhibs" cascade="all">
+			<key>
+				<column name="xsysdzhubid"></column>
+			</key>
+			<one-to-many class="cn.itcast.gyl.domain.xsgl.Xsysdzhib"/>
+		</set>
+	</class>
+</hibernate-mapping>

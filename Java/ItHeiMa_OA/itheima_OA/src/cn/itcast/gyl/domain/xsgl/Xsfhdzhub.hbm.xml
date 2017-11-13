@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.xsgl.Xsfhdzhub">
+		<id name="xsfhdzhubid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 
+			商品编码
+		 -->
+		<property name="bm" length="50"></property>
+		<!-- 
+			商品所在仓库
+		 -->
+		<property name="ck" length="20"></property>
+		<!-- 
+			单据号
+		 -->
+		<property name="ddh" length="100"></property>
+		<!-- 
+			单据日期
+		 -->
+		<property name="djrq"></property>
+		<!-- 
+			公司
+		 -->
+		<property name="gs" length="50"></property>
+		<!-- 
+			是否退货
+		 -->
+		<property name="isth"></property>
+		<!-- 
+			库管员
+		 -->
+		<property name="kgy" length="20"></property>
+		<!-- 
+			客户
+		 -->
+		<property name="kh" length="50"></property>
+		<!-- 
+			签字人
+		 -->
+		<property name="qzr" length="20"></property>
+		<!-- 
+			审核人
+		 -->
+		<property name="shr" length="20"></property>
+		<!-- 
+			审核日期
+		 -->
+		<property name="shrq"></property>
+		<!-- 
+			单据状态
+		 -->
+		<property name="status" length="20"></property>
+		<!-- 
+			修改日期
+		 -->
+		<property name="xgrq"></property>
+		<!-- 
+			制单人
+		 -->
+		<property name="zdr" length="20"></property>
+		<!-- 
+			制单日期
+		 -->
+		<property name="zdrq"></property>
+		<set name="xsfhdzhibs" inverse="true" cascade="all">
+			<key>
+				<column name="xsfhdzhubid"></column>
+			</key>
+			<one-to-many class="cn.itcast.gyl.domain.xsgl.Xsfhdzhib"/>
+		</set>
+	</class>
+</hibernate-mapping>

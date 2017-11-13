@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+           
+ <context:annotation-config/>
+ <context:component-scan base-package="com.lk.spring"/>
+	<!-- <aop:config>
+		<aop:aspect id="MyAspect" ref="logInterceptor">
+			<aop:before method="before" pointcut="execution(public * com.lk.spring.service..*.*(..))"/>
+			<aop:after-returning method="after" pointcut="execution(public * com.lk.spring.service..*.*(..))"/>
+		</aop:aspect>
+	</aop:config>
+
+	<bean id="logInterceptor" class="com.lk.spring.aop.LogInterceptor">
+
+	</bean> -->
+	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	    <property name="url" value="jdbc:mysql://localhost:3306/spring" />
+	    <property name="username" value="root"/>
+	    <property name="password" value="root"/>
+    </bean>
+
+<!--文档中没写annotation的用法: 1. class 要填:"org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"  -->
+    <bean id="mySessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+	    <property name="dataSource" ref="myDataSource"/>
+<!--文档中没写annotation的用法: 2. 映射的模型类的property 要填property name="annotatedClasses" 满足以上两条才能将累注入到spring中    -->
+	    <property name="annotatedClasses">
+	      <list>
+	        <value>com.lk.spring.model.User</value>
+	      </list>
+	    </property>
+	    <property name="hibernateProperties">
+	      <props>  
+                <!-- 设置Hibernate方言 -->  
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>  
+                <!-- 是否打印sql -->  
+                <prop key="hibernate.show_sql">true</prop>  
+                <!-- 格式化sql -->  
+                <prop key="hibernate.format_sql">true</prop>  
+                <!-- 是否自动更新表 -->  
+                <prop key="hibernate.hbm2ddl.auto">update</prop>  
+                <prop key="hibernate.current_session_context_class">thread</prop>  
+                <!-- 最大抓取深度，如果为0，则关闭默认的外连接抓取。建议值为0-3 -->  
+                <prop key="hibernate.max_fetch_depth">1</prop>  
+                <!-- 用于生成有助于调试的注释信息，默认为关闭 -->  
+                <prop key="hibernate.use_sql_comments">true</prop>  
+            </props>  
+	    </property>
+     </bean>
+
+</beans>

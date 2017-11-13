@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.xsgl.Xskpzhub">
+		<id name="xskpzhubid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 
+			商品编码
+		 -->
+		<property name="bm" length="50"></property>
+		<!-- 
+			币种
+		 -->
+		<property name="bz" length="5"></property>
+		<!-- 
+			仓库
+		 -->
+		<property name="ck" length="20"></property>
+		<!-- 
+			发票号     按照订单号生成
+		 -->
+		<property name="fph" length="100"></property>
+		<!-- 
+			发票类型
+		 -->
+		<property name="fplx" length="50"></property>
+		<!-- 
+			发票总金额
+		 -->
+		<property name="fpzje"></property>
+		<!-- 
+			公司
+		 -->
+		<property name="gs" length="50"></property>
+		<!-- 
+			客户
+		 -->
+		<property name="kh"></property>
+		<!-- 
+			客户打印名称
+		 -->
+		<property name="khdymc"></property>
+		<!-- 
+			会计年度
+		 -->
+		<property name="kjnd"></property>
+		<!-- 
+			开票日期
+		 -->
+		<property name="kprq"></property>
+		<!-- 
+			收货单位
+		 -->
+		<property name="shdw" length="200"></property>
+		<!-- 
+			收货地址
+		 -->
+		<property name="shdz" length="200"></property>
+		<!-- 
+			审批人
+		 -->
+		<property name="spr" length="20"></property>
+		<!-- 
+			审批时间
+		 -->
+		<property name="spsj"></property>
+		<!-- 
+			状态
+		 -->
+		<property name="status" length="20"></property>
+		<!-- 
+			修改人
+		 -->
+		<property name="xgr" length="20"></property>
+		<!-- 
+			修改时间
+		 -->
+		<property name="xgsj"></property>
+		<!-- 
+			业务员
+		 -->
+		<property name="ywy" length="20"></property>
+		<!-- 
+			制单人
+		 -->
+		<property name="zdr" length="20"></property>
+		<!-- 
+			制单时间
+		 -->
+		<property name="zdsj"></property>
+		<!-- 
+			整单折扣
+		 -->
+		<property name="zdzk"></property>
+		
+		<set name="xskpzhibs" inverse="true" cascade="all">
+			<key>
+				<column name="xskpzhubid"></column>
+			</key>
+			<one-to-many class="cn.itcast.gyl.domain.xsgl.Xskpzhib"/>
+		</set>
+	</class>
+</hibernate-mapping>

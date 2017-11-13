@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Spring_2700_Registration_Hibernate_Struts_5_bak">
+        <wb-resource deploy-path="/" source-path="/WebRoot"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
+        <property name="java-output-path" value="/Spring_2700_Registration_Hibernate_Struts_5_bak/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="/Spring_3000_Registration_Hibernate_Struts_Spring_8"/>
+    </wb-module>
+</project-modules>

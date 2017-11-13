@@ -1,0 +1,21 @@
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.net.DatagramSocket;
+
+
+public class TankNewMsg {
+	Tank tank;
+
+	public TankNewMsg(Tank tank) {
+		super();
+		this.tank = tank;
+	}
+	
+	
+
+	public void send(DatagramSocket ds) {
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		DataOutputStream dos = new DataOutputStream(baos);
+		dos.writeInt(tank.id);
+	}
+}

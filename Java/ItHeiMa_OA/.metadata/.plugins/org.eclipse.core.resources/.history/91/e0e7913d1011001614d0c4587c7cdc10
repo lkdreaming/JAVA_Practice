@@ -1,0 +1,7 @@
+package com.lk.oa.service.base.impl;
+
+import com.lk.oa.service.base.BaseService;
+
+public class BaseServiceImpl implements BaseService {
+
+}

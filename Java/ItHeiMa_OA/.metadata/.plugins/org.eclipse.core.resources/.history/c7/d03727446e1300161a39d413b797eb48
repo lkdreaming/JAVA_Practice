@@ -1,0 +1,16 @@
+package com.lk.oa.service.impl;
+
+import com.lk.oa.dao.base.BaseDao;
+import com.lk.oa.model.User;
+import com.lk.oa.service.UserService;
+import com.lk.oa.service.base.impl.BaseServiceImpl;
+
+public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
+
+	@Override
+	public BaseDao getBaseDao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

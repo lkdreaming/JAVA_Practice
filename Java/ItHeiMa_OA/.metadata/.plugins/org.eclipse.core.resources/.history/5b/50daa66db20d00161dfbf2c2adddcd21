@@ -1,0 +1,72 @@
+package com.lk.oa.dao.base.impl;
+
+import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.metadata.ClassMetadata;
+import org.springframework.orm.hibernate5.HibernateCallback;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+
+import com.lk.oa.dao.base.BaseDao;
+
+public class BaseDaoImpl<T> implements BaseDao<T> {
+	
+	public BaseDaoImpl() {
+		ParameterizedType type = (ParameterizedType) this.getClass().getGenericSuperclass();
+	}
+	
+	@Override
+	public List<T> getALLEntry() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public T getEntryById(Serializable id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateEntry(T t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteEntry(Serializable id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void saveEntry(T t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Set<T> getEntrysByIds(Serializable[] serializables) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public T queryEntryByProperty(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+}

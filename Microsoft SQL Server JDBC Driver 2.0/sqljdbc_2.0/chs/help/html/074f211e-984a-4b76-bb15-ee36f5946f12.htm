@@ -1,0 +1,140 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>JDBC Driver 的新增功能</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:03/05/2009 21:02:01-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">JDBC Driver 的新增功能</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+		<font color="DarkGray"> </font> <p /> <p />
+	
+        <div id="introductionSection" class="section">
+    <p>以下各部分讨论 Microsoft SQL Server JDBC Driver 2.0 的新增功能。</p>
+  </div><h1 class="heading">JDBC Driver 2.0 的新增功能</h1><div id="sectionSection0" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">Microsoft SQL Server JDBC Driver 2.0 发行版中包含若干新增功能和增强功能。</p>
+    </content><sections xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <h1 class="heading" xmlns="">驱动程序名称</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">JDBC Driver 的名称不再包含 SQL Server 的版本标识符。因此，JDBC Driver 的最新版本是 Microsoft SQL Server JDBC Driver 2.0。</p>
+        </content></div>
+      <h1 class="heading" xmlns="">JDBC 4.0 支持</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">JDBC Driver 2.0 现在提供对 JDBC 4.0 API 的支持，后者包括以下新增功能：</p>
+          <ul xmlns=""><li>
+              区域字符集 API 支持<br />
+              JDBC Driver 2.0 现在包括新的区域字符集转换 API 方法。该支持包括用于 <b>NCHAR</b>、<b>NVARCHAR</b>、<b>LONGNVARCHAR</b> 和 <b>NCLOB</b> JDBC 类型的新增 setter、getter 和 updater 方法。有关详细信息，请参阅<a href="4fceacfd-df4f-40cd-b7a2-5e5e58a5979f.htm">区域字符集支持</a>。<br />
+              
+              <br />
+            </li><li>
+              SQLXML 支持<br />
+              JDBC Driver 2.0 现在对 <b>SQLXML</b> 数据类型提供支持。有关使用 <b>SQLXML</b> 的详细信息，请参阅<a href="32b7217e-1f0c-473d-9a45-176daa81584e.htm">支持 XML 数据</a>。<br />
+              
+              <br />
+            </li><li>
+              SQLServerConnection 类的 createBlob、createClob 和 createNClob 方法<br />
+              JDBC Driver 2.0 现在支持创建 <b>BLOB</b>、<b>CLOB</b> 和 <b>NCLOB</b> 对象，从而增强了 <a href="937292a6-1525-423e-a2b2-a18fd34c2893.htm">SQLServerConnection</a> 类。有关详细信息，请参阅 <a href="630a93b0-6e3c-4255-a007-1097ce0ee243.htm">createBlob</a>、<a href="58b0865a-1cde-4046-9761-51e471294023.htm">createClob</a> 和 <a href="fa160884-394e-4fb2-a6e8-0437b81c149d.htm">createNClob</a> 方法。<br />
+              
+              <br />
+            </li><li>
+              java.sql.Wrapper 接口<br />
+              JDBC Driver 2.0 支持 <b>java.sql.Wrapper</b> 接口。该接口提供一种机制，通过代理接口访问特定于 Microsoft SQL Server JDBC Driver 的 JDBC API 扩展。<br />
+              
+<b>java.sql.Wrapper</b> 接口定义两个方法：<b>isWrapperFor</b> 和 <b>unwrap</b>。<b>isWrapperFor</b> 方法检查指定的输入对象是否实现此接口。<b>unwrap</b> 方法返回一个实现此接口的对象，从而允许访问特定于 Microsoft SQL Server JDBC Driver 的方法。<br />
+              
+              <br />
+            </li><li>
+              其他新增 JDBC 4.0 API 方法<br />
+              JDBC Driver 2.0 现在对以下 JDBC 4.0 方法提供支持：<br />
+              <ul><li>
+                  SQLServerConnection：<a href="3b0a8bbf-9369-4456-9ab8-1434ccacdd7e.htm">isValid</a>、<a href="241536e1-fae6-4980-85a5-d8cfcd50b8bd.htm">getClientInfo</a> 和 <a href="9eaafb0e-8bfa-456c-a481-8e06e5d539e1.htm">setClientInfo</a>。<br />
+                </li><li>
+                  SQlServerDatabaseMetadata：<a href="1739ecb5-e5cb-4807-b5a8-97c0299929d0.htm">autoCommitFailureClosesAllResultSets</a>、<a href="1568aef4-f4c4-40a0-a1ab-9c106905bd92.htm">getClientInfoProperties</a>、<a href="e2b0e0f7-717c-48e6-bcd2-a325d938a833.htm">getFunctionColumns</a>、<a href="44335cbd-c84d-4ef3-a6a1-fca7eb7ec768.htm">getFunctions</a>、<a href="317c0b44-fe3f-4142-9cab-e40e4c4fe070.htm">getRowIdLifetime</a>、<a href="672171ac-976f-4605-9bee-2a5e141d92cb.htm">getSchemas</a> 和 <a href="0e5c0579-84b5-4717-b128-0bcd512f6022.htm">supportsStoredFunctionsUsingCallSyntax</a>。<br />
+                </li><li>
+                  SQLServerStatement：<a href="e79b5b53-16b0-42a3-be4e-542a77a21e12.htm">isClosed</a> 方法。<br />
+                </li><li>
+                  SQLServerCallableStatement：重载的 <a href="8de3ae7c-ba7b-4249-8333-71c8416b3bb7.htm">setAsciiStream</a>、<a href="567297bf-5bec-46ae-8264-29639b9b4a06.htm">setBinaryStream</a>、<a href="3b4c3234-09f6-44fa-9757-0a20ca90e13e.htm">setCharacterStream</a>、<a href="218ff486-3f31-49e4-ad81-a423246a8307.htm">setBlob</a>、<a href="222ea248-1185-4c33-ae10-5158bf3f6430.htm">setClob</a> 方法和 <a href="6207ad4b-56b3-4c66-bad5-6e590591ac2f.htm">getCharacterStream</a> 方法。<br />
+                </li><li>
+                  SQLServerPreparedStatement：重载的 <a href="91df14fb-ff92-457f-ad51-50da7a254630.htm">setAsciiStream</a>、<a href="fd6be063-08eb-40cf-9201-5a9f62387726.htm">setBinaryStream</a>、<a href="fe13326b-799d-4bf3-b4f1-32ab1841d0ed.htm">setCharacterStream</a>、<a href="218ff486-3f31-49e4-ad81-a423246a8307.htm">setBlob</a> 和 <a href="1b148388-01a8-4e2e-bc72-470ce29164de.htm">setClob</a> 方法。<br />
+                </li><li>
+                  SQLServerResultSet：<a href="6081aa34-fc88-4dd0-9a3f-05e8488219dc.htm">isClosed</a>、<a href="4508d90f-c3c4-4eac-8001-fb0b93b66734.htm">getHoldability</a>、重载的 <a href="4959a0a9-ae55-4c4e-80a8-21119aaceb92.htm">updateAsciiStream</a>、<a href="1af26ac2-76e5-4a26-a600-9919211333ba.htm">updateBinaryStream</a>、<a href="78e367c6-5e4d-4715-8cb7-e841e4f76a7c.htm">updateBlob</a>、<a href="78f39ec7-e27c-4534-bb19-fae806afd08c.htm">updateCharacterStream</a> 和 <a href="e841f9a6-e94f-4552-a0e2-aefe3d84faf0.htm">updateClob</a> 方法。<br />
+                </li></ul>
+            </li></ul>
+        </content></div>
+      <h1 class="heading" xmlns="">JDBC 3.0 Jar 和 JDBC 4.0 Jar</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">JDBC Driver 2.0 提供两个类库文件：<b>sqljdbc.jar</b> 和 <b>sqljdbc4.jar</b>，具体使用哪个文件取决于首选的 Java 运行时环境 (JRE) 设置。</p>
+          <p xmlns="">
+            <b>sqljdbc.jar</b> 类库提供 JDBC 3.0 支持，并需要 5.0 版的 Java 运行时环境 (JRE)。<b>sqljdbc4.jar</b> 类库提供 JDBC 4.0 支持，并需要 6.0 或更高版本的 Java 运行时环境 (JRE)。<b>sqljdbc4.jar</b> 包括 <b>sqljdbc.jar</b> 的所有功能，同时还包括新的 JDBC 4.0 方法。有关选择哪个 JAR 文件的详细信息，请参阅 <a href="447792bb-f39b-49b4-9fd0-1ef4154c74ab.htm">JDBC Driver 的系统要求</a>。</p>
+          <div style="margin: .5em 1.5em .5em 1.5em" xmlns=""><b>重要提示：</b>
+            JDBC Driver 2.0 不支持 JRE 1.4。<p />
+          </div>
+        </content></div>
+      <h1 class="heading" xmlns="">sendStringParametersAsUnicode 连接属性</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">为了获得 CHAR、VARCHAR 和 LONGVARCHAR JDBC 数据类型的最佳性能，使用 JDBC Driver 2.0 版的应用程序应将 <b>sendStringParametersAsUnicode</b> 连接属性设置为“false”，并使用非区域字符方法。有关 sendStringParametersAsUnicode 连接属性的详细信息，请参阅<a href="f1b62700-f046-488d-bd6b-a5cd8fc345b7.htm">设置连接属性</a>。</p>
+        </content></div>
+      <h1 class="heading" xmlns="">loginTimeout 连接属性</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">从 JDBC Driver 2.0 开始，<b>loginTimeout</b> 连接属性的默认值为 15 秒。在 1.2 版中，默认值为 0。有关 loginTimeout 连接属性的详细信息，请参阅<a href="f1b62700-f046-488d-bd6b-a5cd8fc345b7.htm">设置连接属性</a>。</p>
+        </content></div>
+      <h1 class="heading" xmlns="">跟踪驱动程序操作的性能得到增强</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">此版本的 JDBC Driver 会记录公共方法的进入点和退出点，并且更加明确了不同跟踪级别之间的差别，从而增强了跟踪驱动程序操作的性能。有关详细信息，请参阅<a href="723aeae7-6504-4585-ba8b-3525115bea8b.htm">跟踪驱动程序操作</a>。</p>
+        </content></div>
+      <h1 class="heading" xmlns="">自适应缓冲的默认行为</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">从 JDBC Driver 2.0 开始，此驱动程序的默认响应缓冲行为改为“<b>adaptive</b>”。这意味着，要获取自适应缓冲行为，应用程序不必显式请求自适应行为。在 1.2 版中，默认情况下，缓冲模式为“<b>full</b>”，应用程序必须显式请求自适应缓冲模式。如果希望在应用程序中保留 1.2 版本的默认行为，则必须将 responseBufferring 连接属性设置为“<b>full</b>”。有关自适应缓冲的详细信息，请参阅<a href="92d4e3be-c3e9-4732-9a60-b57f4d0f7cb7.htm">使用自适应缓冲</a>。</p>
+        </content></div>
+      <h1 class="heading" xmlns="">排序规则支持</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">在 JDBC Driver 2.0 中，该驱动程序支持 SQL Server 2000 和 SQL Server 2005 支持的所有排序规则，此外还支持 SQL Server 2008 中引入的新排序规则或新版 Windows 排序规则名称。有关详细信息，请参阅 <a href="bbb74a1d-9278-401f-9530-7b5f45aa79de.htm">JDBC Driver 的国际功能</a>。</p>
+        </content></div>
+    </sections></div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="939a8773-2583-49a4-bf00-6b892fbe39dc.htm">JDBC 驱动程序概述</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2009 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

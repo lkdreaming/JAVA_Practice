@@ -1,0 +1,10 @@
+import java.awt.event.KeyEvent;
+
+
+public class Snake {
+
+	public static void keyPressed(KeyEvent e) {
+		
+	}
+
+}

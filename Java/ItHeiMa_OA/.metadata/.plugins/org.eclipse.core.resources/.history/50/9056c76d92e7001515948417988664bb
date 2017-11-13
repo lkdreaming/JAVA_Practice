@@ -1,0 +1,62 @@
+var duty_privilege = {
+	data : {
+		duty : {
+			dutyId : '',
+			name : ''	
+		},
+		zTreePlugin : ''
+	},
+	
+	init : {
+		initData : function() {
+			duty_privilege.data.duty.dutyId =  $(this).parent().siblings("input[type='hidden']").val();
+			duty_privilege.data.duty.name = $(this).parent().siblings("td:first").text();
+		},
+		initEvent : function() {
+			$("a").each(function() {
+				if($(this).text() == "设置权限") {
+					$(this).unbind("click");
+					$(this).bind("click", function() {
+						$("div:hidden").show();
+						duty_privilege.init.initData.call(this);
+						duty_privilege.operation.duty_privilegeTree.loadDuty_privilegeTree();
+					});
+				} 
+			});
+		}
+	},
+	operation: {
+		duty_privilegeTree : {
+			setting : {
+				isSimpleData : true,
+				checkable : true,
+				checkType : { "Y": "s", "N": "ps" },
+				treeNodeKey : "privilegeId",
+				treeNodeParentKey : "pid",
+				showLine : true,
+				callback : {
+				}
+			},
+			loadDuty_privilegeTree : function() {
+				$.ajax({
+					url : 'privilegeAction_showPrivilegeByDutyId.aciton',
+					data: duty_privilege.data.duty.dutyId,
+					success : function(data) {
+						duty_privilege.data.zTreePlugin = $("#privilegeTree").zTree(duty_privilege.operation.duty_privilegeTree.setting, data);
+					}
+				});
+			}
+		}
+	}
+};
+
+
+$().ready(function() {
+	//加载事件
+	//duty.init.initEvent();
+	//加载角色树
+	//user_duty.init.initData();
+	
+	duty_privilege.init.initEvent();
+	
+});

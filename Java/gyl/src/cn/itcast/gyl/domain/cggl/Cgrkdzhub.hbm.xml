@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.cggl.Cgrkdzhub">
+		<id name="cgrkdzhubid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 
+			部门
+		 -->
+		<property name="bm"></property>
+		<!-- 
+			仓库
+		 -->
+		<property name="ck"></property>
+		<!-- 
+			单据号
+		 -->
+		<property name="djh"></property>
+		<!-- 
+			单据日期
+		 -->
+		<property name="djrq"></property>
+		<!-- 
+			公司
+		 -->
+		<property name="gs"></property>
+		<!-- 
+			供应商
+		 -->
+		<property name="gys"></property>
+		<!-- 
+			是否退货
+		 -->
+		<property name="isth"></property>
+		<!-- 
+			库管员
+		 -->
+		<property name="kgy"></property>
+		<!-- 
+			审批人
+		 -->
+		<property name="spr"></property>
+		<!-- 
+			审批日期
+		 -->
+		<property name="sprq"></property>
+		<!-- 
+			修改人
+		 -->
+		<property name="xgr"></property>
+		<!-- 
+			修改日期
+		 -->
+		<property name="xgrq"></property>
+		<!-- 
+			制单人
+		 -->
+		<property name="zdr"></property>
+		<!-- 
+			制单日期
+		 -->
+		<property name="zdrq"></property>
+		
+		<set name="cgrkdzhibs" inverse="true">
+			<key>
+				<column name="cgrkdzhubid"></column>
+			</key>
+			<one-to-many class="cn.itcast.gyl.domain.cggl.Cgrkdzhib"/>
+		</set>
+	</class>
+</hibernate-mapping>

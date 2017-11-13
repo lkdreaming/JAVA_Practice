@@ -1,0 +1,81 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>了解行锁定</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:04/01/2010 05:03:28-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">了解行锁定</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+    <font color="DarkGray">
+      
+    </font>
+    <p />
+    
+    <p />
+  
+        <div id="introductionSection" class="section">
+    <p>Microsoft SQL Server JDBC Driver 使用 SQL Server 行锁。这样，就可以在同时在数据库中执行修改的多个用户之间实施并发控制。默认情况下，事务和锁是在每个连接的基础上进行管理的。例如，如果应用程序打开两个 JDBC 连接，则一个连接获得的锁不能与另一个连接共享。一个连接所获得的锁不能与另一个连接所持有的锁相冲突。</p>
+    <div style="margin: .5em 1.5em .5em 1.5em"><b>注意：</b>
+      如果使用行锁定，则将锁定提取缓冲区中的所有行，这样，如果提取大小的设置非常大，则可能影响并发性能。<p />
+    </div>
+    <p>锁定用于确保事务完整性和数据库一致性。锁定可以防止用户读取其他用户正在更改的数据，并防止多个用户同时更改相同的数据。如果不使用锁定，数据库中的数据可能在逻辑上变得不正确，而针对这些数据进行查询可能会产生想不到的结果。</p>
+    <div style="margin: .5em 1.5em .5em 1.5em"><b>注意：</b>
+      有关 SQL Server 中的行锁定的详细信息，请参阅 SQL Server 联机丛书中的“数据库引擎 中的锁定”。<p />
+    </div>
+  </div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="9ed5ad41-22e0-4e4a-8a79-10512db60d50.htm">通过 JDBC 驱动程序管理结果集</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2010 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>了解数据类型的差异</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:04/01/2010 05:03:28-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">了解数据类型的差异</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+    <font color="DarkGray">
+      
+    </font>
+    <p />
+    
+    <p />
+  
+        <div id="introductionSection" class="section">
+    <p>Java 编程语言数据类型和 SQL Server 数据类型之间存在很多差异。Microsoft SQL Server JDBC Driver 通过各种类型的转换来帮助消除这些差异。</p>
+  </div><h1 class="heading">字符类型</h1><div id="sectionSection0" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">JDBC 字符串数据类型为 <b>CHAR</b>、<b>VARCHAR</b> 和 <b>LONGVARCHAR</b>。从 Microsoft SQL Server JDBC Driver 2.0 开始，JDBC Driver 对 JDBC 4.0 API 提供支持。在 JDBC 4.0 中，JDBC 字符串数据类型也可以是 <b>NCHAR</b>、<b>NVARCHAR</b> 和 <b>LONGNVARCHAR</b>。这些新的字符串类型以 Unicode 格式维护 Java 本机字符类型，从而不必执行任何 ANSI 到 Unicode 或 Unicode 到 ANSI 的转换。</p>
+      <table width="100%" cellspacing="0" cellpadding="0" border="1" style="background-color: #CCCCCC;" xmlns=""><tr>
+            <th colspan="">
+              类型
+            </th>
+            <th colspan="">
+              说明
+            </th>
+          </tr><tr>
+          <td colspan="">
+            <p>Fixed-length</p>
+          </td>
+          <td colspan="">
+            <p>SQL Server <b>char</b> 和 <b>nchar</b> 数据类型直接映射到 JDBC <b>CHAR</b> 和 <b>NCHAR</b> 类型。这些都是在列具有 SET ANSI_PADDING ON 的情况下，具有由服务器提供的填充的固定长度的类型。对于 <b>nchar</b>，填充始终是启用的，但对于 <b>char</b>，在未填充服务器字符列的情况下，JDBC Driver 将添加填充。</p>
+          </td>
+        </tr><tr>
+          <td colspan="">
+            <p>Variable-length</p>
+          </td>
+          <td colspan="">
+            <p>SQL Server <b>varchar</b> 和 <b>nvarchar</b> 类型分别直接映射到 JDBC <b>VARCHAR</b> 和 <b>NVARCHAR</b> 类型。</p>
+          </td>
+        </tr><tr>
+          <td colspan="">
+            <p>Long</p>
+          </td>
+          <td colspan="">
+            <p>SQL Server <b>text</b> 和 <b>ntext</b> 类型分别映射到 JDBC <b>LONGVARCHAR</b> 和 <b>LONGNVARCHAR</b> 类型。从 SQL Server 2005 开始不推荐使用这些类型，因此应改用大值类型 <b>varchar(max)</b> 或 <b>nvarchar(max)</b>。</p>
+            <p>针对 <b>text</b> 和 <b>ntext</b> 服务器列使用 <b>update&lt;Numeric Type&gt;</b> 和 <a href="4993dfe1-2232-4b3c-b931-dfdb35dd225a.htm">updateObject (int, java.lang.Object)</a> 方法时将失败。然而，对于 <b>text</b> 和 <b>ntext</b> 服务器列，支持将 <a href="93a2b22c-82b4-48c7-a428-369ebe98a372.htm">setObject</a> 方法用于指定的字符转换类型。</p>
+          </td>
+        </tr></table>
+    </content></div><h1 class="heading">二进制字符串类型</h1><div id="sectionSection1" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">JDBC 二进制字符串类型为 <b>BINARY</b>、<b>VARBINARY</b> 和 <b>LONGVARBINARY</b>。</p>
+      <table width="100%" cellspacing="0" cellpadding="0" border="1" style="background-color: #CCCCCC;" xmlns=""><tr>
+            <th colspan="">
+              类型
+            </th>
+            <th colspan="">
+              说明
+            </th>
+          </tr><tr>
+          <td colspan="">
+            <p>固定长度</p>
+          </td>
+          <td colspan="">
+            <p>SQL Server <b>binary</b> 类型直接映射到 JDBC <b>BINARY</b> 类型。这是在列具有 SET ANSI_PADDING ON 的情况下，具有由服务器提供填充的固定长度类型。没有填充服务器 char 列时，JDBC 驱动程序会添加填充。</p>
+            <p>SQL Server <b>timestamp</b> 类型是具有 8 个字节的固定长度的 JDBC <b>BINARY</b> 类型。</p>
+          </td>
+        </tr><tr>
+          <td colspan="">
+            <p>Variable-length</p>
+          </td>
+          <td colspan="">
+            <p>SQL Server <b>varbinary</b> 类型映射到 JDBC <b>VARBINARY</b> 类型。</p>
+            <p>SQL Server 中的 <b>udt</b> 类型作为 <b>VARBINARY</b> 类型映射到 JDBC。</p>
+          </td>
+        </tr><tr>
+          <td colspan="">
+            <p>Long</p>
+          </td>
+          <td colspan="">
+            <p>SQL Server <b>image</b> 类型映射到 JDBC <b>LONGVARBINARY</b> 类型。从 SQL Server 2005 开始不推荐使用此类型，因此应改用大值类型 <b>varbinary(max)</b>。</p>
+          </td>
+        </tr></table>
+    </content></div><h1 class="heading">精确数字类型</h1><div id="sectionSection2" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">JDBC 精确数字类型直接映射到其对应的 SQL Server 类型。</p>
+      <table width="100%" cellspacing="0" cellpadding="0" border="1" style="background-color: #CCCCCC;" xmlns=""><tr>
+            <th colspan="">
+              类型
+            </th>
+            <th colspan="">
+              说明
+            </th>
+          </tr><tr>
+          <td colspan="">
+            <p>BIT</p>
+          </td>
+          <td colspan="">
+            <p>JDBC <b>BIT</b> 类型表示可能是 0 或 1 的单个位。此类型映射到 SQL Server <b>bit</b> 类型。</p>
+          </td>
+        </tr><tr>
+          <td colspan="">
+            <p>TINYINT</p>
+          </td>
+          <td colspan="">
+            <p>JDBC <b>TINYINT</b> 类型表示单个字节。此类型映射到 SQL Server <b>tinyint</b> 类型。</p>
+          </td>
+        </tr><tr>
+          <td colspan="">
+            <p>SMALLINT</p>
+          </td>
+          <td colspan="">
+            <p>JDBC <b>SMALLINT</b> 类型表示有符号的 16 位整数。此类型映射到 SQL Server <b>smallint</b> 类型。</p>
+          </td>
+        </tr><tr>
+          <td colspan="">
+            <p>INTEGER</p>
+          </td>
+          <td colspan="">
+            <p>JDBC <b>INTEGER</b> 类型表示有符号的 32 位整数。此类型映射到 SQL Server <b>int</b> 类型。</p>
+          </td>
+        </tr><tr>
+          <td colspan="">
+            <p>BIGINT</p>
+          </td>
+          <td colspan="">
+            <p>JDBC <b>BIGINT</b> 类型表示有符号的 64 位整数。此类型映射到 SQL Server <b>bigint</b> 类型。</p>
+          </td>
+        </tr><tr>
+          <td colspan="">
+            <p>NUMERIC</p>
+          </td>
+          <td colspan="">
+            <p>JDBC <b>NUMERIC</b> 类型表示固定精度的十进制值，它可存放相同精度的值。<b>NUMERIC</b> 类型映射到 SQL Server <b>numeric</b> 类型。</p>
+          </td>
+        </tr><tr>
+          <td colspan="">
+            <p>DECIMAL</p>
+          </td>
+          <td colspan="">
+            <p>JDBC <b>DECIMAL</b> 类型表示固定精度的十进制值，它可存放至少具有指定精度的值。<b>DECIMAL</b> 类型映射到 SQL Server <b>decimal</b> 类型。</p>
+            <p>JDBC <b>DECIMAL</b> 类型还映射到 SQL Server <b>money</b> 和 <b>smallmoney</b> 类型，这些类型是特定的固定精度的十进制类型，分别以 8 个字节和 4 个字节进行存储。</p>
+          </td>
+        </tr></table>
+    </content></div><h1 class="heading">近似数字类型</h1><div id="sectionSection3" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">JDBC 近似数值数据类型为 <b>REAL</b>、<b>DOUBLE</b> 和 <b>FLOAT</b>。</p>
+      <table width="100%" cellspacing="0" cellpadding="0" border="1" style="background-color: #CCCCCC;" xmlns=""><tr>
+            <th colspan="">
+              类型
+            </th>
+            <th colspan="">
+              说明
+            </th>
+          </tr><tr>
+          <td colspan="">
+            <p>REAL</p>
+          </td>
+          <td colspan="">
+            <p>JDBC <b>REAL</b> 类型具有 7 位精度（单精度）并直接映射到 SQL Server <b>real</b> 类型。</p>
+          </td>
+        </tr><tr>
+          <td colspan="">
+            <p>DOUBLE</p>
+          </td>
+          <td colspan="">
+            <p>JDBC <b>DOUBLE</b> 类型具有 15 位精度（双精度）并直接映射到 SQL Server <b>float</b> 类型。JDBC <b>FLOAT</b> 类型是 <b>DOUBLE</b> 的同义词。由于 <b>FLOAT</b> 与 <b>DOUBLE</b> 之间可能存在冲突，因此 <b>DOUBLE</b> 为首选类型。</p>
+          </td>
+        </tr></table>
+    </content></div><h1 class="heading">日期时间类型</h1><div id="sectionSection4" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">JDBC <b>TIMESTAMP</b> 类型映射到 SQL Server <b>datetime</b> 和 <b>smalldatetime</b> 类型。<b>datetime</b> 类型以两个 4 字节整数进行存储。<b>smalldatetime</b> 类型可存放相同的信息（日期和时间），但精度较低，为两个 2 字节的小整数。</p>
+      <div style="margin: .5em 1.5em .5em 1.5em" xmlns=""><b>注意：</b>
+        SQL Server <b>timestamp</b> 类型是固定长度的二进制字符串类型。它不映射到任何 JDBC 时间类型：<b>DATE</b>、<b>TIME</b> 或 <b>TIMESTAMP</b>。<p />
+      </div>
+    </content></div><h1 class="heading">自定义类型映射</h1><div id="sectionSection5" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">JDBC 驱动程序中未实现将 <b>SQLData</b> 接口用于 JDBC 高级类型（UDT、Struct 等）的 JDBC 自定义类型映射功能。</p>
+    </content></div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="7802328d-4d23-4775-9573-4169b127d258.htm">了解 JDBC 驱动程序数据类型</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2010 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

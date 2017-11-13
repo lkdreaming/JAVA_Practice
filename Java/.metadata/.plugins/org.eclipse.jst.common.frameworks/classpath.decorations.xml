@@ -1,0 +1,8 @@
+<classpath>
+  <container id="Struts2_0100_Introduction!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/用户目录/我的文档/Documents/Java/Struts2_0100_Introduction/WebRoot/WEB-INF/lib/struts2-core-2.3.24.1.jar">
+      <source-attachment-path>D:/用户目录/我的文档/Documents/struts-2.3.24.1/src/core/src/main/java</source-attachment-path>
+      <attribute name="javadoc_location">file:/D:/用户目录/我的文档/Documents/struts-2.3.24.1/docs/struts2-core/apidocs/</attribute>
+    </entry>
+  </container>
+</classpath>

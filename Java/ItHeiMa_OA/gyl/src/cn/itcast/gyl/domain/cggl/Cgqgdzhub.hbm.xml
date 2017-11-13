@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.cggl.Cgqgdzhub">
+		<id name="cgqgdzhubid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 
+			采购部门
+		 -->
+		<property name="cgbm" length="20"></property>
+		<!-- 
+			采购人
+		 -->
+		<property name="cgr" length="20"></property>
+		<!-- 
+			订单日期
+		 -->
+		<property name="qgrq"></property>
+		<!-- 
+			单据号
+		 -->
+		<property name="djh" length="100"></property>
+		
+		<!-- 
+			公司
+		 -->
+		<property name="gs" length="100"></property>
+		<!-- 
+			供应商
+		 -->
+		<property name="qggys" length="100"></property>
+		
+		<!-- 
+			状态   自由  审批中 通过 未通过
+		 -->
+		<property name="status" length="50"></property>
+		<!-- 
+			整单税率
+		 -->
+		<property name="zdsl"></property>
+		<set name="cgqgdzhibs" inverse="true">
+			<key>
+				<column name="cgqgdzhubid"></column>
+			</key>
+			<one-to-many class="cn.itcast.gyl.domain.cggl.Cgqgdzhib"/>
+		</set>
+	</class>
+</hibernate-mapping>

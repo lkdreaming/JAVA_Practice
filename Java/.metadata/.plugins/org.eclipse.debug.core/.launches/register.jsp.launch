@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.dltk.javascript.launching.JavaScriptLaunchConfigurationType">
+<stringAttribute key="mainScript" value="WebRoot/register.jsp"/>
+<stringAttribute key="nature" value="org.eclipse.dltk.javascript.core.nature"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Spring_2800_Registration_Hibernate_Struts_Spring_6"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<stringAttribute key="project" value="Spring_2800_Registration_Hibernate_Struts_Spring_6"/>
+</launchConfiguration>

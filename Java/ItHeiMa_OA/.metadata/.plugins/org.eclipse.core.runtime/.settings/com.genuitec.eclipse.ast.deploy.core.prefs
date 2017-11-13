@@ -1,0 +1,14 @@
+#Tue Aug 16 15:21:57 CST 2016
+tomcat6Server.OA.shouldOverwrite=false
+tomcat6Server.OA.isExploded=true
+tomcat6Server.OA.altContextRoot=
+tomcat6Server.OA.isUptoDate=true
+tomcat6Server.OA.IEARProjectName=
+tomcat6Server.OA.deploymentPath=D\:\\WebServers\\tomcat6.0.44\\webapps\\OA
+tomcat6Server.OA.shouldBackup=false
+eclipse.preferences.version=1
+tomcat6Server.OA.type=WebDeployment
+tomcat6Server.OA.deployIsOverProject=false
+tomcat6Server.OA.contextRoot=/OA
+tomcat6Server.OA.isDeployed=true
+tomcat6Server.OA.noFileCopy=false

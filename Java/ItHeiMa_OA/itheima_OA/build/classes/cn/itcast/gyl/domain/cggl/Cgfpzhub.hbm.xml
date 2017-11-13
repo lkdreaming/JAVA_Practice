@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.cggl.Cgfpzhub">
+		<id name="cgfpzhubid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 
+			币种
+		 -->
+		<property name="bz"></property>
+		<!-- 
+			采购部门
+		 -->
+		<property name="cgbm"></property>
+		<!-- 
+			单据状态
+		 -->
+		<property name="djzt"></property>
+		<!-- 
+			发票号
+		 -->
+		<property name="fph"></property>
+		<!-- 
+			发票类型
+		 -->
+		<property name="fplx"></property>
+		<!-- 
+			发票日期
+		 -->
+		<property name="fprq"></property>
+		<!-- 
+			公司
+		 -->
+		<property name="gs"></property>
+		<!-- 
+			供应商
+		 -->
+		<property name="gys"></property>
+		<!-- 
+			是否已传应付
+		 -->
+		<property name="isycyf"></property>
+		<!-- 
+			票到日期
+		 -->
+		<property name="pdrq"></property>
+		<!-- 
+			业务员
+		 -->
+		<property name="ywy"></property>
+		<!-- 
+			整单税率
+		 -->
+		<property name="zdsl"></property>
+		<set name="cgfpzhibs" inverse="true">
+			<key>
+				<column name="cgfpzhubid"></column>
+			</key>
+			<one-to-many class="cn.itcast.gyl.domain.cggl.Cgfpzhib"/>
+		</set>
+	</class>
+</hibernate-mapping>

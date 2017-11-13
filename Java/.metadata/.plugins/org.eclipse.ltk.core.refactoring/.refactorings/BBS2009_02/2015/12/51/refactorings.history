@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;论坛首页.htm&apos; to &apos;论坛首页.htm&apos;&#x0D;&#x0A;- Original project: &apos;BBS2009_02&apos;&#x0D;&#x0A;- Destination element: &apos;论坛首页.htm&apos;&#x0D;&#x0A;- Original element: &apos;论坛首页.htm&apos;" description="Copy file" element1="WebRoot/论坛首页.htm" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1450407491010" target="/BBS2009_02/WebRoot/论坛首页.htm" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<package name="role" namespace="/" extends="json-default">
+		<action name="roleAction_*" method="{1}" class="com.lk.oa.action.RoleAction">
+			<result type="json"></result>
+		</action>
+	</package>
+	<package name="role2" namespace="/" extends="struts-default">
+		<action name="roleAction2_*" method="{1}" class="com.lk.oa.action.RoleAction">
+			<result name="listAction">WEB-INF/jsp/system/role/role2.jsp</result>
+		</action>
+	</package>
+</struts>

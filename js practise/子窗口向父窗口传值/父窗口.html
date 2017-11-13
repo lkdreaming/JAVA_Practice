@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>父窗口</title>
+	<script type="text/javascript">
+		function selectCity() {
+			var valuec = window.showModalDialog("子窗口.html");
+			//alert(valc);
+			document.getElementById("city").value = valuec;
+			
+			}
+	</script>
+</head>
+
+<body>
+<h1><font size="60px" color="red">此实验对360浏览器无效!!!!</font></h1><br/>
+	<input type="text" id="city"  /><input type="button" value="请选择城市" onclick="selectCity()" />
+
+
+</body>
+</html>

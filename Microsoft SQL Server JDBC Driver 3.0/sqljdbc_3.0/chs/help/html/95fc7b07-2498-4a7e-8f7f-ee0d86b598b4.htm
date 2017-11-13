@@ -1,0 +1,89 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>SQLServerXADataSource 类</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:04/01/2010 05:03:28-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">SQLServerXADataSource 类</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+    <font color="DarkGray">
+      
+    </font>
+    <p />
+    
+    <p />
+  
+        <div id="introductionSection" class="section">
+    <p>表示在内部使用的 <a href="5ecb4bf1-b8d1-47cf-9cb1-7a18acc11ce2.htm">SQLServerXAConnection</a> 的对象工厂。</p>
+    <p>
+      <b>包：</b>com.microsoft.sqlserver.jdbc</p>
+    <p>
+      <b>扩展：</b> <a href="b00e5a90-2af7-4d04-8ef8-256183777dcf.htm">SQLServerConnectionPoolDataSource</a></p>
+    <p>
+      <b>实现：</b>javax.sql.XADataSource</p>
+  </div><h1 class="heading">语法</h1><div id="syntaxSection" class="section"><div class="sampleCode"><span codeLanguage="other"><pre>
+public class <b>SQLServerXADataSource</b></pre></span></div></div><h1 class="heading">备注</h1><div id="remarksSection" class="section" name="collapseableSection">
+    <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">实现 <b>SQLServerXADataSource</b> 接口的对象通常在使用 Java 命名和目录接口 (JNDI) 的命名服务中注册。</p>
+      <p xmlns=""><b>SQLServerXADataSource</b> 类提供可用于分布式 (XA) 事务的数据库连接。<b>SQLServerXADataSource</b> 类还支持物理连接的连接池。<b>SQLServerXADataSource</b> 和 <b>SQLServerXAConnection</b> 接口（在包 javax.sql 中定义）由 SQL Server 实现。</p>
+      <p xmlns=""><b>SQLServerXAConnection</b> 对象是可参与分布式事务的池连接。更准确地说，<b>SQLServerXAConnection</b> 通过添加方法 <a href="e1d2828f-fd20-44b0-b796-dc70f77c5b03.htm">getXAResource</a> 扩展了 <b>SQLServerPooledConnection</b> 接口。此方法生成 <a href="df957b79-536f-4db7-b6ac-3d59343559fc.htm">SQLServerXAResource</a> 对象，事务管理器可以使用该对象在基于此连接执行的操作与分布式事务中的其他参与者之间进行协调。由于它们扩展了 <b>SQLServerPooledConnection</b> 接口，<b>SQLServerXAConnection</b> 对象支持 <b>SQLServerPooledConnection</b> 对象的所有方法。它们是可重用的基础数据源物理连接，并且可生成可传递回 JDBC 应用程序的逻辑连接句柄。</p>
+      <p xmlns="">
+        <b>SQLServerXAConnection</b> 对象由 <b>SQLServerXADataSource</b> 对象生成。<b>SQLServerConnectionPoolDataSource</b> 对象类似于 <b>SQLServerXADataSource</b> 对象，这两个对象都是在对 JDBC 应用程序可见的数据源层之下实现的。此体系结构使 SQL Server 能以对应用程序透明的方式支持分布式事务。可配置 <b>SQLServerXADataSource</b> 与 Microsoft 分布式事务处理协调器 (DTC) 集成，以提供真正的分布式事务处理。</p>
+    </content>
+  </div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="04178645-915f-4569-8907-d45e299bbe7d.htm">SQLServerXADataSource 成员</a><br /><a href="e4e1ae9d-18a6-41db-8bd2-9cf0eee4cccb.htm">JDBC 驱动程序 API 参考</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2010 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<classpath>
+  <container id="itheima_OA_Shiro!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/用户目录/我的文档/Documents/Java/ItHeiMa_OA/itheima_OA_Shiro/WebRoot/WEB-INF/lib/xwork-core-2.3.24.1.jar">
+      <source-attachment-path>D:/用户目录/我的文档/Documents/struts-2.3.24.1/src</source-attachment-path>
+    </entry>
+    <entry id="D:/用户目录/我的文档/Documents/Java/ItHeiMa_OA/itheima_OA_Shiro/WebRoot/WEB-INF/lib/ognl-3.0.6.jar">
+      <source-attachment-path>D:/用户目录/我的文档/Documents/struts-2.3.24.1/src</source-attachment-path>
+    </entry>
+  </container>
+  <container id="gyl!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/用户目录/我的文档/Documents/Java/ItHeiMa_OA/gyl/WebRoot/WEB-INF/lib/hibernate3.jar">
+      <source-attachment-path>D:/用户目录/我的文档/Documents/hibernate-release-5.0.6.Final/lib/required/hibernate-core-5.0.6.Final.jar</source-attachment-path>
+    </entry>
+    <entry id="D:/用户目录/我的文档/Documents/Java/ItHeiMa_OA/gyl/WebRoot/WEB-INF/lib/struts2-core-2.3.1.jar">
+      <source-attachment-path>D:/用户目录/我的文档/Documents/struts-2.3.24.1/src</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

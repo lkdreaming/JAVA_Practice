@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;hibernate.cfg.xml&apos; to &apos;Spring_2500_Registration_Hibernate_3/src&apos;&#x0D;&#x0A;- Original project: &apos;hibernate3_0300_BasicConfiguration&apos;&#x0D;&#x0A;- Destination element: &apos;Spring_2500_Registration_Hibernate_3/src&apos;&#x0D;&#x0A;- Original element: &apos;hibernate.cfg.xml&apos;" description="Copy file" destination="=Spring_2500_Registration_Hibernate_3/src" element1="src/hibernate.cfg.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1454374037331" units="0" version="1.0"/>
+</session>

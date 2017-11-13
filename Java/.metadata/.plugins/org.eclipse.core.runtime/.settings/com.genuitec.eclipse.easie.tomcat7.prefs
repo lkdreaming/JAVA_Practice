@@ -1,0 +1,9 @@
+#Mon Feb 15 10:35:49 CST 2016
+LIBRARY_PATH="D\:\\Program Files\\Java\\jdk1.8.0_65\\bin;D\:\\WebServers\\tomcat7.0.40\\bin"
+eclipse.preferences.version=1
+JDK_HOME=D\:\\Program Files\\Java\\jdk1.8.0_65
+TOMCAT_BASE=D\:\\WebServers\\tomcat7.0.40
+ENDORSED_DIRS="D\:\\WebServers\\tomcat7.0.40/common/endorsed"
+TOMCAT_HOME=D\:\\WebServers\\tomcat7.0.40
+JDK_INSTALLATION_NAME=jdk1.8.0_65
+TOMCAT_TEMP=D\:\\WebServers\\tomcat7.0.40\\temp

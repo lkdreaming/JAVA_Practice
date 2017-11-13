@@ -1,0 +1,9 @@
+#Tue Mar 15 10:58:10 CST 2016
+SERVER_ENABLEMENT=true
+LIBRARY_PATH="D\:\\Program Files\\Java\\jdk1.6.0_43\\bin;D\:\\WebServers\\tomcat6.0.44\\bin"
+eclipse.preferences.version=1
+JDK_HOME=D\:\\Program Files\\Java\\jdk1.6.0_43
+TOMCAT_BASE=D\:\\WebServers\\tomcat6.0.44
+ENDORSED_DIRS="D\:\\WebServers\\tomcat6.0.44/common/endorsed"
+TOMCAT_HOME=D\:\\WebServers\\tomcat6.0.44
+TOMCAT_TEMP=D\:\\WebServers\\tomcat6.0.44\\temp

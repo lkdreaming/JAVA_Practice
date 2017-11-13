@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 5 elements from 项目“TankWar2.1”&#x0D;&#x0A;－ 原始项目：“TankWar2.1”&#x0D;&#x0A;－ 原始元素：&#x0D;&#x0A;     Explode.java&#x0D;&#x0A;     Missile.java&#x0D;&#x0A;     Tank.java&#x0D;&#x0A;     TankClient.java&#x0D;&#x0A;     Wall.java" description="删除元素" element1="/src&lt;{TankClient.java" element2="/src&lt;{Missile.java" element3="/src&lt;{Explode.java" element4="/src&lt;{Tank.java" element5="/src&lt;{Wall.java" elements="5" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1445414610559" subPackages="false" version="1.0"/>
+</session>

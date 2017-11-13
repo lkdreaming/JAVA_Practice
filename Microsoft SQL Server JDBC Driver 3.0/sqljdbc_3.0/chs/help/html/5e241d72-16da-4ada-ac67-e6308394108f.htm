@@ -1,0 +1,95 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>获取驱动程序版本</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:04/01/2010 05:03:28-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">获取驱动程序版本</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+    <font color="DarkGray">
+      
+    </font>
+    <p />
+    
+    <p />
+  
+        <div id="introductionSection" class="section">
+    <p>可以通过以下方法找到所安装的 Microsoft SQL Server JDBC Driver 的版本：</p>
+    <ul><li>
+        调用 <a href="8b8049d0-8c6d-4476-866b-098709f37eec.htm">SQLServerDatabaseMetaData</a> 方法 <a href="3f3f717f-ef07-4300-8286-1cfe73619a5e.htm">getDriverMajorVersion</a>、<a href="adb6ae29-025e-4ab3-a6e4-133fc29fb98b.htm">getDriverMinorVersion</a> 或 <a href="3be84d65-af61-4c34-b052-74a5d488eaa9.htm">getDriverVersion</a>。<br />
+      </li><li>
+        版本将显示在产品分发内容的 readme.txt 文件中。<br />
+      </li></ul>
+    <p>此外，可以通过在 <b>SQLServerDatabaseMetaData</b> 类上调用 <a href="2ccec113-ae1b-45b8-a334-13eae04941f3.htm">getDriverName</a> 方法来返回 JDBC Driver 名称。将返回“Microsoft SQL Server JDBC Driver 3.0”。</p>
+    <p>以下是调用 <b>SQLServerDatabaseMetaData</b> 类的各个方法所输出的内容示例：</p>
+    <p>
+      <code>getDriverName = Microsoft SQL Server JDBC Driver 3.0</code>
+    </p>
+    <p>
+      <code>getDriverMajorVersion = 3</code>
+    </p>
+    <p>
+      <code>getDriverMinorVersion = 0</code>
+    </p>
+    <p>
+      <code>getDriverVersion = 3.0.</code>
+      <i>xxx.x</i>
+    </p>
+    <p>其中，“xxx.x”是最终版本号。</p>
+  </div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="723e2680-a0c5-4a7d-a319-1e49e41078cf.htm">诊断与 JDBC 驱动程序有关的问题</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2010 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+import java.awt.*;
+import java.awt.event.*;
+
+
+public class Yard extends Frame {
+	public static final int BLOCK_SIZE = 15;
+	public static final int ROWS = 30;
+	public static final int COLS = 30;
+	public static final String TITLE = "贪吃蛇游戏";
+	Snake snake = new Snake(this);
+	Egg egg = new Egg();
+	public static void main(String[] args) {
+		new Yard().launch();
+	}
+	private void launch() {
+		
+		this.setSize(Yard.BLOCK_SIZE * Yard.COLS, Yard.BLOCK_SIZE * Yard.ROWS);
+		this.setBackground(Color.GRAY);
+		this.setLocation(400, 150);
+		this.setResizable(false);
+		
+		this.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+		this.addKeyListener(new KeyMonitor());
+		this.setVisible(true);
+		
+		new Thread(new PaintThread()).start();
+	}
+	
+	public void paint(Graphics g) {
+		Color c = g.getColor();
+		g.setColor(Color.WHITE);
+		for (int i = 1; i < Yard.COLS; i++) {
+			g.drawLine(Yard.BLOCK_SIZE * i, 0, Yard.BLOCK_SIZE * i,
+					Yard.BLOCK_SIZE * Yard.ROWS);
+		}
+		for (int i = 1; i < Yard.ROWS; i++) {
+			g.drawLine(0, Yard.BLOCK_SIZE * i, Yard.BLOCK_SIZE * Yard.COLS,
+					Yard.BLOCK_SIZE * i);
+		}
+		g.setColor(c);
+		snake.draw(g);
+	}
+	
+	
+	private class PaintThread implements Runnable {
+
+		public void run() {
+			repaint();
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO 自动生成的 catch 块
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	private class KeyMonitor extends KeyAdapter {
+		public void keyPressed(KeyEvent e) {
+			snake.keyPressed(e);
+		}
+	}
+}

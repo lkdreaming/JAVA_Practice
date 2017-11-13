@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>购物车</title>
+</head>
+<script type="text/javascript">
+	//------------------------XML DOM------------------------------------------------------
+	/*function addIT() {
+		//拿到上面表格的值
+		var shopname = document.getElementById("shopname").value;
+		var itemname = document.getElementById("itemname").value;
+		var price = document.getElementById("price").value;
+		//弄好tr和td
+		var trObj = document.createElement("tr");
+		var tdshopname = document.createElement("td");
+		var tditemname = document.createElement("td");
+		var tdprice = document.createElement("td");
+		var tdButton = document.createElement("td");
+		//往里面赋值到td对象中
+		tdshopname.innerHTML = shopname;
+		tditemname.innerHTML = itemname;
+		tdprice.innerHTML = price;
+		tdButton.innerHTML = "<input type='button' value='删除' onclick = 'confirm(\"确定吗?\")?delTT() : false'/>";
+		//将td对象添加到tr对象中
+		trObj.appendChild(tdshopname);
+		trObj.appendChild(tditemname);
+		trObj.appendChild(tdprice);
+		trObj.appendChild(tdButton);
+		//将tr对象添加到id为tabInfo的table对象中.
+		document.getElementById("tabInfo").appendChild(trObj);
+		}*/
+		//------------------------HTML DOM   360会有浏览器有错误------------------------------------------------------
+	function addIT() {
+		var shopname = document.getElementById("shopname").value;
+		var itemname = document.getElementById("itemname").value;
+		var price = document.getElementById("price").value;
+		//拿到当前页的table对象
+		var tabInfo = document.getElementById("tabInfo");
+		//插入tr
+		var tRow = tabInfo.insertRow();
+		//分别插入td
+		var tdshopname = tRow.insertCell();
+		var tditemname = tRow.insertCell();
+		var tdprice = tRow.insertCell();
+		var tdButton = tRow.insertCell();
+		//往里面赋值到td对象中
+		tdshopname.innerHTML = shopname;
+		tditemname.innerHTML = itemname;
+		tdprice.innerHTML = price;
+		tdButton.innerHTML = "<input type='button' value='删除' onclick='confirm(\"确定要删除吗?\")?delIT(this):false'/>";
+		}
+		
+	function delIT(obj) {
+		var tabInfoDel = document.getElementById("tabInfo");
+		//得到当前行的索引
+		var rI = obj.parentNode.parentNode.rowIndex;
+		tabInfoDel.deleteRow(rI);
+		
+		}
+
+
+
+
+</script>
+
+
+
+<body>
+	  <table align="center" cellpadding="10" cellspacing="3" >
+	<tr>
+		<td>商店名：<input type="text" id="shopname"/></td>
+		<td>商品名:<input type="text" id="itemname"/></td>
+		<td>价格:<input type="text" id="price"/></td>
+	</tr>
+	<tr>
+		<td colspan="3" align="center"><input type="button" value="添加" onclick="addIT()"/></td>
+	</tr>
+ </table>
+
+ <br/>
+ <br/>
+ <br/>
+<hr/>
+
+	 <table id="tabInfo" align="center" width="500" border="1">
+		<tr>
+			<td>商店名</td>
+			<td>商品名</td>
+			<td>价格</td>
+			<td>操作</td>
+		</tr>
+		
+ </table>
+
+
+
+
+
+</body>
+</html>

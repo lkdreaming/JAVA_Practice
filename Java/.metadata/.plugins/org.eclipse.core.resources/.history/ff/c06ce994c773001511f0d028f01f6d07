@@ -1,0 +1,29 @@
+import java.awt.*;
+
+public class Tank {
+	int x,y;
+	static int WIDTH = 30;
+	static int HEIGHT = 30;
+	static int XSPEED = 5;
+	static int YSPEED = 5;
+	
+	Tank(int x, int y) {
+		
+		this.x = x;
+		this.y = y;
+	}
+	public void graw(Graphics g) {
+		
+		
+		
+		Color c = g.getColor();
+		g.setColor(Color.RED);
+		g.fillOval(this.x, this.y, WIDTH, HEIGHT);
+		g.setColor(c);
+		x += XSPEED;
+		y += YSPEED;
+		
+		
+	}
+	
+}

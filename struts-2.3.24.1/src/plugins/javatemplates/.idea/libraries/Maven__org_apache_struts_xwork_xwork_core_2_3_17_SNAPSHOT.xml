@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.struts.xwork:xwork-core:2.3.17-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/struts/xwork/xwork-core/2.3.17-SNAPSHOT/xwork-core-2.3.17-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/struts/xwork/xwork-core/2.3.17-SNAPSHOT/xwork-core-2.3.17-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/struts/xwork/xwork-core/2.3.17-SNAPSHOT/xwork-core-2.3.17-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

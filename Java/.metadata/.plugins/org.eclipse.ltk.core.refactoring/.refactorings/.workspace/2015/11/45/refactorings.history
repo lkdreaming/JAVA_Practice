@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将Java 项目“TankWar2.8”重命名为“TankWar2.8.1-2”&#x0D;&#x0A;－ 原始元素：“TankWar2.8”&#x0D;&#x0A;－ 重命名的元素：“TankWar2.8”&#x0D;&#x0A;－ 更新对已重构元素的引用" description="重命名 Java 项目“TankWar2.8”" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=TankWar2.8" name="TankWar2.8.1-2" references="true" stamp="1446708166422" version="1.0"/>
+</session>

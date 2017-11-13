@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="bjsxtOA_Final"
+  id="myeclipse.1455337758955"
+  context-root="/bjsxtOA_Final"
+  j2ee-spec="5.0"
+  archive="bjsxtOA_Final.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

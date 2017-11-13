@@ -1,0 +1,127 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>JDBC 驱动程序的系统要求</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:04/01/2010 05:03:28-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">JDBC 驱动程序的系统要求</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+    <font color="DarkGray">
+      
+    </font>
+    <p />
+    
+    <p />
+  
+        <div id="introductionSection" class="section">
+    <p>若要使用 Microsoft SQL Server JDBC Driver 访问 SQL Server 数据库中的数据，计算机上必须安装有下列组件：</p>
+    <ul><li>
+        
+          Microsoft SQL Server JDBC Driver<br />
+      </li><li>
+        Java 运行时环境<br />
+      </li></ul>
+  </div><h1 class="heading">Java 运行时环境要求</h1><div id="sectionSection0" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">从 Microsoft SQL Server JDBC 驱动程序开始，JDBC 驱动程序对 Java 数据库连接 (JDBC) Spec API 的支持扩展为包括 JDBC 4.0 API。JDBC 4.0 是作为 Sun Java SE 开发工具包 (JDK) 6.0 和 Java 运行时环境 (JRE) 6.0 的一部分引入的。JDBC 4.0 是 JDBC 3.0 的超集。</p>
+      <p xmlns="">Microsoft SQL Server JDBC 驱动程序同时支持 JDBC 3.0 和 JDBC 4.0。</p>
+      <p xmlns="">在 Windows 和 UNIX 操作系统上部署 Microsoft SQL Server JDBC 驱动程序时，必须分别使用 <i>sqljdbc_&lt;版本&gt;_enu.exe</i> 和 <i>sqljdbc_&lt;版本&gt;_enu.tar.gz</i> 安装包。有关如何部署 JDBC Driver 的详细信息，请参阅<a href="3ad3508d-d9b1-47fb-a63b-21cdc3ed44e0.htm">部署 JDBC 驱动程序</a> 主题。</p>
+      <p xmlns="">为了支持向后兼容以及可能的升级方案，JDBC 驱动程序在每个安装包中都包括 2 个 JAR 类库：<b>sqljdbc.jar</b> 和 <b>sqljdbc4.jar</b>。</p>
+      <table width="100%" cellspacing="0" cellpadding="0" border="1" style="background-color: #CCCCCC;" xmlns=""><tr>
+            <th colspan="">
+              JAR
+            </th>
+            <th colspan="">
+              说明
+            </th>
+          </tr><tr>
+          <td colspan="">
+            <p>sqljdbc.jar</p>
+          </td>
+          <td colspan="">
+            <p>
+              <b>sqljdbc.jar</b> 类库提供对 JDBC 3.0 的支持。</p>
+            <p>
+              <b>sqljdbc.jar</b> 类库要求使用 5.0 版的 Java 运行时环境 (JRE)。连接到数据库时，在 JRE 6.0 上使用 <b>sqljdbc.jar</b> 会引发异常。</p>
+            <div style="margin: .5em 1.5em .5em 1.5em"><b>注意：</b>
+              JDBC 驱动程序不支持 JRE 1.4。使用 JDBC 驱动程序时必须将 JRE 1.4 升级至 JRE 5.0 或更高版本。在某些情况下，您可能需要重新编译应用程序，因为它可能与 JDK 5.0 或更高版本不兼容。有关详细信息，请参阅 Sun Microsystems 网站上的文档。<p />
+            </div>
+          </td>
+        </tr><tr>
+          <td colspan="">
+            <p>sqljdbc4.jar</p>
+          </td>
+          <td colspan="">
+            <p>
+              <b>sqljdbc4.jar</b> 类库提供对 JDBC 4.0 的支持。它不仅包括 <b>sqljdbc.jar</b> 的所有功能，还包括新增的 JDBC 4.0 方法。</p>
+            <p>
+              <b>sqljdbc4.jar</b> 类库要求使用 6.0 或更高版本的 Java 运行时环境 (JRE)。在 JRE 1.4 或 5.0 上使用 <b>sqljdbc4.jar</b> 会引发异常。</p>
+            <div style="margin: .5em 1.5em .5em 1.5em"><b>注意：</b>
+              如果应用程序必须在 JRE 6.0 上运行，即使该应用程序不使用 JDBC 4.0 功能，也应使用 <b>sqljdbc4.jar</b>。<p />
+            </div>
+          </td>
+        </tr></table>
+      <p xmlns="">请注意，尽管驱动程序旨在与所有主要的 Sun 等效 Java 虚拟机一起工作并由这些虚拟机支持，但却是在 Sun JRE 5.0 或更高版本上进行测试的。</p>
+    </content></div><h1 class="heading">SQL Server 要求</h1><div id="sectionSection1" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">JDBC 驱动程序专为使用 SQL Server 2005 引入的功能而设计，但它向后兼容 SQL Server 2000（包括 64 位版本）。JDBC Driver 3.0 在 SQL Server 2008 中支持新的日期和时间类型、大型用户定义类型和稀疏列。</p>
+    </content></div><h1 class="heading">操作系统要求</h1><div id="sectionSection2" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">JDBC 驱动程序可在任何支持使用 Java 虚拟机 (JVM) 的操作系统上工作。但是，仅 Sun Solaris、SUSE Linux 以及 Windows XP 或更高版本的操作系统经过了正式测试。</p>
+    </content></div><h1 class="heading">支持的语言</h1><div id="sectionSection3" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">JDBC Driver 支持所有的 SQL Server 列排序规则。有关 JDBC driver 支持的排序规则的详细信息，请参阅 <a href="bbb74a1d-9278-401f-9530-7b5f45aa79de.htm">JDBC Driver 的国际功能</a>。</p>
+      <p xmlns="">有关排序规则的详细信息，请参阅 SQL Server 联机丛书中的“使用排序规则”。</p>
+    </content></div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="939a8773-2583-49a4-bf00-6b892fbe39dc.htm">JDBC 驱动程序概述</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2010 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

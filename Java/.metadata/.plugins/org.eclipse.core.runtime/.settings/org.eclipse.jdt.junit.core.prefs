@@ -1,0 +1,4 @@
+#Mon Jan 04 17:01:04 CST 2016
+org.eclipse.jdt.junit.do_filter_stack=false
+org.eclipse.jdt.junit.enable_assertions=false
+eclipse.preferences.version=1

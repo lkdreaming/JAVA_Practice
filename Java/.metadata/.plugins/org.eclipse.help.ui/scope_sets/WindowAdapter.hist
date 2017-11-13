@@ -1,0 +1,4 @@
+#Sun Nov 08 09:20:33 CST 2015
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=WindowAdapter

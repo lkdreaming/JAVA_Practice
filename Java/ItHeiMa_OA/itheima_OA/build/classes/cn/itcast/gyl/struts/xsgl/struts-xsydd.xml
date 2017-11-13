@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="xsydd" namespace="/" extends="struts-default">
+		<action name="xsyddAction_*" method="{1}" class="cn.itcast.gyl.web.action.xsgl.XsyddAction">
+			<result name="xsyddList">/WEB-INF/jsp/gyl/xsgl/xsydd/list.jsp</result>
+			<result name="xsyddUpdateUI">/WEB-INF/jsp/gyl/xsgl/xsydd/update.jsp</result>
+			<result name="xsyddAddUI">/WEB-INF/jsp/gyl/xsgl/xsydd/add.jsp</result>
+			<result name="action2action" type="redirectAction">xsyddAction_showAllXsydd.action</result>
+		</action>
+	</package>
+</struts>

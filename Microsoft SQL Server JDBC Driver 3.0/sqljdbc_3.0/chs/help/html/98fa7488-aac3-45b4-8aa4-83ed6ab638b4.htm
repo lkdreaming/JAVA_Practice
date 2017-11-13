@@ -1,0 +1,148 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>了解数据类型转换</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:04/01/2010 05:03:28-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">了解数据类型转换</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+    <font color="DarkGray">
+      
+    </font>
+    <p />
+    
+    <p />
+  
+        <div id="introductionSection" class="section">
+    <p>为了简化 Java 编程语言数据类型到 SQL Server 数据类型的转换，Microsoft SQL Server JDBC Driver 根据 JDBC 规范的要求提供了数据类型转换。为了提高灵活性，所有类型都可以与 <b>Object</b>、<b>String</b> 和 <b>byte[]</b> 数据类型相互转换。</p>
+  </div><h1 class="heading">Getter 方法转换</h1><div id="sectionSection0" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">基于 SQL Server 的数据类型，以下图表包含 <a href="eaffcff1-286c-459f-83da-3150778480c9.htm">SQLServerResultSet</a> 类的 <b>get&lt;Type&gt;()</b> 方法的 JDBC Driver 转换图，以及 <a href="30710a63-c05d-47d9-9cf9-c087a1c76373.htm">SQLServerCallableStatement</a> 类的 <b>get&lt;Type&gt;</b> 方法支持的转换。</p>
+      <div xmlns=""><img src="../local/a01384f7-3912-4a57-beca-eb876955c6f6.gif" target="_blank" alt="JDBCGetterConversions" /></div>
+      <p xmlns="">JDBC Driver 的 getter 方法支持三类转换：</p>
+      <ul xmlns=""><li>
+          
+            <b>非丢失 (x)</b>：适用于 getter 类型与基础服务器类型相同或者小于基础服务器类型时的转换。例如，对基础服务器十进制数列调用 <b>getBigDecimal</b> 时，无需进行转换。<br />
+        </li><li>
+          
+            <b>已转换 (y)</b>：从数值服务器类型转换为 Java 语言类型，其中转换是常规的并遵循 Java 语言转换规则。对于这些转换，总是直接截取有效位数（从不四舍五入），而溢出则按目标类型取模处理，以较小者为准。例如，对于包含“1.9999”的基础 <b>decimal</b> 列调用 <b>getInt</b> 时将返回“1”，或者，如果基础 <b>decimal</b> 值为“3000000000”，则 <b>int</b> 值溢出为“-1294967296”。<br />
+        </li><li>
+          
+            <b>依赖于数据 (z)</b>：如果从基础字符类型转换到数值类型，则要求字符类型包含可转换为数值类型的值。不执行其他转换。如果值对于 getter 类型过大，则该值无效。例如，如果对包含“53”的 varchar(50) 列调用 <b>getInt</b>，则值将作为 <b>int</b> 返回；如果基础值为“xyz”或“3000000000”，则将引发错误。<br />
+        </li></ul>
+      <p xmlns="">如果对 <b>binary</b>、<b>varbinary</b>、<b>varbinary(max)</b> 或 <b>image</b> 列数据类型调用 <b>getString</b>，则值将作为十六进制字符串值返回。</p>
+    </content></div><h1 class="heading">Updater 方法转换</h1><div id="sectionSection1" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">对于传递给 <a href="eaffcff1-286c-459f-83da-3150778480c9.htm">SQLServerResultSet</a> 类的 <b>update&lt;Type&gt;()</b> 方法的 Java 类型的数据，可应用下列转换。</p>
+      <div xmlns=""><img src="../local/104cb32d-a90c-4bcb-97de-e6907a0efe99.gif" target="_blank" alt="JDBCUpdaterConversions" /></div>
+      <p xmlns="">JDBC Driver 的 updater 方法支持三类转换：</p>
+      <ul xmlns=""><li>
+          
+            <b>非丢失 (x)</b>：适用于 updater 类型与基础服务器类型相同或者小于基础服务器类型时的转换。例如，对基础服务器十进制数列调用 <b>updateBigDecimal</b> 时，无需进行转换。<br />
+        </li><li>
+          
+            <b>已转换 (y)</b>：从数值服务器类型转换为 Java 语言类型，其中转换是常规的并遵循 Java 语言转换规则。对于这些转换，总是直接截取有效位数（从不四舍五入），而溢出则按目标（较小者）类型取模处理。例如，对包含“1.9999”的基础 <b>int</b> 列调用 <b>updateDecimal</b> 时将返回“1”，如果基础 <b>decimal</b> 值为“3000000000”，则 <b>int</b> 值溢出为“-1294967296”。<br />
+        </li><li>
+          
+            <b>依赖于数据 (z)</b>：如果从基础源数据类型转换到目标数据类型，则要求源数据类型包含可转换为目标数据类型的值。不执行其他转换。如果值对于 getter 类型过大，则该值无效。例如，如果对包含“53”的 int 列调用 <b>updateString</b>，更新将成功；如果基础字符串值为“foo”或“3000000000”，将引发错误。<br />
+        </li></ul>
+      <p xmlns="">对 <b>binary</b>、<b>varbinary</b>、<b>varbinary(max)</b> 或 <b>image</b> 列数据类型调用 <b>updateString</b> 时，会将字符串值作为十六进制字符串值进行处理。</p>
+      <p xmlns="">当 SQL Server 列的数据类型为 <b>XML</b> 时，数据值必须是有效的 <b>XML</b>。调用 <b>updateBytes</b>、<b>updateBinaryStream</b> 或 <b>updateBlob</b> 方法时，数据值应为 XML 字符的十六进制字符串表示形式。 例如：</p>
+      <div class="sampleCode" xmlns=""><span codeLanguage="other"><pre>&lt;hello&gt;world&lt;/hello&gt; = 0x3C68656C6C6F3E776F726C643C2F68656C6C6F3E </pre></span></div>
+      <p xmlns="">请注意，如果 XML 字符使用特殊的字符编码，则需要字节顺序标记 (BOM)。</p>
+    </content></div><h1 class="heading">Setter 方法转换</h1><div id="sectionSection2" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">对于传递给 <a href="a8481c06-fbba-432b-8c69-4f4619c20ad4.htm">SQLServerPreparedStatement</a> 类和 <a href="30710a63-c05d-47d9-9cf9-c087a1c76373.htm">SQLServerCallableStatement</a> 类的 <b>set&lt;Type&gt;()</b> 方法的 Java 类型的数据，可应用下列转换。</p>
+      <div xmlns=""><img src="../local/fe289363-9e70-4c8d-88bc-51e959ed9755.gif" target="_blank" alt="JDBCSetterConversions" /></div>
+      <p xmlns="">服务器会尝试所有转换，并在失败时返回错误。</p>
+      <p xmlns="">对于 <b>String</b> 数据类型，如果值超过了 <b>VARCHAR</b> 的长度，则将映射为 <b>LONGVARCHAR</b>。同样，对于 <b>NVARCHAR</b> 数据类型，如果值超过了 <b>NVARCHAR</b> 的支持长度，则将映射为 <b>LONGNVARCHAR</b>。这同样适用于 <b>byte[]</b>。比 <b>VARBINARY</b> 长的值将成为 <b>LONGVARBINARY</b>。</p>
+      <p xmlns="">JDBC Driver 的 setter 方法支持两类转换：</p>
+      <ul xmlns=""><li>
+          
+            <b>非丢失 (x)</b>：适用于 setter 类型与基础服务器类型相同或者小于基础服务器类型时的数值转换。例如，当对基础服务器 <b>decimal</b> 列调用 <b>setBigDecimal</b> 时，不需要进行转换。对于数值转换为字符的情形，Java <b>numeric</b> 数据类型转换为 <b>String</b>。例如，使用值“53”对 varchar(50) 列调用 <b>setDouble</b> 时将在该目标列中生成字符值“53”。<br />
+        </li><li>
+          
+            <b>已转换 (y)</b>：从 Java <b>numeric</b> 类型转换为更小的基础服务器 <b>numeric</b> 类型。该转换为常规转换，并且遵循 SQL Server 转换约定。总是直接截取有效位数（从不四舍五入），而溢出将引发“不支持的转换”错误。例如，通过值“1.9999”对基础整数列使用 <b>updateDecimal</b> 时，将在目标列中生成“1”；但如果传递的值为“3000000000”，驱动程序将引发错误。<br />
+        </li><li>
+          
+            <b>依赖于数据 (z)</b>：从 Java <b>String</b> 类型转换到基础 SQL Server 数据类型取决于以下条件：如有必要，驱动程序会将 <b>String</b> 值发送给 SQL Server，SQL Server 再执行转换。如果 <b>sendStringParametersAsUnicode</b> 设置为 True，并且基础 SQL Server 数据类型为 <b>image</b>，SQL Server 将不允许将 <b>nvarchar</b> 转换为 <b>image</b>并会引发 <b>SQLServerException</b>。如果 sendStringParametersAsUnicode 设置为 False，并且基础 SQL Server 数据类型为 <b>image</b>，SQL Server 将允许将 <b>varchar</b> 转换为 <b>image</b>，而不会引发异常。<br />
+        </li></ul>
+      <p xmlns="">
+        SQL Server 执行转换，并在出现问题时将错误传回 JDBC Driver。</p>
+      <p xmlns="">当 SQL Server 列的数据类型为 <b>XML</b> 时，数据值必须是有效的 <b>XML</b>。调用 <b>updateBytes</b>、<b>updateBinaryStream</b> 或 <b>updateBlob</b> 方法时，数据值应为 XML 字符的十六进制字符串表示形式。 例如：</p>
+      <div class="sampleCode" xmlns=""><span codeLanguage="other"><pre>&lt;hello&gt;world&lt;/hello&gt; = 0x3C68656C6C6F3E776F726C643C2F68656C6C6F3E </pre></span></div>
+      <p xmlns="">请注意，如果 XML 字符使用特殊的字符编码，则需要字节顺序标记 (BOM)。</p>
+    </content></div><h1 class="heading">setObject 的转换</h1><div id="sectionSection3" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">对于传递给 <a href="a8481c06-fbba-432b-8c69-4f4619c20ad4.htm">SQLServerPreparedStatement</a> 类的 <b>setObject(&lt;Type&gt;)</b> 方法的 Java 类型的数据，可应用下列转换。</p>
+      <div xmlns=""><img src="../local/92cdf5f9-afdf-4a92-b1ea-204a7d93b8a5.gif" target="_blank" alt="JDBCSetObjectConversions" /></div>
+      <p xmlns="">没有指定目标类型的 <b>setObject</b> 方法将使用默认映射。对于 <b>String</b> 数据类型，如果值超过了 <b>VARCHAR</b> 的长度，则将映射为 <b>LONGVARCHAR</b>。同样，对于 <b>NVARCHAR</b> 数据类型，如果值超过了 <b>NVARCHAR</b> 的支持长度，则将映射为 <b>LONGNVARCHAR</b>。这同样适用于 <b>byte[]</b>。比 <b>VARBINARY</b> 长的值将成为 <b>LONGVARBINARY</b>。</p>
+      <p xmlns="">JDBC Driver 的 setObject 方法支持三类转换：</p>
+      <ul xmlns=""><li>
+          
+            <b>非丢失 (x)</b>：适用于 setter 类型与基础服务器类型相同或者小于基础服务器类型时的数值转换。例如，当对基础服务器 <b>decimal</b> 列调用 <b>setBigDecimal</b> 时，不需要进行转换。对于数值转换为字符的情形，Java <b>numeric</b> 数据类型转换为 <b>String</b>。例如，使用值“53”对 varchar(50) 列调用 <b>setDouble</b> 时将在该目标列中生成字符值“53”。<br />
+        </li><li>
+          
+            <b>已转换 (y)</b>：从 Java <b>numeric</b> 类型转换为更小的基础服务器 <b>numeric</b> 类型。该转换为常规转换，并且遵循 SQL Server 转换约定。总是直接截取有效位数（从不四舍五入），而溢出将引发不支持转换的错误。例如，通过值“1.9999”对基础整数列使用 <b>updateDecimal</b> 时，将在目标列中生成“1”；但如果传递的值为“3000000000”，驱动程序将引发错误。<br />
+        </li><li>
+          
+            <b>依赖于数据 (z)</b>：从 Java <b>String</b> 类型转换到基础 SQL Server 数据类型取决于以下条件：如有必要，驱动程序会将 <b>String</b> 值发送给 SQL Server，SQL Server 再执行转换。如果 <b>sendStringParametersAsUnicode</b> 连接属性设置为 True，并且基础 SQL Server 数据类型为 <b>image</b>，SQL Server 将不允许将 <b>nvarchar</b> 转换为 <b>image</b> 并会引发 SQLServerException。如果 <b>sendStringParametersAsUnicode</b> 设置为 False，并且基础 SQL Server 数据类型为 <b>image</b>，SQL Server 将允许将 <b>varchar</b> 转换为 <b>image</b>，而不会引发异常。<br />
+        </li></ul>
+      <p xmlns="">
+        SQL Server 执行大部分设置转换，并且在出现问题时将错误传回 JDBC Driver。客户端转换是例外情况，仅在值为 <b>date</b>、<b>time</b>、<b>timestamp</b>、<b>Boolean</b> 和 <b>String</b> 的情况下才执行。</p>
+      <p xmlns="">当 SQL Server 列的数据类型为 <b>XML</b> 时，数据值必须是有效的 <b>XML</b>。调用 setObject(byte[], SQLXML)、setObject(inputStream, SQLXML) 或 setObject(Blob, SQLXML) 方法时，数据值应为 XML 字符的十六进制字符串表示形式。例如：</p>
+      <div class="sampleCode" xmlns=""><span codeLanguage="other"><pre>&lt;hello&gt;world&lt;/hello&gt; = 0x3C68656C6C6F3E776F726C643C2F68656C6C6F3E </pre></span></div>
+      <p xmlns="">请注意，如果 XML 字符使用特殊的字符编码，则需要字节顺序标记 (BOM)。</p>
+    </content></div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="7802328d-4d23-4775-9573-4169b127d258.htm">了解 JDBC 驱动程序数据类型</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2010 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

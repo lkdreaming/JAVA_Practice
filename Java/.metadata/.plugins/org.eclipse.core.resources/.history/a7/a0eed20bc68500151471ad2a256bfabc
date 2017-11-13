@@ -1,0 +1,60 @@
+import java.awt.event.*;
+import java.awt.*;
+
+public class Snake {
+	Dir dir = Dir.R;
+	Node head;
+	Node tail;
+	int x,y;
+	int size;
+	Yard yard;	
+	public Snake(int x, int y, Yard yard) {
+		head.next = head;
+		tail.prev = head;
+		head.prev = null;
+		tail.next = null;
+		this.x = x;
+		this.y = y;
+		this.yard = yard;
+	}
+	private class Node {
+		Node prev = null;
+		Node next = null;
+	}
+	
+	public void draw(Graphics g) {
+		Color c = g.getColor();
+		g.setColor(Color.BLACK);
+		g.fillOval(x, y, Yard.BLOCK_SIZE, Yard.BLOCK_SIZE);
+		g.setColor(c);
+	}
+	
+	private void toWord() {
+		switch(dir) {
+		case U:
+			y = y - Yard.BLOCK_SIZE;
+			break;
+		case D:
+			y = y + Yard.BLOCK_SIZE;
+			break;
+		case L:
+			x = x - Yard.BLOCK_SIZE;
+			break;
+		case R:
+			x = x + Yard.BLOCK_SIZE;
+			break;
+		}
+	}
+	
+	public void keyPressed(KeyEvent e) {
+		int key = e.getKeyCode();
+		switch(key) {
+		case KeyEvent.VK_UP:
+			if(dir != Dir.D)	dir = Dir.U;
+			break;
+		case KeyEvent.VK_DOWN:
+			dir = 
+		}
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将编译单元“UpdClient.java”重命名为“UdpClient.java”&#x0D;&#x0A;－ 原始项目：“UdpTest”&#x0D;&#x0A;－ 原始元素：“UpdClient.java”&#x0D;&#x0A;－ 重命名的元素：“UdpClient.java”" description="重命名编译单元“UpdClient.java”" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{UpdClient.java" name="UdpClient.java" references="false" stamp="1447331016841" version="1.0"/>
+</session>

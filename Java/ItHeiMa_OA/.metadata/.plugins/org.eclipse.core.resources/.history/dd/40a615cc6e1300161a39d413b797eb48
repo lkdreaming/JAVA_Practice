@@ -1,0 +1,9 @@
+package com.lk.oa.service.impl;
+
+import com.lk.oa.model.Privilege;
+import com.lk.oa.service.PrivilegeService;
+import com.lk.oa.service.base.impl.BaseServiceImpl;
+
+public class PrivilegeServiceImpl extends BaseServiceImpl<Privilege> implements PrivilegeService {
+
+}

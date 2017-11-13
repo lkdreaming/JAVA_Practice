@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Struts2_DMI"
+  id="myeclipse.1454560194662"
+  context-root="/Struts2_DMI"
+  j2ee-spec="5.0"
+  archive="Struts2_DMI.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

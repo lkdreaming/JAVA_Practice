@@ -1,0 +1,11 @@
+
+public class TankNewMsg {
+	Tank tank;
+
+	public TankNewMsg(Tank tank) {
+		super();
+		this.tank = tank;
+	}
+	
+	public send(msg);
+}

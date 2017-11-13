@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>数据检查</title>
+<script type="text/javascript">
+	function chkId(obj) {
+		var username = obj.value;
+		var regExp = new RegExp("^[a-zA-Z]{8,16}$");
+		var chkMsg = document.getElementById("chkIdRe");
+		if(regExp.test(username)) {
+				chkMsg.innerHTML="<font color='red'>恭喜,该用户名可以使用!</font>";
+			}
+		else{
+				chkMsg.innerHTML="<font color='red'>对不起,用户名只可以是8-16位的英文字母!</font>";
+			}
+		
+		}
+		
+	function clearText(obj) {
+		if(obj.value == "请填写8-16位英文字母") {
+			obj.value="";
+			}
+		}
+
+</script>
+
+
+
+
+</head>
+
+
+
+<body>
+	<input type="text" id="username" onblur="chkId(this)" onfocus="clearText(this)" value="请填写8-16位英文字母"/><div style="display:inline" id="chkIdRe"></div>
+	
+
+
+</body>
+</html>

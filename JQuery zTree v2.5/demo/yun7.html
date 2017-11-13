@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+ <HEAD>
+  <TITLE> ZTREE DEMO </TITLE>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="zTreeStyle/zTreeStyle.css" type="text/css">
+  <script type="text/javascript" src="jquery-1.4.2.js"></script>
+  <script type="text/javascript" src="jquery-ztree-2.5.js"></script>
+
+  <SCRIPT LANGUAGE="JavaScript">
+  <!--
+	
+	var setting = {
+		isSimpleData: true,
+		treeNodeKey: "id",
+		treeNodeParentKey: "pid",
+		showLine: true,
+		root:{ 
+			isRoot:true,
+			nodes:[]
+		}
+	};
+
+	zNodes =[
+		{id:'1',name:'云7班',pid:'0'},
+		{id:'2',name:'班长',pid:'1',icon:'user.gif'},
+		{id:'3',name:'班秘',pid:'2'},
+		{id:'4',name:'班上全体女同学',pid:'1'},
+		{id:'5',name:'头号班花',pid:'4'},
+		{id:'6',name:'头号班草',pid:'1'}
+	];
+
+	$(document).ready(function(){
+		
+		zTree = $("#tree").zTree(setting, zNodes);
+		
+	
+	});
+
+  //-->
+  </SCRIPT>
+ </HEAD>
+<BODY>
+<TABLE border=0 height=600px align=left>
+	<TR>
+		<TD width=230px align=left valign=top style="BORDER-RIGHT: #999999 1px dashed">
+			<ul id="tree" class="tree" style="width:230px; overflow:auto;"></ul>
+		</TD>
+	</TR>
+</TABLE>
+ </BODY>
+</HTML>

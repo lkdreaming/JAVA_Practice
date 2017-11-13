@@ -1,0 +1,103 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>getConnection 方法 (java.lang.String, java.lang.String)</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:04/01/2010 05:03:28-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">getConnection 方法 (java.lang.String, java.lang.String)</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+    <font color="DarkGray">
+      
+    </font>
+    <p />
+    
+    <p />
+  
+        <div id="introductionSection" class="section">
+    <p>使用给定的用户名和密码尝试与此 <a href="097434fd-2b74-411c-a5ed-eba04481dde5.htm">SQLServerDataSource</a> 对象表示的数据源建立连接。</p>
+  </div><h1 class="heading">语法</h1><div id="syntaxSection" class="section"><div class="sampleCode"><span codeLanguage="other"><pre>
+public java.sql.Connection <b>getConnection</b>(java.lang.String <i>username</i>,
+java.lang.String <i>password</i>)</pre></span></div><h1 class="heading">参数</h1><div id="parametersSection" class="section" name="collapseableSection">
+    <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">
+        <i>username</i>
+      </p>
+      <p xmlns="">包含用户名的<b> String</b>。</p>
+      <p xmlns="">
+        <i>password</i>
+      </p>
+      <p xmlns="">包含密码的<b> String</b>。</p>
+    </content>
+  </div></div><h1 class="heading">返回值</h1><div id="returnValueSection" class="section" name="collapseableSection">
+    <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns=""><a href="937292a6-1525-423e-a2b2-a18fd34c2893.htm">SQLServerConnection</a> 对象。</p>
+    </content>
+  </div><h1 class="heading">异常</h1><div id="exceptionsSection" class="section" name="collapseableSection">
+    <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">java.sql.SQLException</p>
+    </content>
+  </div><h1 class="heading">备注</h1><div id="remarksSection" class="section" name="collapseableSection">
+    <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">此 <b>getConnection</b> 方法由 javax.sql.DataSource 接口中的 <b>getConnection</b> 方法指定。</p>
+      <p xmlns="">如果使用非 Null 的用户名或密码调用 <b>getConnection</b> 方法，将替换初始化 <b>SQLServerConnection</b> 对象时为 <b>SQLServerDataSource</b> 类设置的用户名和密码属性。例如，如果调用方对数据源调用了 <a href="d2ea7906-2d10-438d-aa51-f576eea923c7.htm">setUser</a> 和 <a href="0db06631-5e68-488c-a9f1-6e5052c0759d.htm">setPassword</a>，然后调用 <b>getConnection</b> 并提供非 Null 的用户名或密码，由 <b>setUser</b> 和 <b>setPassword</b> 设置的用户名和密码将被替换为传入 <b>getConnection</b> 的用户名和密码。</p>
+      <div style="margin: .5em 1.5em .5em 1.5em" xmlns=""><b>注意：</b>
+        在这种情况下，通过调用 <a href="bea70100-ac98-4625-8748-ef7cc0b111ea.htm">setURL</a> 方法在 URL 中设置的用户名和密码将保持不变。<p />
+      </div>
+    </content>
+  </div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="097434fd-2b74-411c-a5ed-eba04481dde5.htm">SQLServerDataSource 类</a><br /><a href="a15ee185-f433-4915-9c75-5ebd90c758fd.htm">getConnection 方法 (SQLServerDataSource)</a><br /><a href="7e749bc5-d765-4864-be2b-7822d4c20c09.htm">SQLServerDataSource 成员</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2010 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

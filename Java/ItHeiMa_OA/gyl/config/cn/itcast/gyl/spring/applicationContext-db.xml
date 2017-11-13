@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    
+    xmlns:aop="http://www.springframework.org/schema/aop"  
+    xmlns:tx="http://www.springframework.org/schema/tx"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xsi:schemaLocation="    
+          http://www.springframework.org/schema/beans    
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd    
+          http://www.springframework.org/schema/tx    
+          http://www.springframework.org/schema/tx/spring-tx-3.0.xsd   
+          http://www.springframework.org/schema/context    
+          http://www.springframework.org/schema/context/spring-context-3.0.xsd    
+          http://www.springframework.org/schema/aop    
+          http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+      <bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<value>classpath:jdbc.properties</value>
+		</property>
+	</bean>
+      <bean id="dataSource" destroy-method="close"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+      
+     
+     <bean id="sessionFactory" 
+     	class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+     	<property name="dataSource">
+     		<ref bean="dataSource"/>
+     	</property>
+     	
+     	
+     	<property name="mappingDirectoryLocations">
+	 	
+	 		<!-- 
+	 			把指定路径下面的所有的映射文件全部加载完毕
+	 			  会加载指定路径下所有的映射文件
+	 			  并且还能指定子路径下的所有的映射文件
+	 		 -->
+	 		
+	 		<value>classpath:cn/itcast/gyl/domain</value>
+	 	</property>
+	 	<!-- 
+	 	<property name="mappingJarLocations">
+	 		<value>WEB-INF/lib/jbpm-4.4.jar</value>
+	 	</property>
+	 	 -->
+	 	<property name="hibernateProperties">
+	      <value>
+	        hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+	        hibernate.show_sql=true
+	        hibernate.hbm2ddl.auto=update
+	      </value>
+	    </property>
+     </bean>
+     
+     <!-- 
+     	事务管理器
+     	    告诉spring容器开启事务用什么技术
+      -->
+     <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+     	<property name="sessionFactory">
+     		<ref bean="sessionFactory"/>
+     	</property>
+     </bean>
+     
+     <!-- 
+     	引入hibernateTemplate
+      -->
+     <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+     	<property name="sessionFactory">
+     		<ref bean="sessionFactory"/>
+     	</property>
+     	<property name="cacheQueries">
+     		<value>true</value>
+     	</property>
+     </bean>
+     <!-- 
+     <tx:advice id="tx" transaction-manager="transactionManager">
+     	<tx:attributes>
+     		<tx:method name="save*" isolation="DEFAULT" propagation="REQUIRED" read-only="false"/>
+     	</tx:attributes>
+     </tx:advice>
+      -->
+      <!-- 
+     <aop:config>
+     	<aop:pointcut expression="execution(* cn.itcast.shoa.service.impl.*.*(..))" id="perform"/>
+    	<aop:advisor advice-ref="tx" pointcut-ref="perform"/>
+     </aop:config>
+      -->
+     <context:component-scan base-package="cn.itcast.gyl"></context:component-scan>
+     <tx:annotation-driven transaction-manager="transactionManager"/>
+     
+</beans>

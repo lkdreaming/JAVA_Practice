@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean id="u" class="com.lk.spring.dao.impl.UserDAOImpl">
+    <!-- collaborators and configuration for this bean go here -->
+  </bean>
+
+  <bean id="userService" class="com.lk.spring.service.UserService">
+  	<property name="userDAO" ref="u"/>
+    <!-- collaborators and configuration for this bean go here -->
+  </bean>
+
+  <!-- more bean definitions go here -->
+
+</beans>

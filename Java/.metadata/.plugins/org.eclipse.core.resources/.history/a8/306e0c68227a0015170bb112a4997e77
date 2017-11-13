@@ -1,0 +1,54 @@
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.DatagramSocket;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+
+public class NetClient {
+	public static int UDP_PORT_START = 2333;
+	TankClient tc ;
+	Socket s = null;
+	DatagramSocket ds = null;
+	private int udpPort;
+	NetClient(TankClient tc) {
+		udpPort = UDP_PORT_START ++;
+		this.tc = tc;
+		ds = new DatagramSocket(udpPort);
+	}
+	public boolean connect(String ip, int port) {
+		try {
+			s = new Socket(ip, port);
+			DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+			dos.writeInt(udpPort);
+			DataInputStream dis = new DataInputStream(s.getInputStream());
+			tc.myTank.id = dis.readInt();
+		} catch (UnknownHostException e) {
+			
+			e.printStackTrace();
+			return false;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			try {
+				s.close();
+				s = null;
+			} catch (IOException e) {
+				// TODO 自动生成的 catch 块
+				e.printStackTrace();
+			}
+		}
+System.out.println("Connect to the Server successfully!");
+		TankNewMsg msg = new TankNewMsg(tc.myTank);
+		send(msg);
+		return true;
+		
+	}
+	
+	
+	public void send(TankNewMsg msg) {
+		
+	}
+}

@@ -1,0 +1,175 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>SQLXML 接口</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:04/01/2010 05:03:28-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">SQLXML 接口</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+    <font color="DarkGray">
+      
+    </font>
+    <p />
+    
+    <p />
+  
+        <div id="introductionSection" class="section">
+    <p>从 Microsoft SQL Server JDBC Driver 2.0 开始，JDBC 驱动程序支持 JDBC 4.0 API，后者引入了 java.sql.SQLXML 接口。SQLXML 接口定义与 XML 数据交互以及操作 XML 数据的方法。<b>SQLXML</b> 数据类型映射到 SQL Server <b>xml</b> 数据类型。</p>
+    <p>SQLXML 接口提供用于以 <b>String</b>、<b>Reader</b> 或 <b>Writer</b> 或者 <b>Stream</b> 形式访问 XML 值的方法。XML 值还可以通过 <b>Source</b> 来访问，或者设置为 <b>Result</b>，两者与 XML 分析器 API（如文档对象模型 (DOM)、Simple API for XML (SAX) 和 Streaming API for XML (StAX)）以及 XSLT 转换和 XPath 一起使用。</p>
+    <p>下表介绍了 SQLXML 接口中定义的方法：</p>
+    <table width="100%" cellspacing="0" cellpadding="0" border="1" style="background-color: #CCCCCC;"><tr>
+          <th colspan="">
+            方法语法
+          </th>
+          <th colspan="">
+            方法说明
+          </th>
+        </tr><tr>
+        <td colspan="">
+          <p>
+            <a href="http://go.microsoft.com/fwlink/?LinkId=131685" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">void free()</linkText></a>
+          </p>
+        </td>
+        <td colspan="">
+          <p>此方法释放 SQLXML 对象以及它所持有的资源。</p>
+        </td>
+      </tr><tr>
+        <td colspan="">
+          <p>
+            <a href="http://go.microsoft.com/fwlink/?LinkId=131754" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">InputStream getBinaryStream()</linkText></a>
+          </p>
+        </td>
+        <td colspan="">
+          <p>返回一个用于从 SQLXML 中读取数据的输入流。</p>
+        </td>
+      </tr><tr>
+        <td colspan="">
+          <p>
+            <a href="http://go.microsoft.com/fwlink/?LinkId=131755" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">Reader getCharacterStream()</linkText></a>
+          </p>
+        </td>
+        <td colspan="">
+          <p>将 <b>XML</b> 数据作为 <b>java.io.Reader</b> 对象或字符流返回。</p>
+        </td>
+      </tr><tr>
+        <td colspan="">
+          <p>
+            <a href="http://go.microsoft.com/fwlink/?LinkId=131756" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">T extends Source T getSource(Class&lt;T&gt; sourceClass)</linkText></a>
+          </p>
+        </td>
+        <td colspan="">
+          <p>返回一个 <b>Source</b>，用于读取此 <b>SQLXML</b> 对象所指定的 <b>XML</b> 值。</p>
+          <div style="margin: .5em 1.5em .5em 1.5em"><b>注意：</b>
+            <b>getSource</b> 方法支持下列源：javax.xml.transform.dom.DOMSource、javax.xml.transform.sax.SAXSource、javax.xml.transform.stax.StAXSource 和 java.io.InputStream。<p />
+          </div>
+        </td>
+      </tr><tr>
+        <td colspan="">
+          <p>
+            <a href="http://go.microsoft.com/fwlink/?LinkId=131757" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">String getString()</linkText></a>
+          </p>
+        </td>
+        <td colspan="">
+          <p>返回此 SQLXML 对象所指定的 <b>XML</b> 值的字符串表示形式。</p>
+        </td>
+      </tr><tr>
+        <td colspan="">
+          <p>
+            <a href="http://go.microsoft.com/fwlink/?LinkId=131758" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">OutputStream setBinaryStream()</linkText></a>
+          </p>
+        </td>
+        <td colspan="">
+          <p>检索可用于写入此 SQLXML 对象所表示的 <b>XML</b> 值的流。</p>
+        </td>
+      </tr><tr>
+        <td colspan="">
+          <p>
+            <a href="http://go.microsoft.com/fwlink/?LinkId=131759" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">Writer setCharacterStream()</linkText></a>
+          </p>
+        </td>
+        <td colspan="">
+          <p>返回可用于写入此 SQLXML 对象所表示的 <b>XML</b> 值的流。</p>
+        </td>
+      </tr><tr>
+        <td colspan="">
+          <p>
+            <a href="http://go.microsoft.com/fwlink/?LinkId=131760" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">T extends Result T setResult(Class&lt;T&gt; resultClass)</linkText></a>
+          </p>
+        </td>
+        <td colspan="">
+          <p>返回一个 <b>Result</b>，用于设置此 <b>SQLXML</b> 对象所指定的 <b>XML</b> 值。</p>
+          <div style="margin: .5em 1.5em .5em 1.5em"><b>注意：</b>
+            <b>setResult</b> 方法支持下列源：javax.xml.transform.dom.DOMResult、javax.xml.transform.sax.SAXResult、javax.xml.transform.stax.StaxResult 和 java.io.OutputStream。<p />
+          </div>
+        </td>
+      </tr><tr>
+        <td colspan="">
+          <p>
+            <a href="http://go.microsoft.com/fwlink/?LinkId=131762" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">void setString(String value)</linkText></a>
+          </p>
+        </td>
+        <td colspan="">
+          <p>将此 SQLXML 对象所指定的 XML 值设置为指定的 <b>String</b> 表示形式。</p>
+        </td>
+      </tr></table>
+    <p>应用程序只能从/向 SQLXML 对象中读取/写入 XML 值一次。</p>
+    <p>调用 <b>free()</b> 方法后，SQLXML 对象将变为无效，既不可读也不可写。如果应用程序尝试对该 SQLXML 对象调用 <b>free()</b> 方法以外的方法，将引发异常。</p>
+    <p>当应用程序调用下列任意 getter 方法时，SQLXML 对象将变为既不可读也不可写：<b>getSource</b>、<b>getCharacterStream</b>、<b>getBinaryStream</b> 和 <b>getString</b>。</p>
+    <p>当应用程序调用下列任意 setter 方法时，SQLXML 对象将变为既不可写也不可读：<b>setResult</b>、<b>setCharacterStream</b>、<b>setBinaryStream</b> 和 <b>setString</b>。</p>
+  </div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="32b7217e-1f0c-473d-9a45-176daa81584e.htm">支持 XML 数据</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2010 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

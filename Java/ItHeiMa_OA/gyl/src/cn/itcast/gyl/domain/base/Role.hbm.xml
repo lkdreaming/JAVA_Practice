@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.base.Role">
+		<id name="rid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name" length="20"></property>
+		<property name="pid" length="5"></property>
+		<set name="privileges" table="role_privilege">
+			<key>
+				<column name="rid"></column>
+			</key>
+			<many-to-many class="cn.itcast.gyl.domain.base.Privilege" column="id"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

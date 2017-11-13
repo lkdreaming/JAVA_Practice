@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.6.0_43"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_6_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate5"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Junit4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/log4j"/>
+	<classpathentry kind="lib" path="D:/用户目录/我的文档/Documents/apache/commons-dbcp.jar"/>
+	<classpathentry kind="lib" path="D:/用户目录/我的文档/Documents/apache/commons-logging.jar"/>
+	<classpathentry kind="lib" path="D:/用户目录/我的文档/Documents/apache/commons-pool.jar"/>
+	<classpathentry kind="lib" path="D:/用户目录/我的文档/Documents/aopalliance/aopalliance.jar"/>
+	<classpathentry kind="lib" path="D:/用户目录/我的文档/Documents/spring-framework-2.5.6.SEC03/dist/lib/aspectjweaver.jar"/>
+	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
+</classpath>

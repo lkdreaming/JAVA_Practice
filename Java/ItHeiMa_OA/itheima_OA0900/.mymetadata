@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="itheima_OA0900"
+  id="myeclipse.1456105316704"
+  context-root="/itheima_OA0900"
+  j2ee-spec="6.0"
+  archive="itheima_OA0900.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>左移右移</title>
+<script type="text/javascript">
+	function removeLeft() {
+		var leftOp = document.getElementById("left");
+		var leftIndex = leftOp.selectedIndex;
+		var leftSelected = leftOp.options[leftIndex];
+		var rightOp = document.getElementById("right");
+		rightOp.add(leftSelected);
+	}
+	
+	function removeLeftAll() {
+		var leftOp = document.getElementById("left");
+		
+		var leftSelected = leftOp.options;
+		var rightOp = document.getElementById("right");
+		var length = leftSelected.length;
+		for(var i = 0; i < length; i++) {
+			rightOp.appendChild(leftSelected[0]);
+		}
+		
+	}
+	function removeRight() {
+		var rightOp = document.getElementById("right");
+		var rightIndex = rightOp.selectedIndex;
+		var rightSelected = rightOp.options[rightIndex];
+		var leftOp= document.getElementById("left");
+		leftOp.add(rightSelected);
+	}
+	
+	function removeRightAll() {
+		var rightOp = document.getElementById("right");
+		var rightSelected = rightOp.options;
+		var leftOp= document.getElementById("left");
+		var length = rightSelected.length;
+		for(var i = 0; i < length; i++) {
+			leftOp.appendChild(rightSelected[0]);
+		}
+		
+	}
+	
+
+
+</script>
+</head>
+
+<body>
+	<table align="center">
+		<tr>
+			<td>
+				<select size="10" id="left">
+					<option>选项1</option>
+					<option>选项2</option>
+					<option>选项3</option>
+					<option>选项4</option>
+					<option>选项5</option>
+					<option>选项6</option>
+					<option>选项7</option>
+					<option>选项8</option>
+
+				</select>
+			</td>
+			<td>
+				<input type="button" value="--->" onclick="removeLeft()"/><br/>
+				<input type="button" value="===>" onclick="removeLeftAll()"/><br/>
+				<input type="button" value="<---" onclick="removeRight()"/><br/>
+				<input type="button" value="<===" onclick="removeRightAll()"/><br/>
+			</td>
+			<td>
+				<select size="10" id="right">
+					<option>选项9</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

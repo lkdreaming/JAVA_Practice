@@ -1,0 +1,68 @@
+import java.awt.*;
+import java.awt.event.*;
+public class TankClient extends Frame {
+	public static final int GAME_WIDTH = 640;
+	public static final int GAME_HEIGHT = 480;
+	static String TITLE = "坦克大战v0.5";
+	Tank t = new Tank(50,50);
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		TankClient tc = new TankClient();
+		tc.launchframe();
+	}
+	public void launchframe() {
+		
+		this.setSize(GAME_WIDTH, GAME_HEIGHT);
+		this.setLocation(300, 100);
+		this.setBackground(Color.BLACK);
+		this.setTitle(TITLE);
+		this.setResizable(false);
+		this.setVisible(true);
+		this.addWindowListener(new WindowAdapter() {
+			
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		
+		});
+	
+		new Thread(new PaintThread()).start();
+		
+	}
+	public void paint(Graphics g) {
+		
+		t.graw(g);
+	}
+	
+	public void update(Graphics g) {
+		
+		Image offScreenImage = this.createImage(this.GAME_WIDTH, this.GAME_HEIGHT);
+		Graphics gOffScreen = offScreenImage.getGraphics();
+		gOffScreen.fillRect(0, 0, this.WIDTH, this.HEIGHT);
+		Color c = gOffScreen.getColor();
+		
+		gOffScreen.drawImage(offScreenImage, 0, 0, null);
+		paint(gOffScreen);
+		
+	}
+	
+	public class PaintThread implements Runnable {
+		
+		public void run() {
+			while(true) {
+				
+				try {
+					repaint();
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+					// TODO 自动生成的 catch 块
+					e.printStackTrace();
+				}
+				
+			}
+			
+		}
+		
+	}
+
+}

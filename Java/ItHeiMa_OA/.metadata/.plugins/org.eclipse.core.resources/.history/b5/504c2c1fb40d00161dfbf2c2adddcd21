@@ -1,0 +1,80 @@
+package com.lk.oa.dao.base.impl;
+
+import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.metadata.ClassMetadata;
+import org.springframework.orm.hibernate5.HibernateCallback;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+
+import com.lk.oa.dao.base.BaseDao;
+
+public class BaseDaoImpl<T> implements BaseDao<T> {
+	
+	private Class classT;
+	private HibernateTemplate hibernateTemplate;
+	public BaseDaoImpl() {
+		ParameterizedType type = (ParameterizedType) this.getClass().getGenericSuperclass();
+		this.classT = (Class) type.getActualTypeArguments()[0];
+	}
+	
+	@Override
+	public List<T> getALLEntries() {
+		return (List<T>) this.hibernateTemplate.find("from " + this.classT.getName());
+	}
+
+	@Override
+	public T getEntryById(Serializable id) {
+		return (T) this.hibernateTemplate.get(classT, id);
+	}
+
+	@Override
+	public void updateEntry(T t) {
+		this.hibernateTemplate.update(t);
+		
+	}
+
+	@Override
+	public void deleteEntry(Serializable id) {
+		this.hibernateTemplate.delete(this.getEntryById(id));
+	}
+
+	@Override
+	public void saveEntry(T t) {
+		this.hibernateTemplate.save(t);
+	}
+
+	@Override
+	public Set<T> getEntrysByIds(Serializable[] serializables) {
+		StringBuffer sb = new StringBuffer();
+		sb.append("from " + this.classT.getName() + " where");
+		return null;
+	}
+
+	@Override
+	public T queryEntryByProperty(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public HibernateTemplate getHibernateTemplate() {
+		return hibernateTemplate;
+	}
+	@Resource(name = "hibernateTemplate")
+	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
+		this.hibernateTemplate = hibernateTemplate;
+	}
+
+	
+
+}

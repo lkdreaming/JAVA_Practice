@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="xsdd" namespace="/" extends="struts-default">
+		<action name="xsddAction_*" method="{1}" class="cn.itcast.gyl.web.action.xsgl.XsddAction">
+			<result name="xsddList">/WEB-INF/jsp/gyl/xsgl/xsdd/list.jsp</result>
+			<result name="xsddAddUI_Direct">/WEB-INF/jsp/gyl/xsgl/xsdd/add_direct.jsp</result>
+			<result name="xsddAddUIFromXsydd">/WEB-INF/jsp/gyl/xsgl/xsdd/add_from_xsydd.jsp</result>
+			<result name="action2action" type="redirectAction">xsddAction_showXsdd.action</result>
+			<result name="tuihuoUI_fromXsdd">/WEB-INF/jsp/gyl/xsgl/xsdd/tuihuo_from_xsdd.jsp</result>
+			<result name="updateUI">/WEB-INF/jsp/gyl/xsgl/xsdd/update.jsp</result>
+		</action>
+	</package>
+</struts>

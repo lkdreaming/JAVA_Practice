@@ -1,0 +1,33 @@
+import java.awt.event.KeyEvent;
+
+
+public class Snake {
+	Dir dir = Dir.R;
+	Node head;
+	Node tail;
+	
+	int size;
+	
+	private class Node {
+		Node prev = null;
+		Node next = null;
+	}
+	
+
+	
+	private void toWord() {
+		switch(dir) {
+		case U:
+			
+		case D:
+		case L:
+		case R:
+		}
+	}
+	
+	public void keyPressed(KeyEvent e) {
+		int key = e.getKeyCode();
+		
+	}
+
+}

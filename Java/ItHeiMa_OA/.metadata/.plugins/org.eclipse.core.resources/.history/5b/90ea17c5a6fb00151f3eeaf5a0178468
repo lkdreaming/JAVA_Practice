@@ -1,0 +1,123 @@
+package com.lk.oa.dao.base.impl;
+
+import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.metadata.ClassMetadata;
+import org.springframework.orm.hibernate5.HibernateCallback;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+
+import com.lk.oa.dao.base.BaseDao;
+
+public class BaseDaoImpl<T> implements BaseDao<T> {
+
+	private Class classT;
+	private ClassMetadata metadata;
+	public Class getClassT() {
+		return classT;
+	}
+
+	public HibernateTemplate getHibernateTemplate() {
+		return hibernateTemplate;
+	}
+
+	public void setClassT(Class classT) {
+		classT = classT;
+	}
+
+	@Resource(name = "hibernateTemplate")
+	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
+		this.hibernateTemplate = hibernateTemplate;
+	}
+
+	private HibernateTemplate hibernateTemplate;
+	
+	public BaseDaoImpl() {
+		ParameterizedType parameterizedType = (ParameterizedType)this.getClass().getGenericSuperclass(); 
+		this.classT = (Class) parameterizedType.getActualTypeArguments()[0];
+	}
+	
+	@PostConstruct
+	public void init() {
+		metadata = this.hibernateTemplate.getSessionFactory().getClassMetadata(classT);
+		
+	}
+	
+	@Override
+	public List<T> getALLEntry() {
+		return (List<T>) hibernateTemplate.find("from " + classT.getName());
+	}
+
+	@Override
+	public T getEntryById(Serializable id) {
+		
+		return (T) hibernateTemplate.get(classT.getName(), id);
+	}
+
+	@Override
+	public void updateEntry(T t) {
+		this.hibernateTemplate.update(t);
+		
+	}
+
+	@Override
+	public void deleteEntry(Serializable id) {
+		this.hibernateTemplate.delete(this.getEntryById(id));
+	}
+
+	@Override
+	public void saveEntry(T t) {
+		this.hibernateTemplate.save(t);
+		
+	}
+
+	@Override
+	public Set<T> getEntrysByIds(Serializable[] serializables) {
+		StringBuffer sb = new StringBuffer();
+		sb.append("from " + classT.getName()); 
+		sb.append(" where " + metadata.getIdentifierPropertyName());
+		sb.append(" in(");
+		for(int i = 0; i < serializables.length; i++) {
+			if(i == serializables.length - 1) {
+				sb.append(serializables[i]);
+			} else {
+				sb.append(serializables[i] + ",");
+			}
+		}
+		sb.append(")");
+		System.out.println(sb.toString());
+		return new HashSet(this.hibernateTemplate.find(sb.toString()));
+	}
+
+	@Override
+	public T queryEntryByProperty(final Map<String, Object> map) {
+		final StringBuffer sb = new StringBuffer();
+		sb.append("from " + this.classT.getName());
+		sb.append(" where 1=1");
+		for(Map.Entry<String, Object> entry : map.entrySet()) {
+			sb.append(" and " + entry.getKey() + "=:" + entry.getKey());
+		}
+		return this.hibernateTemplate.execute(new HibernateCallback<T>() {
+
+			@Override
+			public T doInHibernate(Session session) throws HibernateException {
+				Query query = session.createQuery(sb.toString());
+				for(Map.Entry<String, Object> entry : map.entrySet()) {
+					query.setParameter(entry.getKey(), entry.getValue());
+				}
+				return null;
+			}
+		});
+	}
+
+}

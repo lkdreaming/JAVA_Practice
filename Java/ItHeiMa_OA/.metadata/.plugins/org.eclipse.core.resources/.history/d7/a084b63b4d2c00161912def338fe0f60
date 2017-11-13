@@ -1,0 +1,77 @@
+package com.lk.oa.action;
+
+import java.util.Collection;
+
+import javax.annotation.Resource;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+
+import com.lk.oa.action.base.BaseAction;
+import com.lk.oa.model.Role;
+import com.lk.oa.service.RoleService;
+import com.opensymphony.xwork2.ActionContext;
+
+@Controller("roleAction")
+@Scope("prototype")
+public class RoleAction extends BaseAction {
+	private RoleService rs;
+	private Collection<Role> roles;
+	private Role role;
+	
+	public RoleService getRs() {
+		return rs;
+	}
+
+	public Collection<Role> getRoles() {
+		return roles;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+	
+	@Resource(name = "roleService")
+	public void setRs(RoleService rs) {
+		this.rs = rs;
+	}
+
+	public void setRoles(Collection<Role> roles) {
+		this.roles = roles;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public String showAllRoles() {
+		this.roles = this.rs.getAllEntries();
+		return listAction;
+	}
+	public String showAllRolesForTree() {
+		this.roles = this.rs.getAllEntries();
+		ActionContext.getContext().getValueStack().push(roles);
+		ActionContext.getContext().put("duties", roles);
+		return SUCCESS;
+	}
+	
+	public String addUI() {
+		return addUI; 
+	}
+	
+	public String add() {
+		return Action2Action;
+	}
+	
+	public String updateUI() {
+		return updateUI;
+	}
+	
+	public String update() {
+		return Action2Action;
+	}
+	
+	public String delete() {
+		return Action2Action;
+	}
+}

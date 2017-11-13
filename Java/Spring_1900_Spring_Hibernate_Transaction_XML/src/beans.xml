@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop 
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+           
+ <context:annotation-config/>
+ <context:component-scan base-package="com.lk.spring"/>
+	<!-- this is the service object that we want to make transactional -->
+   <!-- <bean id="fooService" class="com.lk.spring.service.UserService"/> -->
+ 
+  <!-- the transactional advice (what 'happens'; see the <aop:advisor/> bean below) -->
+  <tx:advice id="txAdvice" transaction-manager="txManager">
+  <!-- the transactional semantics... -->
+  <tx:attributes>
+    <!-- all methods starting with 'get' are read-only -->
+    <tx:method name="getUser" read-only="true"/>
+    <tx:method name="add*" propagation="REQUIRED"/>
+    <!-- other methods use the default transaction settings (see below) -->
+    <tx:method name="*"/>
+  </tx:attributes>
+  </tx:advice>
+  
+  <!-- ensure that the above transactional advice runs for any execution
+    of an operation defined by the FooService interface -->
+  <aop:config>
+  <aop:pointcut id="fooServiceOperation" expression="execution(public * com.lk.spring.service..*.*(..))"/>
+  <aop:advisor advice-ref="txAdvice" pointcut-ref="fooServiceOperation"/>
+  </aop:config>
+  
+  <!-- similarly, don't forget the PlatformTransactionManager -->
+  <bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+  <property name="sessionFactory" ref="mySessionFactory"/>
+  </bean>
+	
+	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	    <property name="url" value="jdbc:mysql://localhost:3306/spring" />
+	    <property name="username" value="root"/>
+	    <property name="password" value="root"/>
+    </bean>
+
+<!--文档中没写annotation的用法: 1. class 要填:"org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" -->
+    <bean id="mySessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+	    <property name="dataSource" ref="myDataSource"/>
+<!--文档中没写annotation的用法: 2.映射的模型类的property 要填property name="annotatedClasses" 满足以上两条才能将累注入到spring中    -->
+	    <!-- <property name="annotatedClasses">
+	      <list>
+	        <value>com.lk.spring.model.User</value>
+	        <value>com.lk.spring.model.Log</value>
+	      </list>
+	    </property> -->
+	    
+	    <property name="packagesToScan">
+	      <list>
+	        <value>com.lk.spring.model</value>
+	      </list>
+	    </property>
+	    
+	    <property name="hibernateProperties">
+	      <props>  
+                <!-- 设置Hibernate方言 -->  
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>  
+                <!-- 是否打印sql -->  
+                <prop key="hibernate.show_sql">true</prop>  
+                <!-- 格式化sql -->  
+                <prop key="hibernate.format_sql">true</prop>  
+                <!-- 是否自动更新表 -->  
+                <prop key="hibernate.hbm2ddl.auto">update</prop>  
+                <!-- 最大抓取深度，如果为0，则关闭默认的外连接抓取。建议值为0-3 -->  
+                <prop key="hibernate.max_fetch_depth">1</prop>  
+                <!-- 用于生成有助于调试的注释信息，默认为关闭 -->  
+                <prop key="hibernate.use_sql_comments">true</prop>  
+            </props>  
+	    </property>
+     </bean>
+
+</beans>

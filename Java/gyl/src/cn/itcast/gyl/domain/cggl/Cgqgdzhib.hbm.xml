@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.cggl.Cgqgdzhib">
+		<id name="cgqgdzhibid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 
+			单位
+		 -->
+		<property name="dw" length="20"></property>
+		
+		
+		<!-- 
+			行号
+		 -->
+		<property name="hh" length="5"></property>
+		<!-- 
+			含税单价
+		 -->
+		<property name="hsdj"></property>
+		<!-- 
+			含税金额
+		 -->
+		<property name="hsje"></property>
+		
+		
+		
+		<!-- 
+			税额
+		 -->
+		<property name="se"></property>
+		<!-- 
+			税率
+		 -->
+		<property name="shuilv"></property>
+		<!-- 
+			数量
+		 -->
+		<property name="sl"></property>
+		<!-- 
+			商品编码
+		 -->
+		<property name="spbm"></property>
+		<!-- 
+			商品名称
+		 -->
+		<property name="spmc"></property>
+		<!-- 
+			无税单价
+		 -->
+		<property name="wsdj"></property>
+		<!-- 
+			无税金额
+		 -->
+		<property name="wsje"></property>
+		<!-- 
+			型号
+		 -->
+		<property name="xh"></property>
+		<many-to-one name="cgqgdzhub" column="cgqgdzhubid" class="cn.itcast.gyl.domain.cggl.Cgqgdzhub"></many-to-one>
+	</class>
+</hibernate-mapping>

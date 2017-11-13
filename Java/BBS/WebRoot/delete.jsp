@@ -1,0 +1,73 @@
+<%@ page pageEncoding="GB18030"%>
+<%@ include file = "_SessionCheck.jsp" %>
+<%@ page import="java.util.*,com.lk.bbs.*,java.sql.*"%>
+<!-- 进行树形展现,需要递归算法tree -->
+<%!
+	private void delete(int id, Connection conn, boolean isLeaf) {
+		/*用父贴的id来查询,得到后的结果对article进行初始化.判断isLeaf是否为真,为假的话则用子贴的id进行递归*/
+		Statement stmt = DB.creatStatement(conn);
+		String sql = "select * from article where pid =" + id;
+		ResultSet rs = DB.getResult(stmt, sql);
+		if(!isLeaf) {
+			try {
+				while (rs.next()) {
+					delete(rs.getInt("id"), conn, rs.getInt("isleaf") ==0);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} 
+		}
+		DB.executUpdate(stmt, "delete from article where id = " + id);
+	}
+	
+%>
+	
+<%
+
+	String idStr = request.getParameter("id");
+	String pidStr = request.getParameter("pid");
+	String isLeafStr = request.getParameter("isLeaf");
+	String url = request.getParameter("url");
+	int id = 0;
+	int pid = 0;
+	boolean isLeaf = true;
+	ResultSet rsCount = null;
+	Connection conn = DB.getConnection();
+	Statement stmt = DB.creatStatement(conn);
+	boolean autoCommit = true;
+	if(idStr != null && isLeafStr !=null && pidStr != null && !idStr.trim().equals("") && !pidStr.trim().equals("")) {
+		try{
+			id = Integer.parseInt(idStr);
+			pid = Integer.parseInt(pidStr);
+			isLeaf = Boolean.parseBoolean(isLeafStr);
+		} catch(NumberFormatException e) {
+			out.println("出现错误(数字格式)");
+			
+		}
+	}else {
+		out.println("出现错误(空指针)");
+		out.println("<BR>" + idStr + "<BR>" + pidStr + "<BR>"+ isLeafStr);
+		return;
+	}
+	try{
+		autoCommit = conn.getAutoCommit();
+		conn.setAutoCommit(false);
+		delete(id, conn, isLeaf);
+		rsCount = DB.getResult(stmt, "select count(*) from article where pid = " + pid);
+		rsCount.next();
+		int count = rsCount.getInt(1);
+		if(count <= 0) {
+			stmt.executeUpdate("update article set isleaf = 0 where id =" + pid);
+			System.out.println("update article set isleaf = 0 where id =" + pid);
+		}
+		conn.commit();
+	} finally{
+		conn.setAutoCommit(autoCommit);
+		DB.close(rsCount);
+		DB.close(stmt);
+		DB.close(conn);
+	}
+	response.sendRedirect(url);
+// 	out.println(url);
+%>
+

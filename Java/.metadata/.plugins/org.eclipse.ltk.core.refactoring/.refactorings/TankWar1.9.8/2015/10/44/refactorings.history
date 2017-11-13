@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将“MissileNewMsg.send(...)”中的局部变量“dis”重命名为“dos”&#x0D;&#x0A;－ 原始项目：“TankWar1.9.8”&#x0D;&#x0A;－ 原始元素：“MissileNewMsg.send(DatagramSocket, String, int).dis”&#x0D;&#x0A;－ 重命名的元素：“dis”&#x0D;&#x0A;－ 更新对已重构元素的引用" description="重命名局部变量“dis”" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{MissileNewMsg.java[MissileNewMsg~send~QDatagramSocket;~QString;~I@dis!600!649!617!619!QDataOutputStream;!0!false" name="dos" references="true" stamp="1446101542858" version="1.0"/>
+</session>

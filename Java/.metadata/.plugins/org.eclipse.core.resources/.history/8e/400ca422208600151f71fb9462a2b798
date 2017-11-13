@@ -1,0 +1,140 @@
+import java.awt.event.*;
+import java.awt.*;
+
+public class Snake {
+	Dir dir = Dir.L;
+	private Node head;
+	private Node tail;
+	int x = 20;
+	int y = 25;
+	int size = 0;
+	Yard yard;
+	Node node = new Node(x, y, dir);
+	
+	public Snake(Yard yard) {
+		head = node;
+		head.next = node;
+		tail = node;
+		this.yard = yard;
+		this.size = 1;
+	}
+	public void draw(Graphics g) {
+//		for (node = head; node != null; node = node.next) {
+//			node.draw(g);
+//		}
+		while(node != null) {
+			node.draw(g);
+			node = node.next;
+		}
+		
+		move();
+	}
+	private void move() {
+		addToHead();
+		deleteFromTail();
+	}
+	
+	private class Node {
+		Node prev = null;
+		Node next = null;
+		Dir dir;
+		int weight = Yard.BLOCK_SIZE;
+		int height = Yard.BLOCK_SIZE;
+		int row;
+		int col;
+		
+		public Node(int row, int col, Dir dir) {
+			this.row = y * Yard.BLOCK_SIZE;
+			this.col = x * Yard.BLOCK_SIZE;
+			this.dir = dir;
+			
+		}
+		void draw(Graphics g) {
+			Color c = g.getColor();
+			g.setColor(Color.BLACK);
+			g.fillRect(row, col, weight, height);
+			g.setColor(c);
+		}
+		
+	}
+	
+	private void addToHead() {
+		Node newNode = null;
+		switch(head.dir) {
+		case U:
+			newNode = new Node(head.row, head.col - Yard.BLOCK_SIZE, head.dir);
+			break;
+		case D:
+			newNode = new Node(head.row, head.col + Yard.BLOCK_SIZE, head.dir);
+			break;
+		case L:
+			newNode = new Node(head.row - Yard.BLOCK_SIZE, head.col, head.dir);
+			break;
+		case R:
+			newNode = new Node(node.row + Yard.BLOCK_SIZE, head.col, head.dir);
+			break;
+		}
+		
+		newNode.next = head;
+		head.prev = newNode;
+		head = newNode;
+	}
+	
+	private void deleteFromTail(){
+		
+		tail = tail.prev;
+		tail.next = null;
+	}
+	
+	private void afterEatEgg() {
+		Node newNode = null;
+		switch(tail.dir) {
+		case U:
+			newNode = new Node(tail.row, tail.col  + Yard.BLOCK_SIZE, tail.dir);
+			break;
+		case D:
+			newNode = new Node(tail.row, tail.col  - Yard.BLOCK_SIZE, tail.dir);
+			break;
+		case L:
+			newNode = new Node(tail.row + Yard.BLOCK_SIZE, tail.col, tail.dir);
+			break;
+		case R:
+			node = new Node(tail.row - Yard.BLOCK_SIZE, tail.col, tail.dir);
+			break;
+		}
+		
+		tail.next = newNode;
+		newNode.prev = tail;
+		tail = newNode;
+		size ++;
+		
+	}
+	
+	public Rectangle getRect() {
+		return new Rectangle(head.row, head.col);
+	}
+	
+	public boolean eatEgg() {
+		if(this.getRect().intersects(yard.egg.getRect()))	return true;
+		return false;
+	}
+	
+	public void keyPressed(KeyEvent e) {
+		int key = e.getKeyCode();
+		switch(key) {
+		case KeyEvent.VK_UP:
+			if(head.dir != Dir.D)	head.dir = Dir.U;
+			break;
+		case KeyEvent.VK_DOWN:
+			if(head.dir != Dir.U)	head.dir = Dir.D;
+			break;
+		case KeyEvent.VK_LEFT:
+			if(head.dir != Dir.R)	head.dir = Dir.L;
+			break;
+		case KeyEvent.VK_RIGHT:
+			if(head.dir != Dir.L)	head.dir = Dir.R;
+			break;
+		}
+	}
+
+}

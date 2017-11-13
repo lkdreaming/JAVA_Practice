@@ -1,0 +1,5 @@
+INDEX VERSION 1.122+D:\用户目录\我的文档\Documents\Java\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+673897452.index
+2671678766.index
+3819707233.index
+2310264205.index

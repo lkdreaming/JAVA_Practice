@@ -1,0 +1,53 @@
+package com.lk.oa.dao.impl;
+
+import java.util.Set;
+
+import javax.annotation.Resource;
+
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.stereotype.Component;
+
+import com.lk.oa.dao.OrgDao;
+import com.lk.oa.model.Orgnization;
+
+@Component("orgDao")
+public class OrgDaoImpl implements OrgDao {
+	HibernateTemplate hibernateTemplate;
+	
+	public HibernateTemplate getHibernateTemplate() {
+		return hibernateTemplate;
+	}
+	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
+		this.hibernateTemplate = hibernateTemplate;
+	}
+
+	public void update(Orgnization org) {
+		hibernateTemplate.update(org);
+	}
+
+	public void delete(int orgId) {
+		Orgnization org = this.load(orgId);
+		if(org.getChildren().size() > 0) return;
+		hibernateTemplate.delete(org);
+	}
+
+	public Orgnization load(int orgId) {
+		return (Orgnization)hibernateTemplate.load(Orgnization.class, orgId);
+
+	}
+
+	public void save(Orgnization org, int parentId) {
+		if(parentId != 0) {
+			org.setParent(load(parentId));
+		}
+		hibernateTemplate.save(org);
+	}
+	
+	
+	public void listChildren(int orgId) {
+		if(parentId = 0) {
+			
+		}
+	}
+
+}

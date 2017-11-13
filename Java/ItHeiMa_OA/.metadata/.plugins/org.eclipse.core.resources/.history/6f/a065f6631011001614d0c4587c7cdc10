@@ -1,0 +1,48 @@
+package com.lk.oa.service.base.impl;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.lk.oa.service.base.BaseService;
+
+public class BaseServiceImpl<T> implements BaseService {
+
+	public abstract BaseDao getBaseDao();
+	public void saveEntry(Object t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteEntryById(Serializable id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public List getAllEntries() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getEntryById(Serializable id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Set getEntriesByIds(Serializable[] serializables) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object queryEntryByProperty(Map map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void updateEntry(Object t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

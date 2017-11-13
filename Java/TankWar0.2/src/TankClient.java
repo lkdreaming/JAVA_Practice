@@ -1,0 +1,28 @@
+import java.awt.*;
+import java.awt.event.*;
+public class TankClient extends Frame {
+	public static final String TITLE = "坦克大战v0.2";
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		TankClient tc = new TankClient();
+		tc.launchframe();
+	}
+	public void launchframe() {
+		
+		this.setSize(800, 600);
+		this.setLocation(300, 100);
+		this.setBackground(Color.BLACK);
+		this.setTitle(TITLE);
+		this.setResizable(false);
+		this.setVisible(true);
+		
+		this.addWindowListener(new WindowAdapter() {
+			
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+			
+		});
+	}
+
+}

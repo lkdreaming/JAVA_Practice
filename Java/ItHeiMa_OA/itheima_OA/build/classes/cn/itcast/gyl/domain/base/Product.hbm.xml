@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.base.Product">
+		<id name="pid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 
+			编码
+		 -->
+		<property name="bm" length="20"></property>
+		<!-- 
+			单位
+		 -->
+		<property name="dw" length="50"></property>
+		<property name="name" length="100"></property>
+		<property name="xinghao" length="100"></property>
+		<set name="repositories" table="repository_product">
+			<key>
+				<column name="pid"></column>		
+			</key>
+			<many-to-many class="cn.itcast.gyl.domain.base.Repository" column="rid"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>
+	

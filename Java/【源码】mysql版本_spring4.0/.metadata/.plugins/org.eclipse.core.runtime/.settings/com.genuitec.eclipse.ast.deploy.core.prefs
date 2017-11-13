@@ -1,0 +1,14 @@
+#Tue Mar 15 10:51:02 CST 2016
+tomcat6Server.FHADMINM.contextRoot=/FHADMINM
+tomcat6Server.FHADMINM.isDeployed=true
+tomcat6Server.FHADMINM.IEARProjectName=
+tomcat6Server.FHADMINM.noFileCopy=false
+tomcat6Server.FHADMINM.deployIsOverProject=false
+tomcat6Server.FHADMINM.altContextRoot=
+tomcat6Server.FHADMINM.deploymentPath=D\:\\WebServers\\tomcat6.0.44\\webapps\\FHADMINM
+tomcat6Server.FHADMINM.type=WebDeployment
+tomcat6Server.FHADMINM.isUptoDate=true
+tomcat6Server.FHADMINM.isExploded=true
+eclipse.preferences.version=1
+tomcat6Server.FHADMINM.shouldOverwrite=false
+tomcat6Server.FHADMINM.shouldBackup=false

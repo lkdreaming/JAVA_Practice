@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.xsgl.Xsddzhub">
+		<id name="xsddzhubid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 
+			出库结束标志
+		 -->
+		<property name="ckjsbz" length="10"></property>
+		<!-- 
+			订单号
+		 -->
+		<property name="ddh" length="100"></property>
+		<!-- 
+			订货日期
+		 -->
+		<property name="dhrq" type="date"></property>
+		<!-- 
+			发货结束标志
+		 -->
+		<property name="fhjsbz" length="10"></property>
+		<!-- 
+			客户名称
+		 -->
+		<property name="khmc" length="100"></property>
+		<!-- 
+			开票单位
+		 -->
+		<property name="kpdw" length="100"></property>
+		<!-- 
+			开票结束标志
+		 -->
+		<property name="kpjsbz" length="10"></property>
+		<!-- 
+			收货地区
+		 -->
+		<property name="shdq" length="100"></property>
+		<!-- 
+			收货地址
+		 -->
+		<property name="shdz" length="100"></property>
+		<!-- 
+			审批人
+		 -->
+		<property name="spr" length="20"></property>
+		<!-- 
+			审批日期
+		 -->
+		<property name="sprq"></property>
+		<!-- 
+			状态
+		 -->
+		<property name="state"></property>
+		<!-- 
+			销售部门
+		 -->
+		<property name="sxbm" length="20"></property>
+		
+		<!-- 
+			来源单据号
+			   	如果该销售订单由销售预订单生成，则来源单据号为销售预订单的单据号
+			   	如果直接生成，该值为null
+		 -->
+		<property name="lydjh" length="20"></property>
+		<!-- 
+			收现款金额
+		 -->
+		<property name="sxkje"></property>
+		<!-- 
+			失效日期
+		 -->
+		<property name="sxrq"></property>
+		<!-- 
+			退货标志
+		 -->
+		<property name="thbz" length="10"></property>
+		<!-- 
+			修改人
+		 -->
+		<property name="xgr" length="20"></property>
+		<!-- 
+			修改日期
+		 -->
+		<property name="xgrq"></property>
+		<!-- 
+			整单价税合计
+		 -->
+		<property name="zdjshj"></property>
+		<!-- 
+			业务员
+		 -->
+		<property name="ywy" length="20"></property>
+		<!-- 
+			整单扣税
+		 -->
+		<property name="zdkl"></property>
+		<!-- 
+			制单人
+		 -->
+		<property name="zdr"></property>
+		<!-- 
+			制单日期
+		 -->
+		<property name="zdrq"></property>
+	
+		<set name="xsddzhibs" cascade="all">
+			<key>
+				<column name="xsddzhubid"></column>
+			</key>
+			<one-to-many class="cn.itcast.gyl.domain.xsgl.Xsddzhib"/>
+		</set>
+	</class>
+</hibernate-mapping>

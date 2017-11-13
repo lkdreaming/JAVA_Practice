@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.cggl.Cgrkdzhib">
+		<id name="cgrkdzhibid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 
+			存货编码	
+		 -->
+		<property name="chbm"></property>
+		<!-- 
+			存货名称
+		 -->
+		<property name="chmc"></property>
+		<!-- 
+			单价
+		 -->
+		<property name="dj"></property>
+		<!-- 
+			单位
+		 -->
+		<property name="dw"></property>
+		<!-- 
+			行号
+		 -->
+		<property name="hh"></property>
+		<!-- 
+			金额
+		 -->
+		<property name="je"></property>
+		<!-- 
+			来源单据号
+		 -->
+		<property name="lydjh"></property>
+		<!-- 
+			来源行号
+		 -->
+		<property name="lyhh"></property>
+		<!-- 
+			批次号
+		 -->
+		<property name="pch"></property>
+		<!-- 
+			入库日期
+		 -->
+		<property name="rkrq"></property>
+		<!-- 
+			生产日期
+		 -->
+		<property name="scrq"></property>
+		<!-- 
+			数量
+		 -->
+		<property name="sl"></property>
+		<!-- 
+			实收数量
+		 -->
+		<property name="sssl"></property>
+		<!-- 
+			失效日期
+		 -->
+		<property name="sxrq"></property>
+		<!-- 
+			型号
+		 -->
+		<property name="xh"></property>
+		<!-- 
+			应收数量
+		 -->
+		<property name="yssl"></property>
+		<!-- 
+			源头单据号
+		 -->
+		<property name="ytdjh"></property>
+		<!-- 
+			源头行号
+		 -->
+		<property name="ythh"></property>
+		<!-- 
+			赠品
+		 -->
+		<property name="zp"></property>
+		<many-to-one name="cgrkdzhub" class="cn.itcast.gyl.domain.cggl.Cgrkdzhub" column="cgrkdzhubid"></many-to-one>
+	</class>
+</hibernate-mapping>
+		

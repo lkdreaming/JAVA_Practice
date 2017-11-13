@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.aptana.ide.ui.editors.FindReplaceDialog">
+		<item value="false" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="isMultiLine"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="shouldEscape"/>
+		<item value="false" key="wholeword"/>
+		<item value="duty.data.dutyNode" key="selection"/>
+		<list key="findhistory">
+			<item value="duty.data.dutyNode"/>
+			<item value="dutyNode"/>
+			<item value="data"/>
+			<item value="refresh"/>
+			<item value="refuresh"/>
+			<item value="刷"/>
+			<item value="setting"/>
+			<item value="seting"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="273" key="DIALOG_WIDTH"/>
+		<item value="121" key="DIALOG_Y_ORIGIN"/>
+		<item value="8" key="DIALOG_X_ORIGIN"/>
+		<item value="400" key="DIALOG_HEIGHT"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="${pageContext.request.contextPath}/css" key="selection"/>
+		<list key="findhistory">
+			<item value="../style"/>
+			<item value="department"/>
+			<item value="insert"/>
+			<item value="identityName"/>
+			<item value="style/"/>
+			<item value="style"/>
+			<item value="initData"/>
+			<item value="debug"/>
+		</list>
+		<list key="replacehistory">
+			<item value="${pageContext.request.contextPath}/css"/>
+			<item value="user"/>
+			<item value="${pageContext.request.contextPath}/css/"/>
+			<item value="privilege"/>
+			<item value="${pageContext.request.contextPath}/"/>
+		</list>
+	</section>
+	<section name="com.aptana.ide.ui.editors.FindReplaceDialog_dialogBounds">
+		<item value="381" key="DIALOG_WIDTH"/>
+		<item value="137" key="DIALOG_Y_ORIGIN"/>
+		<item value="8" key="DIALOG_X_ORIGIN"/>
+		<item value="425" key="DIALOG_HEIGHT"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+	</section>
+</section>

@@ -1,0 +1,35 @@
+<%@ page import="java.sql.*,com.lk.bbs.* " pageEncoding="GB18030"%>
+
+<%
+	request.setCharacterEncoding("GBK");
+%>
+
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+	String title = new String(request.getParameter("title").getBytes(
+			"iso-8859-1"), "GBK");
+	String cont = new String(request.getParameter("cont").getBytes(
+			"iso-8859-1"), "GBK");
+	int pid = 0;
+	int rootId = 0;
+	try {
+		pid = Integer.parseInt(request.getParameter("pid"));
+		rootId = Integer.parseInt(request.getParameter("rootId"));
+	} catch (NumberFormatException e) {
+		out.println("页面不存在");
+	}
+
+	String sql = "insert into article values(null,?,?,?,?,now(),?)";
+	Connection conn = DB.getConnection();
+	PreparedStatement pstmt = DB.preparedStatment(conn, sql);
+	pstmt.setInt(1, pid);
+	pstmt.setInt(2, rootId);
+	pstmt.setString(3, title);
+	pstmt.setString(4, cont);
+	pstmt.setInt(5, 0);
+	pstmt.executeUpdate();
+	out.println("回复成功");
+%>

@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/style_customer.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	
+	function data(){
+		$('#seek').css("display","block");
+	}
+	function allclose(){
+		$('#seek').css("display","none");
+	}
+</script>
+</head>
+<body>
+<table id="wrap">
+	<tr>
+    	<td id="rig_top" >
+            <div   style="overflow:auto; height:190px; width:1150px;">
+            <table class="content">
+                <tr>
+                    <td class="one" style="color:#00F">公 司</td>
+                    <td class="inp">
+                    <div class="inp_search">
+                    	<input type="text" class="bdnone"/>
+                        <span class="searRR" onclick="data()"></span>
+                    </div>
+                    <div id="seek">
+                    	<div class="seek_con_top">
+                        	<h5>公司信息</h5>
+                            <span class="seek_close" onclick="allclose()"></span>
+                        </div>
+                        <div class="seek_con">
+                            <div class="seek_top">
+                                <span><a href="#" class="clear">刷新</a><a href="#" class="programa">栏目</a></span>			
+                                <input type="text" class="seek_inp"/>
+                            </div>
+                            <div  style="overflow:scroll; overflow-x:hidden; height:275px;border:1px solid #898989;width:800px">
+                            <table cellpadding="0" cellspacing="0">
+                                <tr style="text-align:center; background:url(images/seek_tab_bg.png) repeat-x;">
+                                    <td class="num_1" style="border:1px solid #9EB6CE; border-left:0"></td>
+                                    <td class="num_2" style="border:1px solid #9EB6CE; border-left:0">模板类型编码</td>
+                                    <td class="num_3" style="border:1px solid #9EB6CE; border-left:0">模板类型</td>
+                                </tr>
+                                <tr>
+                                    <td class="num_1_1">3</td>
+                                    <td class="num_2_1">100404</td>
+                                    <td class="num_3_1">会计期间</td>
+                                </tr>
+                                <tr>
+                                    <td class="num_1_1">4</td>
+                                    <td class="num_2_1">100405</td>
+                                    <td class="num_3_1">会计期间调整期</td>
+                                </tr>
+                            </table>
+                            </div>
+                            <div class="btns">
+                                <button  class="btn" onclick="allclose()">取消</button><button  class="btn">确定</button>
+                            </div>
+                        </div>
+                    </div>
+                    </td>
+                    <td class="one" style="width:66px;">对方订单号</td>
+                    <td class="inp">
+                    <div class="inp_search"  style="width:244px;">
+                    <input type="text"  class="bdnone"/>
+                    </div>
+                    </td>
+                    <td class="one">订单编号</td>
+                    <td class="inp">
+                    <input type="text" class="current"/>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#00F">版本号</td>
+                    <td class="inp">
+                    <div class="inp_search">
+                    	<input type="text" value="1.00"  class="bdnone" style="text-align:right;width:224px;"/>
+                    </div>
+                    </td>
+                    <td colspan="2"><input type="checkbox"/> 是否补货</td>
+                    <td colspan="2"><input type="checkbox"/> 是否退货</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="checkbox" class="pane"/> 是否已协同生成销售订单</td>
+                    <td colspan="2"><input type="checkbox" class="pane"/> 是否由销售订单协同生成</td>
+                    <td style="color:#00F">订单日期</td>
+                    <td class="inp"><input type="text" class="current" value="2011-02-16" style="text-align:right"/></td>
+                </tr>
+                <tr>
+                    <td style="color:#00F">业务流程</td>
+                    <td class="inp">
+                    <div class="inp_search_2">
+                    <input type="text"   class="bdnone" value="普通采购" style="text-align:left;background:#FFF;"/>
+                     <span class="searR_2"></span>
+                    </div>
+                    </td>
+                    <td style="color:#00F">采购组织</td>
+                    <td class="inp">
+                    <div class="inp_search_2"  style="width:244px;">
+                    <input type="text"   class="bdnone" style="text-align:left;background:#FFF; width:218px;"/>
+                     <span class="searR_2"></span>
+                    </div>
+                    </td>
+                    <td style="color:#00F">供应商</td>
+                    <td class="inp">
+                    <div class="inp_search_2"  style="width:244px;">
+                    <input type="text"   class="bdnone" style="text-align:left;background:#FFF; width:218px;"/>
+                    <span class="searR_2"></span>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="one">散 户</td>
+                    <td class="inp">
+                    <div class="inp_search" >
+                    	<input type="text"   class="bdnone"/>
+                        <span class="searRR"></span>
+                    </div>
+                    </td>
+                    <td class="one">开户银行</td>
+                    <td class="inp">
+                    <div class="inp_search" style="width:244px;">
+                    	<input type="text" style=" width:218px;"   class="bdnone"/>
+                        <span class="searRR"></span>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#00F">供应商发货地址</td>
+                    <td class="inp" colspan="3">
+                    <div class="inp_search_2" style="width:600px;">
+                    <input type="text"   class="bdnone" style="text-align:left;background:#FFF; width:575px;"/>
+                    <span class="searR_2"></span>
+                    </div>
+                    </td>
+                    <td class="one">采购员</td>
+                    <td class="inp"><input type="text" class="current"/></td>
+                </tr><tr>
+                    <td style="color:#00F">采购部门</td>
+                    <td class="inp"><div class="inp_search_2"  style="width:234px;">
+                    <input type="text"   class="bdnone" style="text-align:left;background:#FEFEDD;"/>
+                     <span class="searR_2"></span>
+                    </div></td>
+                    <td>收货方</td>
+                    <td class="inp">
+                    <div class="inp_search_2"  style="width:244px;">
+                    <input type="text"   class="bdnone" style="text-align:left;background:#FFF; width:220px;"/>
+                     <span class="searR_2"></span>
+                    </div>
+                    </td>
+                     <td>发票方</td>
+                    <td class="inp">
+                    <div class="inp_search_2"  style="width:244px;">
+                    <input type="text"   class="bdnone" style="text-align:left;background:#FFF; width:218px;"/>
+                     <span class="searR_2"></span>
+                    </div>
+                    </td>
+                </tr>
+            </table>
+           </div>
+		</td>
+    </tr>
+    <tr>
+    	<td id="right_center" >
+            <div  style="overflow:auto; height:200px; width:1150px">
+            <table cellspacing="0" cellpadding="0" width="1180">
+                <tr class="one">
+                     <td style="width:30px;">&nbsp;</td>
+                    <td style="color:#00F; width:50px;">行号</td>
+                    <td style="color:#00F; width:200px;">存货编码</td>
+                    <td style="width:200px;">存货名称</td>
+                    <td style="width:100px;">规格</td>
+                    <td style="width:100px;">型号</td>
+                    <td style="width:100px;">自由项</td>
+                    <td style="width:100px;">计量单位</td>
+                    <td style="color:#00F;width:100px;">数量</td>
+                    <td style="color:#00F;width:100px;">含税单价</td>
+                    <td style="color:#00F;width:100px;">单价</td>
+                </tr>
+                <tr style="background:#FDF2C5;">
+                    <td style="width:30px; text-align:center; background:#E2E2E2;">1</td>
+                    <td onmousedown="whichButton(event)">&nbsp;10
+                    <ul id="menu">
+                      <li>增行</li>
+                      <li>删行</a></li>
+                      <li>插入行</li>
+                      <li>复制行</li>
+                      <li>粘贴行</li>
+                      <li>粘贴行到表尾</li>
+                      <li>重排行号</li>
+                      <li>卡片编辑</li>
+                    </ul>
+                    </td>
+                    <td style="background:#FFF;">
+                    <div class="current">
+                    <input type="text" class="search" style="width:92%;"/><span class="td_search"></span>
+                    </div>
+                    </td>
+                    <td  id="tdtxt" onclick="txt()"></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="width:30px; text-align:center; background:#E2E2E2;">2</td>
+                    <td>&nbsp;20</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td><select style="width:100%">
+                        	<option>台</option>
+                            <option>张</option>
+                            <option>分米</option>
+                            <option>厘米</option>
+                        </select></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="width:30px; text-align:center; background:#E2E2E2;">3</td>
+                    <td>&nbsp;30</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="width:30px; text-align:center; background:#E2E2E2;">4</td>
+                    <td>&nbsp;40</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="width:30px; text-align:center; background:#E2E2E2;">5</td>
+                    <td>&nbsp;50</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="width:30px; text-align:center; background:#E2E2E2;">6</td>
+                    <td>&nbsp;60</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="11">&nbsp;</td>
+                </tr>
+                <tr style="background:#ECF4FB;"  height="30">
+                <td colspan="4" style="border-right:0;border-top:1px solid #8FAFD7; text-align:left;">&nbsp;&nbsp;共有 120 条记录，当前第 1/10 页</td>
+                <td colspan="8" style="border-right:0; padding-right:80px;border-top:1px solid #8FAFD7;" align="right" class="page"><input type="button" value="首页"/>&nbsp;<input type="button" value="上一页" />&nbsp;<input type="button" value="下一页"/>&nbsp;<input type="button" value="尾页"/>&nbsp;<span>转到第 <input name="textfield" type="text" size="4" style="height:16px; width:28px; border:1px solid #999999; background:#FFF; border-radius:0;" /> 页 </span>&nbsp;&nbsp;<input type="button" value="转" style=" padding:0 10px;"/>
+                </td>
+                </tr> 
+            </table>
+           </div>
+    	</td>
+    </tr>
+    <tr>
+    	<td id="right-bot">
+            <table>
+                <tr>
+                    <td class="bot_1" style="color:#00F">制单人</td>
+                    <td class="inp_1"><input type="text"/></td>
+                    <td class="bot_1" style="color:#00F">修订人</td>
+                    <td class="inp_1"><input type="text"/></td>
+                    <td class="bot_1">审批人</td>
+                    <td class="inp_1"><input type="text"/></td>
+                    <td  width="77px">审批日期</td>
+                    <td class="inp_1"><input type="text" style="background:url(images/date.png) no-repeat 169px center;"/></td>
+                </tr>
+                <tr>
+                    <td>制单时间</td>
+                    <td class="inp_2"><input type="text"/></td>
+                    <td>修订时间</td>
+                    <td class="inp_2"><input type="text"/></td>
+                    <td>审批时间</td>
+                    <td class="inp_2"><input type="text"/></td>
+                    <td>最后修改时间</td>
+                    <td class="inp_2"><input type="text"/></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+     <tr class="save">
+       <td height="30" align="right" style="padding-right"><input type="button" value="保存" class="search"/></td>
+     </tr>
+     <tr>
+    	<td id="mantain-bot">
+            <div class="last"></div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

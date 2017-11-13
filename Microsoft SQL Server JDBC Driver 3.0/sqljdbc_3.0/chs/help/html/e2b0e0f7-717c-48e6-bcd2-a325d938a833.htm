@@ -1,0 +1,505 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>getFunctionColumns 方法 (SQLServerDatabaseMetaData)</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:04/01/2010 05:03:28-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">getFunctionColumns 方法 (SQLServerDatabaseMetaData)</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+    <font color="DarkGray">
+      
+    </font>
+    <p />
+    
+    <p />
+  
+        <div id="introductionSection" class="section">
+    <p>检索关于指定目录的系统函数或用户函数参数和返回类型的说明。</p>
+    <div style="margin: .5em 1.5em .5em 1.5em"><b>注意：</b>
+      此功能始于 Microsoft SQL Server JDBC Driver 2.0 版。<p />
+    </div>
+  </div><h1 class="heading">语法</h1><div id="syntaxSection" class="section"><div class="sampleCode"><span codeLanguage="other"><pre>
+public ResultSet <b>getFunctionColumns</b>(java.lang.String <i>catalog</i>,
+java.lang.String <i>schemaPattern</i>,
+java.lang.String <i>functionNamePattern</i>
+java.lang.String <i>columnNamePattern</i>)</pre></span></div><h1 class="heading">参数</h1><div id="parametersSection" class="section" name="collapseableSection">
+    <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">
+        <i>catalog</i>
+      </p>
+      <p xmlns="">包含目录名称的 <b>String</b>。如果该名称为空字符串 ""，则结果将包括无目录的函数。如果该名称为 <b>null</b>，则目录名称不用于搜索。</p>
+      <p xmlns="">
+        <i>schemaPattern</i>
+      </p>
+      <p xmlns="">包含架构名称模式的 <b>String</b>。如果该名称为空字符串 ""，则结果将包括无架构的函数。如果该名称为 <b>null</b>，则架构名称不用于搜索。</p>
+      <p xmlns="">
+        <i>functionNamePattern</i>
+      </p>
+      <p xmlns="">包含函数名称的 <b>String</b>。</p>
+      <p xmlns="">
+        <i>columnNamePattern</i>
+      </p>
+      <p xmlns="">包含参数名称的 <b>String</b>。</p>
+    </content>
+  </div></div><h1 class="heading">返回值</h1><div id="returnValueSection" class="section" name="collapseableSection">
+    <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns=""><a href="eaffcff1-286c-459f-83da-3150778480c9.htm">SQLServerResultSet</a> 对象。</p>
+    </content>
+  </div><h1 class="heading">异常</h1><div id="exceptionsSection" class="section" name="collapseableSection">
+    <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">
+        <a href="af5ef257-7cf6-4db3-b1ee-07d22d82bef1.htm">SQLServerException</a>
+      </p>
+    </content>
+  </div><h1 class="heading">备注</h1><div id="remarksSection" class="section" name="collapseableSection">
+    <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">此 <b>getFunctionColumns</b> 方法由 java.sql.DatabaseMetaData 接口中的 <b>getFunctionColumns</b> 方法指定。</p>
+      <p xmlns="">此方法只返回与指定目录内的指定架构、函数名称和参数名称相匹配的函数和参数。</p>
+      <p xmlns="">结果集中的各行均包括针对参数说明、列说明或返回类型的以下列：</p>
+      <table width="100%" cellspacing="0" cellpadding="0" border="1" style="background-color: #CCCCCC;" xmlns=""><tr>
+            <th>
+              名称
+            </th>
+            <th>
+              类型
+            </th>
+            <th>
+              说明
+            </th>
+          </tr><tr>
+          <td>
+            <p>FUNCTION_CAT</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>函数所在的数据库的名称。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>FUNCTION_SCHEM</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>函数的架构。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>FUNCTION_NAME</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>函数的名称。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>COLUMN_NAME</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>参数或列的名称。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>COLUMN_TYPE</p>
+          </td>
+          <td>
+            <p>
+              <b>short</b>
+            </p>
+          </td>
+          <td>
+            <p>列的类型。可以是下列值之一：</p>
+            <ul><li>
+                functionColumnUnknown (0)：未知类型。<br />
+              </li><li>
+                functionColumnIn (1)：输入参数。<br />
+              </li><li>
+                functionColumnInOut (2)：输入/输出参数。<br />
+              </li><li>
+                functionColumnOut (3)：输出参数。<br />
+              </li><li>
+                functionReturn (4)：函数返回值。<br />
+              </li><li>
+                functionColumnResult (5)：参数或列是结果集中的列。<br />
+              </li></ul>
+          </td>
+        </tr><tr>
+          <td>
+            <p>DATA_TYPE</p>
+          </td>
+          <td>
+            <p>
+              <b>smallint</b>
+            </p>
+          </td>
+          <td>
+            <p>来自 <b>Java.sql.Types</b> 的 SQL 数据类型。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>TYPE_NAME</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>数据类型的名称。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>PRECISION</p>
+          </td>
+          <td>
+            <p>
+              <b>int</b>
+            </p>
+          </td>
+          <td>
+            <p>有效数字总个数。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>LENGTH</p>
+          </td>
+          <td>
+            <p>
+              <b>int</b>
+            </p>
+          </td>
+          <td>
+            <p>数据的长度（字节）。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>SCALE</p>
+          </td>
+          <td>
+            <p>
+              <b>short</b>
+            </p>
+          </td>
+          <td>
+            <p>小数点右边的数字位数。</p>
+            <p>
+            </p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>RADIX</p>
+          </td>
+          <td>
+            <p>
+              <b>short</b>
+            </p>
+          </td>
+          <td>
+            <p>数值类型的基数。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>NULLABLE</p>
+          </td>
+          <td>
+            <p>
+              <b>short</b>
+            </p>
+          </td>
+          <td>
+            <p>指示参数或返回值是否可包括 <b>null</b> 值。</p>
+            <p> 可以是下列值之一：</p>
+            <ul><li>
+                functionNoNulls (0)：不允许为 NULL 值。<br />
+              </li><li>
+                functionNullable (1)：允许为 NULL 值。<br />
+              </li><li>
+                functionNullableUnknown (2)：未知。<br />
+              </li></ul>
+          </td>
+        </tr><tr>
+          <td>
+            <p>REMARKS</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>有关列或参数的注释。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>COLUMN_DEF</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>列的默认值。</p>
+            <div style="margin: .5em 1.5em .5em 1.5em"><b>注意：</b>
+              此信息可在 SQL Server 中使用，且特定于 JDBC 驱动程序。<p />
+            </div>
+          </td>
+        </tr><tr>
+          <td>
+            <p>SQL_DATA_TYPE</p>
+          </td>
+          <td>
+            <p>
+              <b>smallint</b>
+            </p>
+          </td>
+          <td>
+            <p>此列与 <b>DATA_TYPE</b> 列相同，但 <b>datetime</b> 和 ISO <b>interval</b> 数据类型除外。</p>
+            <div style="margin: .5em 1.5em .5em 1.5em"><b>注意：</b>
+              此信息可在 SQL Server 中使用，且特定于 JDBC 驱动程序。<p />
+            </div>
+          </td>
+        </tr><tr>
+          <td>
+            <p>SQL_DATETIME_SUB</p>
+          </td>
+          <td>
+            <p>
+              <b>smallint</b>
+            </p>
+          </td>
+          <td>
+            <p>如果 <b>SQL_DATA_TYPE</b> 的值为 <b>SQL_DATETIME</b> 或 <b>SQL_INTERVAL</b>，则为 <b>datetime</b> ISO <b>interval</b> 子代码。对于 <b>datetime</b> 和 ISO <b>interval</b> 以外的数据类型，此列为 NULL。</p>
+            <div style="margin: .5em 1.5em .5em 1.5em"><b>注意：</b>
+              此信息可在 SQL Server 中使用，且特定于 JDBC 驱动程序。<p />
+            </div>
+          </td>
+        </tr><tr>
+          <td>
+            <p>CHAR_OCTET_LENGTH</p>
+          </td>
+          <td>
+            <p>
+              <b>int</b>
+            </p>
+          </td>
+          <td>
+            <p>基于二进制和字符的最大长度的参数或列。对于其他数据类型，该值为 NULL。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>ORDINAL_POSITION</p>
+          </td>
+          <td>
+            <p>
+              <b>int</b>
+            </p>
+          </td>
+          <td>
+            <p>对于输入和输出参数，它表示从 1 开始的位置。</p>
+            <p>对于结果集列，它指从 1 开始的结果集的列的位置。</p>
+            <p>对于返回值，该值为 0。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>IS_NULLABLE</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>确定参数或列的可为 Null 性。</p>
+            <p>可以是下列值之一：</p>
+            <p>
+              <b>YES</b>：参数或列可包括 NULL 值。</p>
+            <p>
+              <b>NO</b>：参数或列不可包括 NULL 值。</p>
+            <p>空字符串 ("")：未知。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>SS_TYPE_CATALOG_NAME</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>包含用户定义类型 (UDT) 的目录名称。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>SS_TYPE_SCHEMA_NAME</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>包含用户定义类型 (UDT) 的架构名称。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>SS_UDT_CATALOG_NAME</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>采用完全限定名称的用户定义类型 (UDT)。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>SS_UDT_SCHEMA_NAME</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>在其中定义 XML 架构集合名称的目录的名称。如果找不到目录名称，则此变量包含空字符串。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>SS_UDT_ASSEMBLY_TYPE_NAME</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>在其中定义 XML 架构集合名称的架构的名称。如果找不到架构名称，则为空字符串。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>SS_XML_SCHEMACOLLECTION_CATALOG_NAME</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>XML 架构集合的名称。如果找不到名称，则为空字符串。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>SS_XML_SCHEMACOLLECTION_SCHEMA_NAME</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>包含用户定义类型 (UDT) 的目录名称。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>SS_XML_SCHEMACOLLECTION_NAME</p>
+          </td>
+          <td>
+            <p>
+              <b>String</b>
+            </p>
+          </td>
+          <td>
+            <p>包含用户定义类型 (UDT) 的架构名称。</p>
+          </td>
+        </tr><tr>
+          <td>
+            <p>SS_DATA_TYPE</p>
+          </td>
+          <td>
+            <p>
+              <b>tinyint</b>
+            </p>
+          </td>
+          <td>
+            <p>扩展存储过程使用的 SQL Server 数据类型。</p>
+            <p>
+              <b>注意</b>   有关 SQL Server 返回的数据类型的详细信息，请参阅 SQL Server 联机丛书中的“数据类型 (Transact-SQL)”。</p>
+          </td>
+        </tr></table>
+    </content>
+  </div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="8b8049d0-8c6d-4476-866b-098709f37eec.htm">SQLServerDatabaseMetaData 类</a><br /><a href="327ba0bc-438a-494c-b119-1cd4a096bb58.htm">SQLServerDatabaseMetaData 成员</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2010 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

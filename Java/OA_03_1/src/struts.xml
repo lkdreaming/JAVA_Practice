@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" /> 
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" /> 
+	<package name="orgnization" namespace="/"  extends="struts-default">
+
+		<action name="org" class="com.lk.oa.web.actions.OrgAction">
+
+			<result name="success">/org/index.jsp</result>
+			<result name="Orgnization add sucess!">/org/add_success.jsp</result>
+			<result name="Orgnization del sucess!">/org/del_success.jsp</result>
+			<result name="Orgnization update sucess!">/org/update_success.jsp</result>
+			<result name="orgList">/org/list.jsp</result>
+
+		</action>
+	</package>
+	<!-- <constant name="struts.objectFactory" value="spring" /> -->
+
+</struts>
+	

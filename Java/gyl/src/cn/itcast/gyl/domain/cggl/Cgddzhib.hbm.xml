@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.cggl.Cgddzhib">
+		<id name="cgddzhibid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 
+			单位
+		 -->
+		<property name="dw" length="20"></property>
+		<!-- 
+			关闭人
+		 -->
+		<property name="gbr" length="20"></property>
+		<!-- 
+			关闭日期
+		 -->
+		<property name="gbrq"></property>
+		<!-- 
+			行关闭boolean类型
+		 -->
+		<property name="hgb"></property>
+		<!-- 
+			行号
+		 -->
+		<property name="hh" length="5"></property>
+		<!-- 
+			含税单价
+		 -->
+		<property name="hsdj"></property>
+		<!-- 
+			含税金额
+		 -->
+		<property name="hsje"></property>
+		<!-- 
+			行状态
+		 -->
+		<property name="hstatus"></property>
+		<!-- 
+			累计退货数量
+		 -->
+		<property name="ljthsl" length="5"></property>
+		<!-- 
+			来源单据
+		 -->
+		<property name="lydj" length="50"></property>
+		<!-- 
+			税额
+		 -->
+		<property name="se"></property>
+		<!-- 
+			税率
+		 -->
+		<property name="shuilv"></property>
+		<!-- 
+			数量
+		 -->
+		<property name="sl"></property>
+		<!-- 
+			商品编码
+		 -->
+		<property name="spbm"></property>
+		<!-- 
+			商品名称
+		 -->
+		<property name="spmc"></property>
+		<!-- 
+			无税单价
+		 -->
+		<property name="wsdj"></property>
+		<!-- 
+			无税金额
+		 -->
+		<property name="wsje"></property>
+		<!-- 
+			型号
+		 -->
+		<property name="xh"></property>
+		<!-- 
+			赠品
+		 -->
+		<property name="zp"></property>
+		<many-to-one name="cgddzhub" column="cgddzhubid" class="cn.itcast.gyl.domain.cggl.Cgddzhub"></many-to-one>
+	</class>
+</hibernate-mapping>

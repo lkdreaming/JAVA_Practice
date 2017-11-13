@@ -1,0 +1,55 @@
+package com.lk.oa.model;
+
+import java.util.Set;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+public class Orgnization {
+	private int id;
+	private String name;
+	private String sn;
+	private String description;
+	private Orgnization parent;
+	private Set<Orgnization> children;
+	
+	@Id
+	@GeneratedValue
+	public int getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getSn() {
+		return sn;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public Orgnization getParent() {
+		return parent;
+	}
+	public Set<Orgnization> getChildren() {
+		return children;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setSn(String sn) {
+		this.sn = sn;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public void setParent(Orgnization parent) {
+		this.parent = parent;
+	}
+	public void setChildren(Set<Orgnization> children) {
+		this.children = children;
+	}
+	
+}

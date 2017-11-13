@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+ <HEAD>
+  <TITLE> ZTREE DEMO </TITLE>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="zTreeStyle/zTreeStyle.css" type="text/css">
+  <script type="text/javascript" src="jquery-1.4.2.js"></script>
+  <script type="text/javascript" src="jquery-ztree-2.5.js"></script>
+  <SCRIPT LANGUAGE="JavaScript">
+	var zTree1;
+	var setting = {
+			treeNodeKey:'id',
+			treeNodeParentKey:'pid',
+			callback:{
+				expand: zTreeOnExpand
+			}
+		};
+	var zNodes = [{
+		id:1,
+		pid:0,
+		name:'aaa',
+		isParent:true
+	}];
+
+	$(document).ready(function(){
+		$("#treeDemo").zTree(setting,zNodes);
+	});
+	
+	function zTreeOnExpand(event, treeId, treeNode) {	
+		alert("aaaaa");
+	}
+  </SCRIPT>
+ </HEAD>
+
+<BODY>
+		<div>
+			<ul id="treeDemo" class="tree"></ul>
+		</div>	
+ </BODY>
+</HTML>

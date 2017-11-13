@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将“TankNewMsg.send(...)”中的局部变量“b”重命名为“buf”&#x0D;&#x0A;－ 原始项目：“TankWar1.9.4”&#x0D;&#x0A;－ 原始元素：“TankNewMsg.send(DatagramSocket).b”&#x0D;&#x0A;－ 重命名的元素：“b”&#x0D;&#x0A;－ 更新对已重构元素的引用" description="重命名局部变量“b”" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{TankNewMsg.java[TankNewMsg~send~QDatagramSocket;@b!693!722!700!700!\[B!0!false" name="buf" references="true" stamp="1445673114346" version="1.0"/>
+</session>

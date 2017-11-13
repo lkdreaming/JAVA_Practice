@@ -1,0 +1,17 @@
+import java.io.DataInputStream;
+import java.net.DatagramSocket;
+
+
+public class MissileDeadMsg implements Msg {
+	int msgType = Msg.MISSILE_DEAD_MSG;
+	Missile m;
+	TankClient t;
+	public void send(DatagramSocket ds, String ip, int udpPort) {
+
+	}
+
+	public void parse(DataInputStream dis) {
+
+	}
+
+}

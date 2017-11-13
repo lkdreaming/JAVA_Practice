@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+<!--   	若不开启下面的开关则无法使用DMI即动态方法调用 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <!-- 开启开发模式 -->
+    <constant name="struts.devMode" value="true" />
+
+    
+
+    <package name="front" namespace="/" extends="struts-default">
+        <action name="user" class="com.lk.struts2.action.UserAction">
+        	<result name="success">
+               /index.jsp
+            </result>
+            <result name="method1">
+               /method1.jsp
+            </result>
+            <result name="method2">
+               /method2.jsp
+            </result>
+        </action>
+    </package>
+
+    <!-- Add packages here -->
+
+</struts>

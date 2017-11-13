@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.lk.BBS2009.service.CategoryServcie&apos; to &apos;CategoryService&apos;&#x0D;&#x0A;- Original project: &apos;BBS2009_03&apos;&#x0D;&#x0A;- Original element: &apos;com.lk.BBS2009.service.CategoryServcie&apos;&#x0D;&#x0A;- Renamed element: &apos;com.lk.BBS2009.service.CategoryService&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;CategoryServcie&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.lk.BBS2009.service{CategoryServcie.java[CategoryServcie" matchStrategy="1" name="CategoryService" qualified="false" references="true" similarDeclarations="false" stamp="1450408514127" textual="false" version="1.0"/>
+</session>

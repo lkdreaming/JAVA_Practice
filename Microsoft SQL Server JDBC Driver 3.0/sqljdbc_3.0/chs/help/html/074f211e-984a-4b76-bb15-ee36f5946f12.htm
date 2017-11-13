@@ -1,0 +1,279 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>JDBC 驱动程序的新增功能</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:04/01/2010 05:03:28-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">JDBC 驱动程序的新增功能</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+    <font color="DarkGray">
+      
+    </font>
+    <p />
+    
+    <p />
+  
+        <div id="introductionSection" class="section">
+    <p>以下各部分讨论 Microsoft SQL Server JDBC Driver 的新增功能。</p>
+  </div><h1 class="heading">JDBC Driver 3.0 的新增功能</h1><div id="sectionSection0" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">
+        Microsoft SQL Server JDBC Driver 3.0 包含若干新增功能和增强功能。</p>
+    </content><sections xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <h1 class="heading" xmlns="">驱动程序名称</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">JDBC 驱动程序的新版本为 Microsoft SQL Server JDBC Driver 3.0。</p>
+        </content></div>
+      <h1 class="heading" xmlns="">支持在 SQL Server 2008 中引入的 SQL Server 2008 时间和日期数据类型</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">Microsoft SQL Server JDBC Driver 3.0 现在支持以下 SQL Server 数据类型：</p>
+          <ul xmlns=""><li>
+              
+                <b>time</b>
+              <br />
+            </li><li>
+              
+                <b>date</b>
+              <br />
+            </li><li>
+              
+                <b>datetime2</b>
+              <br />
+            </li><li>
+              
+                <b>datetimeoffset</b>
+              <br />
+            </li></ul>
+          <p xmlns="">有关这些 SQL Server 类型的详细信息，请参阅<a href="http://go.microsoft.com/fwlink/?LinkId=183664" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">日期和时间数据类型及函数 (Transact-SQL)</linkText></a>。</p>
+          <p xmlns="">新增了 <a href="20bbeacd-ccca-4a46-8184-ff941ae2ec5f.htm">DateTimeOffset 类</a> 类型以及允许您访问 <b>datetimeoffset</b> 列中的值的函数：</p>
+          <ul xmlns=""><li>
+              
+                <a href="7d9d7b05-582a-41df-b2c4-ec4a64d49752.htm">SQLServerCallableStatement.getDateTimeOffset</a>
+              <br />
+            </li><li>
+              
+                <a href="9383e14d-c83e-43c5-980c-50a3e0bedc31.htm">SQLServerCallableStatement.setDateTimeOffset</a>
+              <br />
+            </li><li>
+              
+                <a href="5014dba9-1755-4769-b070-6cbeecee864e.htm">SQLServerPreparedStatement.setDateTimeOffset</a>
+              <br />
+            </li><li>
+              
+                <a href="60ec0499-1c2a-4476-9e32-03b9d698fe54.htm">SQLServerResultSet.getDateTimeOffset</a>
+              <br />
+            </li><li>
+              
+                <a href="40d7fced-cce1-4534-b794-71bc735e53e0.htm">SQLServerResultSet.updateDateTimeOffset</a>
+              <br />
+            </li></ul>
+        </content></div>
+      <h1 class="heading" xmlns="">配置如何将 java.sql.Time 值发送到服务器</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">新增了 <b>sendTimeAsDatetime</b> 连接属性。<b>sendTimeAsDatetime</b> 确定如何将 java.sql.Time 值发送到服务器，即作为 SQL Server <b>time</b> 还是 <b>datetime</b> 值发送。</p>
+          <p xmlns="">有关使用 <b>sendTimeAsDatetime</b> 连接属性的详细信息，请参阅<a href="f1b62700-f046-488d-bd6b-a5cd8fc345b7.htm">设置连接属性</a>。</p>
+          <p xmlns="">有关将 java.sql.Time 类型发送到服务器的详细信息，请参阅<a href="07eb00dd-621a-46f9-a5a5-8cab4d6058b5.htm">配置如何将 java.sql.Time 值发送到服务器</a>。</p>
+          <p xmlns="">您可以通过编程使用 <a href="705a0494-b5e2-43db-940a-1b8cec550cdb.htm">SQLServerDataSource.setSendTimeAsDatetime</a> 修改 <b>sendTimeAsDatetime</b> 连接属性的值。</p>
+        </content></div>
+      <h1 class="heading" xmlns="">完全支持 MERGE 操作</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">以下方法现在返回针对 MERGE 操作更新的正确行数：</p>
+          <ul xmlns=""><li>
+              
+                <a href="10ae662a-ce3c-4b24-875c-5c2df319d93b.htm">SQLServerStatement.executeUpdate</a>
+              <br />
+            </li><li>
+              
+                <a href="e9570228-4500-44b6-b2f1-84ac050b5112.htm">SQLServerStatement.getUpdateCount</a>
+              <br />
+            </li><li>
+              
+                <a href="677b0907-316e-40f2-a0d9-d4d0872c7f52.htm">SQLServerPreparedStatement.executeUpdate</a>
+              <br />
+            </li><li>
+              SQLServerPreparedStatement.getUpdateCount（从 SQLServerStatement 继承）<br />
+            </li><li>
+              SQLServerCallableStatement.executeUpdate（从 SQLServerPreparedStatement 继承）<br />
+            </li><li>
+              SQLServerPreparedStatement.getUpdateCount（从 SQLServerStatement 继承）<br />
+            </li></ul>
+        </content></div>
+      <h1 class="heading" xmlns="">对于日期和时间类型不支持 getBytes、setBytes 和 updateBytes</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">在 Microsoft SQL Server JDBC Driver 2.0 中，您可以使用 <a href="b6e88cea-54b3-4d18-a9af-db54abf19f45.htm">SQLServerCallableStatement.getBytes</a>、<a href="f264f1a6-ee35-4eaf-81d8-ecf99f03b35d.htm">SQLServerCallableStatement.setBytes</a>、<a href="d16a0aea-6144-4fcb-bcbc-5d7daa36d327.htm">SQLServerResultSet.getBytes</a> 或 <a href="3050c836-fbb3-4475-99e5-05637a48a932.htm">SQLServerResultSet.updateBytes</a> 将字节数组值和 SQL Server 数据类型 <b>date</b>、<b>time</b>、<b>datetime2</b> 或<b> datetimeoffset</b> 的值相互转换。在 SQL Server JDBC Driver 3.0 中，对于这些数据类型使用上述方法将导致异常，指出不支持该转换。</p>
+        </content></div>
+      <h1 class="heading" xmlns="">getObject 返回日期或时间对象</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">在 Microsoft SQL Server JDBC Driver 2.0 中，使用 <a href="c5cc562f-2c5a-4fdb-a552-dfb08c2bf0ad.htm">SQLServerCallableStatement.getObject</a> 或 <a href="924df406-14b2-40b8-a7bc-c2fd145d7d7c.htm">SQLServerResultSet.getObject</a> 检索 date、time、datetime2 或 datetimeoffset 类型的值时，会返回 java.lang.String 类型的对象。</p>
+          <p xmlns="">在 SQL Server JDBC Driver 3.0 中：</p>
+          <ul xmlns=""><li>
+              date 类型的值将作为 java.sql.Date 对象返回。<br />
+            </li><li>
+              time 类型的值将作为 java.sql.Time 对象返回。<br />
+            </li><li>
+              datetime2 类型的值将作为 java.sql.Timestamp 对象返回。<br />
+            </li><li>
+              datetimeoffset 类型的值将作为 microsoft.sql.DateTimeOffset 对象返回。<br />
+            </li></ul>
+        </content></div>
+      <h1 class="heading" xmlns="">列行为更改</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">在 SQL Server JDBC Driver 3.0 中，对于某些列 SQLServerDatabaseMetaData.getColumns 将返回不同于早期驱动程序版本的值。有关详细信息，请参阅 <a href="f173fa5d-e114-4a37-a5c4-2baad9ff3af1.htm">SQLServerDatabaseMetaData.getColumns</a>。</p>
+          <p xmlns="">SQLServerResultSetMetaData 中的以下方法也会发生行为更改：</p>
+          <ul xmlns=""><li>
+              
+                <a href="21c25443-bd2b-4b60-9798-4efe2c158952.htm">SQLServerResultSetMetaData.getColumnDisplaySize</a>
+              <br />
+            </li><li>
+              
+                <a href="81815a41-9265-4574-a4d8-f6341a68d9fd.htm">SQLServerResultSetMetaData.getColumnType</a>
+              <br />
+            </li><li>
+              
+                <a href="a444da82-c1af-40a5-9774-02476416c92c.htm">SQLServerResultSetMetaData.getColumnTypeName</a>
+              <br />
+            </li><li>
+              
+                <a href="fe29aa5f-4cc5-413f-8bbd-a58064993d87.htm">SQLServerResultSetMetaData.getScale</a>
+              <br />
+            </li></ul>
+        </content></div>
+      <h1 class="heading" xmlns="">接口</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">新增了以下接口：</p>
+          <ul xmlns=""><li>
+              
+                <a href="030a1631-cfcd-41e0-beb5-47f93c01e8e0.htm">ISQLServerCallableStatement</a>
+              <br />
+            </li><li>
+              
+                <a href="031c01e2-2c65-4fe4-9700-fdbcc7a39f30.htm">ISQLServerConnection</a>
+              <br />
+            </li><li>
+              
+                <a href="ba1d3242-19ca-4321-83fe-867a4f69f1d4.htm">ISQLServerDataSource</a>
+              <br />
+            </li><li>
+              
+                <a href="cf87892e-5c34-4ac6-8258-c2a81e117b26.htm">ISQLServerPreparedStatement</a>
+              <br />
+            </li><li>
+              
+                <a href="002496f7-8ec0-4267-b4e6-ba095e2ef306.htm">ISQLServerResultSet</a>
+              <br />
+            </li><li>
+              
+                <a href="7f83b514-6e76-4f37-baf3-a10db2010e7c.htm">ISQLServerStatement</a>
+              <br />
+            </li></ul>
+          <p xmlns="">有关详细信息，请参阅<a href="27fc9b72-9f21-4728-abcb-5c015f28a6ab.htm">包装和接口</a>。</p>
+        </content></div>
+      <h1 class="heading" xmlns="">今后不推荐使用的类构造函数</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">在 SQL Server JDBC Driver 3.0 发行版中，Microsoft 公布了在将来的发行版中不推荐使用的几个类中的构造函数。Microsoft 不希望开发人员直接实例化这些类型的实例。</p>
+          <p xmlns="">在 SQL Server JDBC Driver 3.0 发行版中还可以使用这些类的构造函数。</p>
+          <p xmlns="">在 SQL Server JDBC Driver 3.0 发行版中，以下类具有相应的接口。如果您需要访问驱动程序特定的方法或常量，请使用接口来代替类：</p>
+          <ul xmlns=""><li>
+              
+                <a href="30710a63-c05d-47d9-9cf9-c087a1c76373.htm">SQLServerCallableStatement 类</a>（相应的接口是 <a href="030a1631-cfcd-41e0-beb5-47f93c01e8e0.htm">ISQLServerCallableStatement 接口</a>）<br />
+            </li><li>
+              
+                <a href="937292a6-1525-423e-a2b2-a18fd34c2893.htm">SQLServerConnection 类</a>（相应的接口是 <a href="031c01e2-2c65-4fe4-9700-fdbcc7a39f30.htm">ISQLServerConnection 接口</a>）<br />
+            </li><li>
+              
+                <a href="a8481c06-fbba-432b-8c69-4f4619c20ad4.htm">SQLServerPreparedStatement 类</a>（相应的接口是 <a href="cf87892e-5c34-4ac6-8258-c2a81e117b26.htm">ISQLServerPreparedStatement 接口</a>）<br />
+            </li><li>
+              
+                <a href="eaffcff1-286c-459f-83da-3150778480c9.htm">SQLServerResultSet 类</a>（相应的接口是 <a href="002496f7-8ec0-4267-b4e6-ba095e2ef306.htm">ISQLServerResultSet 接口</a>）<br />
+            </li><li>
+              
+                <a href="ec24963c-8b51-4838-91e9-1fbfa2347451.htm">SQLServerStatement 类</a>（相应的接口是 <a href="7f83b514-6e76-4f37-baf3-a10db2010e7c.htm">ISQLServerStatement 接口</a>）<br />
+            </li></ul>
+          <p xmlns="">在将来的发行版中，将不推荐使用以下类的构造函数，并且它们没有相应的接口，因为这些类不公开 SQL Server 特定的函数：</p>
+          <ul xmlns=""><li>
+              
+                <a href="8b8049d0-8c6d-4476-866b-098709f37eec.htm">SQLServerDatabaseMetaData</a>
+              <br />
+            </li><li>
+              
+                <a href="af5ef257-7cf6-4db3-b1ee-07d22d82bef1.htm">SQLServerException</a>
+              <br />
+            </li><li>
+              
+                <a href="546290e0-9411-4a2b-aa36-61251e70e9cf.htm">SQLServerParameterMetaData</a>
+              <br />
+            </li><li>
+              
+                <a href="4c87e9d3-904a-4b86-90cc-3684034c86ee.htm">SQLServerPooledConnection</a>
+              <br />
+            </li><li>
+              
+                <a href="9a36885f-83f3-44af-85f0-2b849dfd20d4.htm">SQLServerResultSetMetaData</a>
+              <br />
+            </li><li>
+              
+                <a href="1ae7db7b-959f-4142-8d9f-aa427869c6ac.htm">SQLServerSavepoint</a>
+              <br />
+            </li><li>
+              
+                <a href="5ecb4bf1-b8d1-47cf-9cb1-7a18acc11ce2.htm">SQLServerXAConnection</a>
+              <br />
+            </li></ul>
+        </content></div>
+      <h1 class="heading" xmlns="">SQLServerDataSource.getReference 不再包含 Password 或 trustStorePassword</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">在 JDBC Driver 3.0 之前，如果对 <b>SQLServerDataSource</b> 对象调用 <a href="0db06631-5e68-488c-a9f1-6e5052c0759d.htm">SQLServerDataSource.setPassword</a>，密码将会显示在 <a href="b3fb1a97-86ee-4977-adca-c35ae199dbb3.htm">SQLServerDataSource.getReference</a> 所返回的对象中，这样会允许使用该对象建立其他连接。在 JDBC Driver 3.0 中，您在使用 <b>SQLServerDataSource.getReference</b> 返回的对象建立连接前，将需要设置该对象的密码。</p>
+          <p xmlns="">而且，如果您在绑定数据源属性前设置 <a href="fa87cbde-71cc-4f21-bc07-f8ba2b6a0a3f.htm">SQLServerDataSource.setTrustStorePassword</a>，在获取连接前必须调用 <b>SQLServerDataSource.setTrustStorePassword</b>。有关详细信息，请参阅 <b>SQLServerDataSource.getReference</b>。</p>
+        </content></div>
+      <h1 class="heading" xmlns="">稀疏列支持</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">当您连接到 SQL Server 2008 或更高版本的服务器时，SQL Server JDBC Driver 3.0 支持稀疏列。有关详细信息，请参阅<a href="7d4237e0-818f-4639-9093-d5ac9683fc71.htm">稀疏列</a>。</p>
+        </content></div>
+      <h1 class="heading" xmlns="">大型用户定义类型 (UDT)</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">已经新增了对大于 8 KB 的 UDT 的支持。有关详细信息，请参阅<a href="19a71b27-b788-43a3-a76d-fe3001a6f016.htm">用户定义类型</a>。</p>
+        </content></div>
+    </sections></div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="939a8773-2583-49a4-bf00-6b892fbe39dc.htm">JDBC 驱动程序概述</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2010 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

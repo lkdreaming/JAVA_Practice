@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+D:\用户目录\我的文档\Documents\Java\【源码】mysql版本_spring4.0\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1546463504.index
+2374191569.index
+1068297988.index
+849701005.index
+4088142065.index

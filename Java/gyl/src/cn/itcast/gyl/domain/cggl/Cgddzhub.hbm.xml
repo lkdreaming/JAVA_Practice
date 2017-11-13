@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.cggl.Cgddzhub">
+		<id name="cgddzhubid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 
+			采购部门
+		 -->
+		<property name="cgbm" length="20"></property>
+		<!-- 
+			采购人
+		 -->
+		<property name="cgr" length="20"></property>
+		<!-- 
+			订单日期
+		 -->
+		<property name="ddrq"></property>
+		<!-- 
+			单据号
+		 -->
+		<property name="ddh" length="100"></property>
+		<!-- 
+			冻结状态
+		 -->
+		<property name="djzt"></property>
+		<!-- 
+			公司
+		 -->
+		<property name="gs" length="100"></property>
+		<!-- 
+			供应商
+		 -->
+		<property name="gys" length="100"></property>
+		<!-- 
+			是否退货
+		 -->
+		<property name="isth"></property>
+		<!-- 
+			解冻人
+		 -->
+		<property name="jdr" length="20"></property>
+		<!-- 
+			状态
+		 -->
+		<property name="status" length="50"></property>
+		<!-- 
+			整单税率
+		 -->
+		<property name="zdsl"></property>
+		<set name="cgddzhibs" inverse="true">
+			<key>
+				<column name="cgddzhubid"></column>
+			</key>
+			<one-to-many class="cn.itcast.gyl.domain.cggl.Cgddzhib"/>
+		</set>
+	</class>
+</hibernate-mapping>

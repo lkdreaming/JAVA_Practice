@@ -1,0 +1,5 @@
+package com.lk.Spring.Registration.Action;
+
+public class UserAction {
+
+}

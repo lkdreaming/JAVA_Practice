@@ -1,0 +1,10 @@
+package com.lk.oa.model;
+
+public class Orgnization {
+	private int id;
+	private String name;
+	private String sn;
+	private String description;
+	private Orgnization parent;
+	private Set<Orgnization> children;
+}

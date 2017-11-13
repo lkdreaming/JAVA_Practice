@@ -1,0 +1,84 @@
+﻿版本信息
+Microsoft SQL Server JDBC Driver 3.0
+2010 年 4 月
+
+
+简介
+------------
+此文件包含为 Microsoft SQL Server JDBC 驱动程序文档提供补充的最新信息或其他重要信息。在安装 JDBC 驱动程序之前，应通读此文件。
+
+您的反馈对于我们非常重要，我们将力求及时回复您的反馈。有关使用 JDBC 驱动程序新闻组和在线论坛提供反馈的信息，请参阅 http://msdn.microsoft.com/data/jdbc 上的 Microsoft SQL Server JDBC 驱动程序页。
+
+
+安装
+------------
+install.txt 中提供了有关安装 JDBC 驱动程序的说明。
+有关在 Windows 和 Unix 操作系统上安装 JDBC 驱动程序的信息，请参阅该文件。
+
+支持的操作系统
+---------------------------
+Microsoft SQL Server JDBC Driver 3.0 支持以下操作系统：
+Linux、Unix、Windows Server 2003 Service Pack 2、Windows Server 2008、Windows Vista Service Pack 1、Windows XP Service Pack 3、Windows Server 2008 R2 和 Windows 7。
+
+上面的列表是某些受支持的操作系统的示例。
+JDBC 驱动程序可在任何支持使用 Java 虚拟机 (JVM) 的操作系统上工作。但是，只有 Sun Solaris、SUSE Linux 以及 Windows XP 或更高版本的操作系统经过了测试。
+
+版本内容
+----------------
+Microsoft SQL Server JDBC 驱动程序可执行 zip 或 tar 文件将以下文件解压缩到指定的位置（相对于所选安装目录）：
+
+<installation directory>\sqljdbc_<version>\<language>\install.txt
+<installation directory>\sqljdbc_<version>\<language>\release.txt
+<installation directory>\sqljdbc_<version>\<language>\license.txt
+<installation directory>\sqljdbc_<version>\<language>\sqljdbc.jar
+<installation directory>\sqljdbc_<version>\<language>\sqljdbc4.jar
+<installation directory>\sqljdbc_<version>\<language>\auth\x86\sqljdbc_auth.dll
+<installation directory>\sqljdbc_<version>\<language>\auth\x64\sqljdbc_auth.dll
+<installation directory>\sqljdbc_<version>\<language>\auth\ia64\sqljdbc_auth.dll
+<installation directory>\sqljdbc_<version>\<language>\help\default.htm
+<installation directory>\sqljdbc_<version>\<language>\help\index.htm
+<installation directory>\sqljdbc_<version>\<language>\help\toc.htm
+<installation directory>\sqljdbc_<version>\<language>\help\html\<doc pages...>
+<installation directory>\sqljdbc_<version>\<language>\help\local\<doc files...>
+<installation directory>\sqljdbc_<version>\<language>\help\samples\<sample files...>
+<installation directory>\sqljdbc_<version>\<language>\xa\xa_install.sql
+<installation directory>\sqljdbc_<version>\<language>\xa\x86\sqljdbc_xa.dll
+<installation directory>\sqljdbc_<version>\<language>\xa\x64\sqljdbc_xa.dll
+<installation directory>\sqljdbc_<version>\<language>\xa\ia64\sqljdbc_xa.dll
+
+
+更改列表
+-----------
+从 2.0 到 3.0 的更改：
+
+327029 “未能加载 sqljdbc_auth.dll”异常现在包含更多有关失败原因的信息。
+
+329180 应用程序服务器现在可以使用 Wrapper 界面来实现 SQLServerDataSource 实例的代理以及其他实现 Wrapper 接口的类。
+
+293533 当 lastUpdateCount=true 时，表触发器执行的存储过程的返回值不再影响 INSERT、UPDATE 或 DELETE 查询的更新计数。
+
+345336 Statement.close() 在其基础连接意外关闭之后出现无限循环的问题已经解决。
+
+351393 executeUpdate 现在可为 BULK INSERT 查询返回正确的更新计数。
+
+327052 当隐式游标转换产生服务器游标不支持的结果集时，ResultSet.getHoldability() 现在返回 ResultSet.HOLD_CURSORS_OVER_COMMIT。
+
+374320 当方法遇到锁定超时或其他行错误时 ResultSet.close() 中出现无限循环的问题已经解决。
+
+373923 驱动程序现在为其 SSL 通信使用 TLS 协议，以符合联邦信息处理标准 (FIPS)。
+
+376322 驱动程序现在连接在 Kerberos 环境中用作主键的故障转移伙伴。
+
+305612 ResultSet.getInt("DATA_TYPE") 不再引发 TABLE SQL 类型的 NullPointerException。
+
+411695 getSchemas 应该返回架构信息。驱动程序在以前的版本中，返回的是用户信息而不是架构信息。现在，根据 JDBC 规范，驱动程序将返回架构信息并支持架构名称的模式匹配。
+
+
+已知问题
+------------
+下面是有关 Microsoft SQL Server JDBC Driver 3.0 的已知问题：
+
+
+1) SQL MERGE 语句的参数元数据限制
+
+PreparedStatement.getParameterMetadata() 在与参数化的 MERGE 查询一起使用时引发 SQLException。

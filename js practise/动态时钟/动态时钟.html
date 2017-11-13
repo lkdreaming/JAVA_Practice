@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+	function showTime() {
+		var date = new Date();
+		var t = date.toLocaleString();
+	//	alert(t);
+		var inputObj = document.getElementById("timeNow");
+		inputObj.value = t;
+		
+		//setTimout(showTime(), 1000);
+		
+		}
+	//也可使用setTimeout方法
+	setInterval(showTime, 1000);
+	//setTimout(showTime(), 1000);
+</script>
+
+
+
+<title>动态时钟</title>
+</head>
+
+<body>
+	<input type="text" style="border:0px; font-size:30px; color:red; text-align:center;" id="timeNow"; size="100%"/>
+</body>
+</html>

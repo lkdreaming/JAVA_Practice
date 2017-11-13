@@ -1,0 +1,4 @@
+#Thu May 19 11:13:42 CST 2016
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n<expression enabled\="true" text\="this.getModel().getUsername()"/>\r\n<expression enabled\="true" text\="this.getModel().getPassword()"/>\r\n<expression enabled\="true" text\="token"/>\r\n<expression enabled\="true" text\="user"/>\r\n<expression enabled\="true" text\="authenticationInfo"/>\r\n<expression enabled\="true" text\="builder.toString"/>\r\n<expression enabled\="true" text\="query_zhub"/>\r\n<expression enabled\="true" text\="user"/>\r\n<expression enabled\="true" text\="user"/>\r\n<expression enabled\="true" text\="id"/>\r\n<expression enabled\="true" text\="id"/>\r\n<expression enabled\="true" text\="roles"/>\r\n<expression enabled\="true" text\="user"/>\r\n<expression enabled\="true" text\="departmentId"/>\r\n</watchExpressions>\r\n
+eclipse.preferences.version=1
+org.eclipse.debug.core.USE_STEP_FILTERS=false

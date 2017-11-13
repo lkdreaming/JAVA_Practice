@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Simplify_Admin"
+  id="myeclipse.1455435307765"
+  context-root="/Simplify_Admin"
+  j2ee-spec="5.0"
+  archive="Simplify_Admin.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

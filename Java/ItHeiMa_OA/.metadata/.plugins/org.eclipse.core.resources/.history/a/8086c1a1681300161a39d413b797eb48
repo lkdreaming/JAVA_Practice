@@ -1,0 +1,5 @@
+package com.lk.oa.service.impl;
+
+public class RoleServiceImpl {
+
+}

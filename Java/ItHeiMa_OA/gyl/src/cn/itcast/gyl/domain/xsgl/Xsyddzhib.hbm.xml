@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.xsgl.Xsyddzhib">
+		<id name="xsyddzhibid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 
+			存货编码
+		 -->
+		<property name="chbm"></property>
+		<!-- 
+			存货名称
+		 -->
+		<property name="chmc"></property>
+		<!-- 
+			单品扣率
+		 -->
+		<property name="dpkl"></property>
+		<!-- 
+			发货仓库
+		 -->
+		<property name="fhck"></property>
+		
+		<!-- 
+			公司
+		 -->
+		<property name="gs"></property>
+		<!-- 
+			行号
+		 -->
+		<property name="hh"></property>
+		<!-- 
+			含税单价
+		 -->
+		<property name="hsdj"></property>
+		<!-- 
+			含税金额
+		 -->
+		<property name="hsje"></property>
+		<!-- 
+			行状态
+		 -->
+		<property name="hstatus"></property>
+		<!-- 
+			计划发货日期
+		 -->
+		<property name="jhfhrq"></property>
+		<!-- 
+			计量单位
+		 -->
+		<property name="jldw"></property>
+		<!-- 
+			批次
+		 -->
+		<property name="pc"></property>
+		<!-- 
+			税额
+		 -->
+		<property name="se"></property>
+		<!-- 
+			收货单位
+		 -->
+		<property name="shdw"></property>
+		<!-- 
+			税率
+		 -->
+		<property name="shulv"></property>
+		<!-- 
+			数量
+		 -->
+		<property name="sl"></property>
+		<!-- 
+			商品分类
+		 -->
+		<property name="spfl"></property>
+		<!-- 
+			无税单价
+		 -->
+		<property name="wsdj"></property>
+		<!-- 
+			无税金额
+		 -->
+		<property name="wsje"></property>
+		<!-- 
+			型号
+		 -->
+		<property name="xh"></property>
+		<!-- 
+			要求收货日期
+		 -->
+		<property name="yqshrq"></property>
+		
+		<!-- 
+			折扣额
+		 -->
+		<property name="zke"></property>
+		<!-- 
+			赠品
+		 -->
+		<property name="zp"></property>
+		<many-to-one name="xsyddzhub" class="cn.itcast.gyl.domain.xsgl.Xsyddzhub" column="xsyddzhubid"></many-to-one>
+	</class>
+</hibernate-mapping>

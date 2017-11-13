@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"/>
+	<constant name="struts.ui.theme" value="simple"/>
+	<include file="cn/itcast/gyl/struts/xsgl/struts-xsydd.xml"></include>
+	<include file="cn/itcast/gyl/struts/xsgl/struts-xsdd.xml"></include>
+	<include file="cn/itcast/gyl/struts/forward/struts-forward.xml"></include>
+	<include file="cn/itcast/gyl/struts/xsgl/struts-xsfhd.xml"></include>
+	<include file="cn/itcast/gyl/struts/xsgl/struts-xsckd.xml"></include>
+	<include file="cn/itcast/gyl/struts/xsgl/struts-xskp.xml"></include>
+	<include file="cn/itcast/gyl/struts/xsgl/struts-xsysd.xml"></include>
+</struts>

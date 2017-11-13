@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="forward" namespace="/" extends="struts-default">
+		<action name="forwardAction_*" method="{1}" class="cn.itcast.gyl.web.action.forward.ForwardAction">
+			<result name="main">WEB-INF/jsp/gyl/frame/main.jsp</result>
+			<result name="top">WEB-INF/jsp/gyl/frame/top.jsp</result>
+			<result name="center">WEB-INF/jsp/gyl/frame/center.jsp</result>
+			<result name="left">WEB-INF/jsp/gyl/frame/left.jsp</result>
+			<result name="right">WEB-INF/jsp/gyl/frame/right.jsp</result>
+			<result name="role">/WEB-INF/jsp/gyl/basedata/role/role.jsp</result>
+		</action>
+	</package>
+</struts>

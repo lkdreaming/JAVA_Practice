@@ -1,0 +1,189 @@
+﻿<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>包装和接口</title>
+    
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css">
+      
+    </link>
+    
+    <script src="../local/script.js">
+      
+    </script><script src="../local/script_main.js">&amp;nbsp;</script>
+  </head>
+  <body>
+    <!--Topic built:04/01/2010 05:03:28-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="header">
+      <table width="100%" id="topTable"><tr>
+          <td align="left">
+            <span id="headerBold">包装和接口</span>
+          </td>
+          <td align="right">
+            
+          </td>
+        </tr></table>
+      
+      
+      
+    </div>
+    <div id="mainSection">
+      
+        
+        
+    <font color="DarkGray">
+      
+    </font>
+    <p />
+    
+    <p />
+  
+        <div id="introductionSection" class="section">
+    <p>Microsoft SQL Server JDBC Driver 支持允许您创建类的代理的接口，并且支持允许您访问对 JDBC API 的扩展（特定于通过代理接口的 SQL Server JDBC 驱动程序）的包装。</p>
+  </div><h1 class="heading">包装</h1><div id="sectionSection0" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">SQL Server JDBC 驱动程序支持 java.sql.Wrapper 接口。该接口提供一种机制，通过代理接口访问特定于 SQL Server JDBC 驱动程序的 JDBC API 扩展。</p>
+      <p xmlns="">java.sql.Wrapper 接口定义两个方法：<b>isWrapperFor</b> 和 <b>unwrap</b>。<b>isWrapperFor</b> 方法检查指定的输入对象是否实现此接口。<b>unwrap</b> 方法返回一个实现此接口的对象，从而允许访问特定于 SQL Server JDBC 驱动程序的方法。</p>
+      <p xmlns="">
+        <b>isWrapperFor</b> 和 <b>unwrap</b> 方法按如下所示公开：</p>
+      <ul xmlns=""><li>
+          
+            <a href="71156863-3588-453e-b5a5-0573b2c1bebf.htm">isWrapperFor 方法 (SQLServerCallableStatement)</a>
+          <br />
+        </li><li>
+          
+            <a href="cbbf2728-b8c8-4c35-875a-6e967c8285dc.htm">unwrap 方法 (SQLServerCallableStatement)</a>
+          <br />
+        </li><li>
+          
+            <a href="09ed10eb-6e46-437b-a7c0-3c55574aad38.htm">isWrapperFor 方法 (SQLServerConnectionPoolDataSource)</a>
+          <br />
+        </li><li>
+          
+            <a href="f5c9b734-2096-4ae4-a284-6b4d1b4a00d4.htm">unwrap 方法 (SQLServerConnectionPoolDataSource)</a>
+          <br />
+        </li><li>
+          
+            <a href="f77af027-c021-4a17-b264-1ee592bfdd84.htm">isWrapperFor 方法 (SQLServerDataSource)</a>
+          <br />
+        </li><li>
+          
+            <a href="eb8abe29-f3ec-4752-a590-1d5dc3e48f08.htm">unwrap 方法 (SQLServerDataSource)</a>
+          <br />
+        </li><li>
+          
+            <a href="b0e591b1-73e2-4f90-967f-5555eadfc3f1.htm">isWrapperFor 方法 (SQLServerPreparedStatement)</a>
+          <br />
+        </li><li>
+          
+            <a href="8e3ec950-3ac1-4c28-9e97-ddce3bd46578.htm">unwrap 方法 (SQLServerPreparedStatement)</a>
+          <br />
+        </li><li>
+          
+            <a href="53f3291f-d43a-476b-a656-d86168dacf6c.htm">isWrapperFor 方法 (SQLServerStatement)</a>
+          <br />
+        </li><li>
+          
+            <a href="ce680176-ef04-4e44-bb6c-ec50bd06e7e6.htm">unwrap 方法 (SQLServerStatement)</a>
+          <br />
+        </li><li>
+          
+            <a href="d612461d-4c3f-46db-b968-ff4c80b2aa7c.htm">isWrapperFor 方法 (SQLServerXADataSource)</a>
+          <br />
+        </li><li>
+          
+            <a href="d97c99b3-2224-4abb-8b32-40aff49fe759.htm">unwrap 方法 (SQLServerXADataSource)</a>
+          <br />
+        </li></ul>
+    </content></div><h1 class="heading">接口</h1><div id="sectionSection1" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">从 SQL Server JDBC Driver 3.0 开始，接口可用于应用程序服务器，以便从关联的类访问驱动程序特定的方法。应用程序服务器通过创建代理对类进行包装，并且从接口公开 SQL Server JDBC 驱动程序特定的函数。SQL Server JDBC 驱动程序支持具有 SQL Server JDBC 驱动程序特定的方法和常量的接口，因此应用程序服务器可以创建类的代理。</p>
+      <p xmlns="">这些接口从标准 Java 接口派生，这样，一旦取消对接口的包装以便访问驱动程序特定的功能或一般 SQL Server JDBC 驱动程序功能时，您可以使用相同的对象。</p>
+      <p xmlns="">新增了以下接口：</p>
+      <ul xmlns=""><li>
+          
+            <a href="030a1631-cfcd-41e0-beb5-47f93c01e8e0.htm">ISQLServerCallableStatement</a>
+          <br />
+        </li><li>
+          
+            <a href="031c01e2-2c65-4fe4-9700-fdbcc7a39f30.htm">ISQLServerConnection</a>
+          <br />
+        </li><li>
+          
+            <a href="ba1d3242-19ca-4321-83fe-867a4f69f1d4.htm">ISQLServerDataSource</a>
+          <br />
+        </li><li>
+          
+            <a href="cf87892e-5c34-4ac6-8258-c2a81e117b26.htm">ISQLServerPreparedStatement</a>
+          <br />
+        </li><li>
+          
+            <a href="002496f7-8ec0-4267-b4e6-ba095e2ef306.htm">ISQLServerResultSet</a>
+          <br />
+        </li><li>
+          
+            <a href="7f83b514-6e76-4f37-baf3-a10db2010e7c.htm">ISQLServerStatement</a>
+          <br />
+        </li></ul>
+    </content></div><h1 class="heading">示例</h1><div id="sectionSection2" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+    </content><sections xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <h1 class="heading" xmlns="">说明</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">此示例说明如何从 <b>DataSource</b> 对象访问 SQL Server JDBC 驱动程序特定的函数。此 <b>DataSource</b> 类可能已由应用程序服务器包装。若要访问 JDBC 驱动程序特定的函数或常量，您可以取消数据源对 <b>ISQLServerDataSource</b> 接口的数据源的包装，并且使用在此接口中声明的函数。</p>
+        </content></div>
+      <h1 class="heading" xmlns="">代码</h1><div id="sectionSection" class="section" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <div class="sampleCode" xmlns=""><span codeLanguage="other"><pre>import javax.sql.*;
+import java.sql.*;
+import com.microsoft.sqlserver.jdbc.*;
+
+public class UnWrapTest {
+   public static void main(String[] args) {
+      // This is a test.  This DataSource object could be something from an appserver 
+      // which has wrapped the real SQLServerDataSource with its own wrapper
+      SQLServerDataSource ds = new SQLServerDataSource();
+      checkSendStringParametersAsUnicode(ds);
+   }
+
+   // Unwrap to the ISQLServerDataSource interface to access the getSendStringParametersAsUnicode function
+   static void checkSendStringParametersAsUnicode(DataSource ds) {
+      try {
+         final ISQLServerDataSource sqlServerDataSource = ds.unwrap(ISQLServerDataSource.class);
+         boolean sendStringParametersAsUnicode = sqlServerDataSource.getSendStringParametersAsUnicode();
+
+         System.out.println("Send string as parameter value is:-" + sendStringParametersAsUnicode);
+
+      } catch (SQLException sqlE) {
+         System.out.println("Exception:-" + sqlE);
+      }
+   }
+}</pre></span></div>
+        </content></div>
+    </sections></div><span id="seeAlsoSpan"><h1 class="heading">请参阅</h1></span><div id="seeAlsoSection" class="section" name="collapseableSection"><a href="7802328d-4d23-4775-9573-4169b127d258.htm">了解 JDBC 驱动程序数据类型</a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/><tool:tip element="roleInfoSpan" avoidmouse="false"/>
+		<![endif]-->
+      <div id="footer" class="section">
+        
+		<hr />
+		
+		<span id="fb" class="feedbackcss">
+			
+			
+		</span>
+		
+		<a href="9bad553b-9e70-4696-8499-2e35f772a1e0.htm">
+			
+			© 2010 Microsoft Corporation。保留所有权利。
+		</a>
+ 	
+	
+      </div>
+    </div>
+  </body>
+</html>

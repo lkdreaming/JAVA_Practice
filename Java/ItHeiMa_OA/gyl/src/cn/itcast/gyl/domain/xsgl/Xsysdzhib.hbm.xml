@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.gyl.domain.xsgl.Xsysdzhib">
+		<id name="xsysdzhibid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<property name="chbm" length="20"></property>
+		<property name="chmc" length="20"></property>
+		<property name="dj"></property>
+		<property name="dw" length="20"></property>
+		<property name="hh" length="5"></property>
+		<property name="hsje"></property>
+		<property name="lydjh" length="50"></property>
+		<property name="se"></property>
+		<property name="wsje"></property>
+		<property name="sl"></property>
+		<!-- 
+			源头单据号
+		 -->
+		<property name="ytdjh"></property>
+		<property name="ythh"></property>
+		<many-to-one name="xsysdzhub" class="cn.itcast.gyl.domain.xsgl.Xsysdzhub" column="xsysdzhubid"></many-to-one>
+	</class>
+</hibernate-mapping>
